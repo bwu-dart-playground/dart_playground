@@ -1,0 +1,26 @@
+name: polymer_try_1
+description: A sample web application
+dependencies:
+#  browser: any
+  polymer: any
+#  shadow_dom: any
+#  mdv: any
+#  observe: any
+#  fancy_syntax: any
+  http: any
+  json_object: any
+  vector_math: any
+  http_server: any
+  route: any
+  yaml: any
+  bootjack: any
+  moviesbwu_components:
+    path: ../moviesbwu_dartclient/moviesbwu_components
+dev_dependencies:
+  unittest: any
+transformers:
+- polymer:
+    entry_points:
+    - web/alarm.html
+
+
