@@ -7,7 +7,7 @@ import "dart:async";
 // was macht protectAsync0??
 void main() {
   test("Protect async", () {
-    var done = expectAsync0(() => {});
+    var done = expectAsync0((){});
     //var f = protectAsync0(errorProne, id: "cb_id_1");
     var f = errorProne();
     expect(f, throws);

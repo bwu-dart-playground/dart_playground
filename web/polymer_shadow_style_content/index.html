@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample app</title>
+    <link rel="stylesheet" href="testpolymer.css">
+
+    <!-- import the test-element -->
+    <link rel="import" href="testelement.html">
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+  </head>
+  <body>
+    <h1>TestPolymer</h1>
+
+    <p>Hello world from Dart!</p>
+
+    <test-element>
+        <p>I'm red and bold</p>
+        <p>I'm blue and bold</p>
+        <footer>
+            <p>I'm also red</p>
+            <p>I'm green</p>
+            <span>I'm black</span>
+        </footer>
+    </test-element>
+
+  </body>
+</html>

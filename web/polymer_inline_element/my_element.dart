@@ -16,4 +16,13 @@ class MyElement extends DivElement with Polymer, Observable {
     shadowRoot.querySelector('#show').style.display = 'none';
     shadowRoot.querySelector('#hide').style.display = 'inline';
   }
+
+  void enteredView() {
+    super.enteredView();
+    try {
+      $['blax'].style.color = 'blue';
+    } catch(e) {
+      print(e.message);
+    }
+  }
 }
