@@ -1,5 +1,6 @@
 import 'dart:html';
 import 'dart:async';
+import 'dart:convert';
 
 StreamSubscription onTransitionEndSubscription;
 
@@ -9,6 +10,8 @@ class MovingThing {
   List<Point>    points;
 
   MovingThing(this.name){
+
+
     sprite.id   = name;
     sprite.text = name;
     sprite.style
@@ -45,7 +48,31 @@ class MovingThing {
   }
 }
 
+Map data;
+void btnClickHandler(MouseEvent e) {
+  String name = (querySelector('[name="pseudo"]') as TextInputElement).value;
+
+  data = {'pseudo': name};
+  String encode = JSON.encode(data);
+
+  print('name: $name');
+  WebSocket wss = new WebSocket('ws://127.0.0.1:4040/ws');
+  wss.onOpen.listen((_) => wss.send(encode));
+  wss.onMessage.listen((msg) => print("Msg received : ${msg.data}"));
+
+}
+
 main () {
+  (querySelector('[name="push"]') as ButtonInputElement).onClick.first.then(btnClickHandler);
+//  var request = new HttpRequest();
+//  request.open('GET', 'http://127.0.0.1:3030/playground/web/animate_manual/index.html');
+//  request.setRequestHeader("Cookie", "JSESSIONID=cdsfaldskfjaölsdjf");
+//  request.setRequestHeader("User-Agent", "test");
+//  request.withCredentials = true;
+//  request.send();
+//
+//  return;
+
   List<Point> points = [
     new Point(120, 120)
     , new Point(200, 20)

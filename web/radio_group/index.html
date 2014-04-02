@@ -8,12 +8,14 @@
 
   <body>
 
+    <input type="radio" id="r1" name="rate" value="Fixed Rate"> Fixed Rate
+    <input type="radio" id="r2" name="rate" value="Variable Rate"> Variable Rate
+    <input type="radio" id="r3" name="rate" value="Multi Rate" checked="checked">
+
+
     <script type="application/dart" src="index.dart"></script>
     <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
     <script src="packages/browser/dart.js"></script>
-
-    <input type="text" name="pseudo"></input>
-    <input type="button" name="push"></input>
 
   </body>
 </html>

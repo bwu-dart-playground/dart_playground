@@ -1,0 +1,30 @@
+<polymer-element name="my-select" >
+  <template>
+    <div>
+      <template repeat="{{v in values}}">
+        <p>{{v}}</p>
+      </template>
+    </div>
+    <div>
+      <select  multiple="true" selectedIndex="{{selected}}" value="{{value}}"
+        style="width:250px;"   size="8" on-click="{{option_selected}}" on-change="{{on_change}}" >
+         <option template repeat="{{dataEle in dataAr}}" > {{dataEle}} </option>
+      </select>
+    </div>
+
+    <div> <!-- doesn't work -->
+      <select  multiple="true"  style="width:250px;" size="8" >
+         <option template repeat="{{dataEle in dataAr | enumerate}}" value="{{sel[dataEle.index] }}" > {{dataEle.value}} {{dataEle.index}} </option>
+      </select>
+    </div>
+
+    <div>
+      <template repeat="{{v in sel}}">
+        <p>{{v}}</p>
+      </template>
+    </div>
+
+    <div>currentIndex: {{currentIndex}}</div>
+  </template>
+  <script type='application/dart' src='my_select.dart'></script>
+</polymer-element>

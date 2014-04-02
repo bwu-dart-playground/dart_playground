@@ -8,7 +8,7 @@ void main(List<String> args) {
   var x = new X();
   var y = new Y();
 
-  print(x.runtimeType == x.runtimeType);
+//  print(x.runtimeType == xb.runtimeType);
 
 
 }

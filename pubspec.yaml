@@ -7,10 +7,15 @@ dependencies:
   json_object: any
   moviesbwu_components:
     path: ../moviesbwu_dartclient/moviesbwu_components
-  polymer: any
+  polymer: '>=0.10.0-pre.1'
   route: any
   vector_math: any
   yaml: any
+  csvparser: any
+  di: '>=0.0.34'
+  json_object: any
+  quiver: any
+  google_maps: any
 dev_dependencies:
   unittest: any
 transformers:

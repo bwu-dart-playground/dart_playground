@@ -1,0 +1,11 @@
+<polymer-element name="test-element">
+    <template>
+       <template if="{{show == true}}">
+           <div on-click="{{hide}}"> click to hide my div </div>
+           <div id="mydiv">
+               my div content here
+           </div>
+       </template>
+     </template>
+  <script type="application/dart" src="test_element.dart"></script>
+</polymer-element>

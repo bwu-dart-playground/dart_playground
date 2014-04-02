@@ -1,28 +1,36 @@
-import 'dart:io';
-import 'dart:async';
-import 'dart:convert';
 import 'package:observe/observe.dart';
 
 class Notifiable extends Object with ChangeNotifier {
   String _input = '';
-  @reflectable get input => _input;
-  @reflectable set input(val) {
-    _input = notifyPropertyChange(#input, _input, val+" new");
+
+  @reflectable
+  get input => _input;
+
+  @reflectable
+  set input(val) {
+    _input = notifyPropertyChange(#input, _input, val + " new");
   }
 
   Notifiable() {
-    this.changes.listen((List<ChangeRecord> record) => print(record.last));
+    this.changes.listen((List<ChangeRecord> record) => record.forEach(print));
   }
+}
 
-  void change(String text) {
-    input = text;
+class MyObservable extends Observable {
+  @observable
+  String counter = '';
+
+  MyObservable() {
+    this.changes.listen((List<ChangeRecord> record) => record.forEach(print));
   }
 }
 
 void main() {
+  var x = new MyObservable();
+  x.counter = "hallo";
+  Observable.dirtyCheck();
+
   Notifiable notifiable = new Notifiable();
-  Stream stdinStream = stdin;
-  stdinStream
-    .transform(new Utf8Decoder())
-      .listen((e) => notifiable.change(e));
+  notifiable.input = 'xxx';
+  notifiable.input = 'yyy';
 }
