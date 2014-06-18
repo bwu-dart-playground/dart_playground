@@ -1,0 +1,27 @@
+<link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+
+<polymer-element name="fancy-button" extends="button">
+  <template>
+    <style>
+      :host {
+        background: linear-gradient(to bottom, #ff5db1 0%,#ef017c 100%);
+        box-shadow: 10px 10px 5px #888888;
+        border-radius: 5px;
+        font-size: 2em;
+        border: 0;
+        font-family: 'Tangerine', cursive;
+        padding: 30px;
+      }
+
+      :host(:hover) {
+        cursor: pointer;
+      }
+
+      :host(:active) {
+        font-size: 3em;
+      }
+    </style>
+    <content></content>
+  </template>
+  <script type="application/dart" src="fancy_button.dart"></script>
+</polymer-element>

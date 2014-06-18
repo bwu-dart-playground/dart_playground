@@ -10,6 +10,7 @@ void main(List<String> args) {
   //
   //  });
   var c = new http.Client();
+  // to add headers new http.Client().head(url)
   c.get(Uri.parse('https://www.google.com')); //.then((http.Response r) {
   c.readBytes(Uri.parse('https://www.google.com')).then((List<int> data) {
     print(data);

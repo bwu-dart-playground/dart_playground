@@ -1,0 +1,26 @@
+<polymer-element name="my-select" >
+  <template>
+    <form id='form'
+            name='form'
+            class='form round-corners'
+            on-submit='submit'>
+
+        <input id=langTxt type='text'
+               list='langs'
+               value="{{lang}}"
+               placeholder='English'
+               required
+               on-change='{{submit}}'>
+
+       <datalist id='langs' >
+          <template repeat='{{lang in langs}}'>
+            <option value='{{lang}}'>{{lang}}</option>
+          </template>
+       </datalist>
+
+        <button id='submit-btn' type='submit' hidden='hidden'></button>
+
+      </form>
+  </template>
+<script type="application/dart;component=1" src="my_select.dart"></script>
+</polymer-element>

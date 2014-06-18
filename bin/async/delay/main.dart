@@ -18,6 +18,6 @@ Future<int> timeconsumingFunctionReturningFuture(int i) {
   }
 }
 
-void Main(List<String> args) {
+void main(List<String> args) {
 
 }

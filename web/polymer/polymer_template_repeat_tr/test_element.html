@@ -1,0 +1,15 @@
+<polymer-element name="test-element">
+  <template>
+    <style>
+      tr.foo {
+        background-color: #00ff00;
+      }
+    </style>
+    <table>
+      <tr template repeat="{{row in rows}}" class="{{ {'foo': row.contains('Approved')} }}">
+        <td template repeat="{{cell in row}}">{{cell}}</td>
+      </tr>
+    </table>
+  </template>
+  <script type="application/dart;component=1" src="test_element.dart"></script>
+</polymer-element>

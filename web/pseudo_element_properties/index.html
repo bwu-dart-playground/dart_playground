@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Window.pushState</title>
+    <style>
+      /* tablets */
+      @media(min-width:768px){
+         body::after {
+          content: 'tablet';
+          display: none;
+        }
+      }
+
+      @media(min-width:992px){
+         body::after {
+          content: 'desktop';
+          display: none;
+        }
+      }
+      @media(min-width:1200px){
+       body::after {
+          content: 'large-screen';
+          display: none;
+        }
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <input type="radio" id="r1" name="rate" value="Fixed Rate"> Fixed Rate
+    <input type="radio" id="r2" name="rate" value="Variable Rate"> Variable Rate
+    <input type="radio" id="r3" name="rate" value="Multi Rate" checked="checked">
+
+
+    <script type="application/dart" src="index.dart"></script>
+    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+    <script src="packages/browser/dart.js"></script>
+
+  </body>
+</html>

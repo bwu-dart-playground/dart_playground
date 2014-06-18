@@ -1,24 +1,34 @@
 name: polymer_try_1
 description: A sample web application
 dependencies:
-  bootjack: any
+#  bootjack: any
   http: any
   http_server: any
   json_object: any
-  moviesbwu_components:
-    path: ../moviesbwu_dartclient/moviesbwu_components
-  polymer: '>=0.10.0-pre.1'
+#  moviesbwu_components:
+#    path: ../moviesbwu_dartclient/moviesbwu_components
+  polymer: '>=0.10.0'
   route: any
   vector_math: any
   yaml: any
   csvparser: any
-  di: '>=0.0.34'
+  di:
   json_object: any
   quiver: any
   google_maps: any
+  fancy_button: any
+#  angular: any
+#    git: git@github.com:angular/angular.dart.git
+  shadow_dom: any
 dev_dependencies:
   unittest: any
+  mock: any
 transformers:
 - polymer:
     entry_points:
     - web/alarm.html
+    - web/polymer/nested_repeat/index.html
+    - web/polymer/fancy_button/index.html
+
+- $dart2js:
+  $exclude: bin/your_entrypoint.dart
