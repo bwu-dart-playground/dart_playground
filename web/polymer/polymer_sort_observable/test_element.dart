@@ -27,13 +27,13 @@ class PeopleElement extends PolymerElement {
   }
 
   @override
-  void enteredView() {
+  void attached() {
     people.add(new Person('c'));
     people.add(new Person('a'));
     people.add(new Person('f'));
     people.add(new Person('b'));
 
-    super.enteredView();
+    super.attached();
 
     new Timer(new Duration(seconds: 3), () => sortByName());
 

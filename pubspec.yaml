@@ -1,4 +1,4 @@
-name: polymer_try_1
+name: playground
 description: A sample web application
 dependencies:
 #  bootjack: any
@@ -7,7 +7,7 @@ dependencies:
   json_object: any
 #  moviesbwu_components:
 #    path: ../moviesbwu_dartclient/moviesbwu_components
-  polymer: '>=0.10.0'
+  polymer: '>=0.12.0-dev'
   route: any
   vector_math: any
   yaml: any
@@ -16,19 +16,31 @@ dependencies:
   json_object: any
   quiver: any
   google_maps: any
-  fancy_button: any
+#  fancy_button: any
 #  angular: any
 #    git: git@github.com:angular/angular.dart.git
-  shadow_dom: any
+  web_components: any
+  core_elements: '>=0.0.6'
+  paper_elements: any
+  fontawesome_elements: any
 dev_dependencies:
   unittest: any
   mock: any
 transformers:
 - polymer:
     entry_points:
-    - web/alarm.html
+#    - web/alarm.html
+#    - web/polymer/nested_repeat/index.html
+#    - web/polymer/fancy_button/index.html
+    - web/polymer/core_menu/index.html
+    - web/polymer/core_menu_button_responsive/index.html
     - web/polymer/nested_repeat/index.html
-    - web/polymer/fancy_button/index.html
+    - web/polymer/template_instance/index.html
+    - web/polymer/core_drawer_panel/index.html
+    - web/polymer/paper_input_value_binding/index.html
+    - web/polymer/paper_button_attribute/index.html
+    - web/polymer/paper_radio_group/index.html
+    - web/polymer/font_awesome_icon/index.html
 
-- $dart2js:
-  $exclude: bin/your_entrypoint.dart
+#- $dart2js:
+#  $exclude: bin/your_entrypoint.dart

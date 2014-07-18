@@ -16,8 +16,8 @@ class MySelect extends PolymerElement {
     ta.scrollTop = ta.scrollHeight;
   }
 
-  void enteredView() {
-    super.enteredView();
+  void attached() {
+    super.attached();
     new Timer.periodic(new Duration(seconds: 1), (_) => message += 'some text ${new DateTime.now()}\n');
   }
 }

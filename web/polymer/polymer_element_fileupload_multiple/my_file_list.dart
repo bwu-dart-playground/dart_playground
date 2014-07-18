@@ -25,8 +25,8 @@ class MyFileList extends PolymerElement {
   @observable String myname2 = "Günter Zöchbauer - G&uuml;nter Z&ouml;chbauer";
 
   @override
-  void enteredView() {
-    super.enteredView();
+  void attached() {
+    super.attached();
     //$['hu'].append(new dom.Text("Günter Zöchbauer xx G&uuml;nter Z&ouml;chbauer"));
     //$['hu'].appendHtml("xGünter ZöchbauerxG&uuml;nter Z&ouml;chbauer");
     //files = toObservable(($['uploader'] as dom.InputElement).files);

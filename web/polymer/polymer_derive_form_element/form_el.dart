@@ -9,8 +9,8 @@ class MyLogin extends TableRowElement with Polymer{
     print('MyLogin');
   }
 
-  enteredView() {
-    super.enteredView();
-    print('enteredView');
+  attached() {
+    super.attached();
+    print('attached');
   }
 }

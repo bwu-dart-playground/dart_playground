@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/roboto.html">
+<link rel="import" href="../../packages/core_elements/core_drawer_panel.html">
+<link rel="import" href="../../packages/core_elements/core_header_panel.html">
+<link rel="import" href="../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+
+<polymer-element name='app-element'>
+  <template>
+    <link rel="stylesheet" href="styles.css">
+    <core-drawer-panel responsiveWidth="600px" id="drawerPanel">
+
+      <core-header-panel drawer>
+        <core-toolbar>My notes</core-toolbar>
+      </core-header-panel>
+
+      <core-header-panel main>
+        <core-toolbar>
+          <paper-icon-button icon="menu" on-click="{{toggleDrawer}}"></paper-icon-button>
+          <span flex>My notes</span>
+          <paper-icon-button icon="search"></paper-icon-button>
+          <paper-icon-button icon="more-vert"></paper-icon-button>
+        </core-toolbar>
+      </core-header-panel>
+
+    </core-drawer-panel>
+  </template>
+  <script type='application/dart' src='app_element.dart'></script>
+</polymer-element>

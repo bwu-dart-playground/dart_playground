@@ -17,8 +17,8 @@ class MyCanvas extends PolymerElement {
   @observable bool test = true;
 
   @override
-  void enteredView() {
-    super.enteredView();
+  void attached() {
+    super.attached();
 
     document.onPaste.listen((data) => onData(data), onDone: () => onDone(null));
     ($['canvas'] as CanvasElement).onPaste.listen((data) =>onData(data), onDone: () => onDone(null));

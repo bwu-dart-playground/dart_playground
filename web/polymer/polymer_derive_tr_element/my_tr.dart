@@ -19,8 +19,8 @@ class MyTr extends TableRowElement with Polymer{
     var bytesForUTF8 = LATIN1.fuse(UTF8).encode(bytesForIso_8859_2);
   }
 
-  enteredView() {
-    super.enteredView();
-    print('enteredView');
+  void attached() {
+    super.attached();
+    print('attached');
   }
 }
