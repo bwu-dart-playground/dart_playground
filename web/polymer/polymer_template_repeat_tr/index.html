@@ -7,7 +7,8 @@
 
     <!-- import the test-element -->
 
-    <link rel="import" href="packages/polymer/polymer.html">
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
     <link rel="import" href="test_element.html">
   </head>
   <body>
@@ -16,6 +17,6 @@
     <p>Sort observable</p>
 
     <test-element></test-element>
-
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
   </body>
 </html>

@@ -32,15 +32,17 @@ transformers:
 #    - web/alarm.html
 #    - web/polymer/nested_repeat/index.html
 #    - web/polymer/fancy_button/index.html
+    - web/polymer/core_drawer_panel/index.html
     - web/polymer/core_menu/index.html
     - web/polymer/core_menu_button_responsive/index.html
+    - web/polymer/font_awesome_icon/index.html
     - web/polymer/nested_repeat/index.html
-    - web/polymer/template_instance/index.html
-    - web/polymer/core_drawer_panel/index.html
+    - web/polymer/observe_property/index.html
     - web/polymer/paper_input_value_binding/index.html
     - web/polymer/paper_button_attribute/index.html
     - web/polymer/paper_radio_group/index.html
-    - web/polymer/font_awesome_icon/index.html
+    - web/polymer/polymer_template_repeat_tr/index.html
+    - web/polymer/template_instance/index.html
 
 #- $dart2js:
 #  $exclude: bin/your_entrypoint.dart
