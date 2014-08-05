@@ -5,16 +5,18 @@
     <meta charset="utf-8">
     <title>Sample app</title>
 
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+
     <!-- import the test-element -->
     <link rel="import" href="test_element.html">
-    <script type="application/dart">
-      export 'package:polymer/init.dart';</script>
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
     <script src="packages/browser/dart.js"></script>
   </head>
   <body>
     <h1>TestPolymer</h1>
 
-    <p>Sort observable</p>
+    <p>Template if</p>
 
     <test-element></test-element>
 

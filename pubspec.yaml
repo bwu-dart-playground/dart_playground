@@ -7,7 +7,7 @@ dependencies:
   json_object: any
 #  moviesbwu_components:
 #    path: ../moviesbwu_dartclient/moviesbwu_components
-  polymer: '>=0.12.0-dev'
+  polymer: '>=0.12.0'
   route: any
   vector_math: any
   yaml: any
@@ -22,7 +22,8 @@ dependencies:
   web_components: any
   core_elements: '>=0.0.6'
   paper_elements: any
-  fontawesome_elements: any
+#  fontawesome_elements: any
+  route_hierarchical: '>=0.4.21 <0.5.0'
 dev_dependencies:
   unittest: any
   mock: any
@@ -41,7 +42,7 @@ transformers:
     - web/polymer/paper_input_value_binding/index.html
     - web/polymer/paper_button_attribute/index.html
     - web/polymer/paper_radio_group/index.html
-    - web/polymer/polymer_template_repeat_tr/index.html
+    - web/polymer/template_repeat_tr/index.html
     - web/polymer/template_instance/index.html
 
 #- $dart2js:
