@@ -32,7 +32,7 @@ packages:
   core_elements:
     description: core_elements
     source: hosted
-    version: "0.1.1"
+    version: "0.1.1+2"
   crypto:
     description: crypto
     source: hosted
@@ -97,6 +97,10 @@ packages:
     description: observe
     source: hosted
     version: "0.11.0+4"
+  options_file:
+    description: options_file
+    source: hosted
+    version: "0.9.15"
   paper_elements:
     description: paper_elements
     source: hosted
@@ -141,6 +145,10 @@ packages:
     description: source_span
     source: hosted
     version: "1.0.0"
+  sqljocky:
+    description: sqljocky
+    source: hosted
+    version: "0.11.0"
   stack_trace:
     description: stack_trace
     source: hosted
