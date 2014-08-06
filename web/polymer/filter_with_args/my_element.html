@@ -13,7 +13,7 @@
     x
     <template repeat="{{v in myValues}}">
       y
-      <div>{{myFilter(v, 2)}}</div>
+      <div>{{v | toFixed(2)}}</div>
     </template>
   </template>
   <script type='application/dart' src='my_element.dart'></script>

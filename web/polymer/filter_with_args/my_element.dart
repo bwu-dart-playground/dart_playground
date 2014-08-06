@@ -19,4 +19,6 @@ class MyElement extends PolymerElement {
   bool myFilter(num val, int precision) {
     return val.toStringAsFixed(precision);
   }
+
+  String toFixed(int digits) => (num n) => n.toStringAsFixed(digits);
 }
