@@ -1,6 +1,7 @@
 name: playground
 description: A sample web application
 dependencies:
+  browser: any
 #  bootjack: any
   http: any
   http_server: any
@@ -9,7 +10,7 @@ dependencies:
 #    path: ../moviesbwu_dartclient/moviesbwu_components
   polymer: '>=0.12.0'
   route: any
-  vector_math: any
+  #vector_math: any
   yaml: any
   csvparser: any
   di:
@@ -24,26 +25,34 @@ dependencies:
   paper_elements: any
 #  fontawesome_elements: any
   route_hierarchical: '>=0.4.21 <0.5.0'
+  sqljocky: any
+  intl: any
+  crypto: any
 dev_dependencies:
   unittest: any
   mock: any
 transformers:
 - polymer:
     entry_points:
-#    - web/alarm.html
-#    - web/polymer/nested_repeat/index.html
-#    - web/polymer/fancy_button/index.html
     - web/polymer/core_drawer_panel/index.html
     - web/polymer/core_menu/index.html
     - web/polymer/core_menu_button_responsive/index.html
+    - web/polymer/extend_paper_item/index.html
+    - web/polymer/filter_with_args/index.html
     - web/polymer/font_awesome_icon/index.html
     - web/polymer/nested_repeat/index.html
     - web/polymer/observe_property/index.html
+    - web/polymer/paper_input_consume_key/index.html
     - web/polymer/paper_input_value_binding/index.html
     - web/polymer/paper_button_attribute/index.html
     - web/polymer/paper_radio_group/index.html
+    - web/polymer/paper_tabs_inside_core_toolbar/index.html
+    - web/polymer/routing/index.html
     - web/polymer/template_repeat_tr/index.html
     - web/polymer/template_instance/index.html
-
-#- $dart2js:
-#  $exclude: bin/your_entrypoint.dart
+    - web/polymer/paper_input_font/index.html
+    - web/polymer/core_overlay_style/index.html
+    - web/polymer/core_icon_button/index.html
+    - web/polymer/paper_dialog/index.html
+    - web/polymer/core_dropdown_item_label/index.html
+    - web/polymer/published_property/index.html

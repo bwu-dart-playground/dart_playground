@@ -22,6 +22,7 @@ void userPostHandler(HttpRequest request) {
   print('userPostHandler');
   print('userPostHandler isBroadcast: ${request.isBroadcast}');
   request.listen((e) {
+    request.headers.value(HttpHeaders.ACCEPT_LANGUAGE)
     print('userPostHandler: ${new String.fromCharCodes(e)}');
     request.response.write(new String.fromCharCodes(e));
     request.response.close();
