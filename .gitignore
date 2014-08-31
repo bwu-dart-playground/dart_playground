@@ -10,6 +10,7 @@
 # Dart global
 ###################
 packages
+build
 .pub
 .buildlog
 #pubspec.lock
