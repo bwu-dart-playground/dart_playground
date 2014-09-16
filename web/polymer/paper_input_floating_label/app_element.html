@@ -1,0 +1,21 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../packages/paper_elements/paper_button.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <paper-input id="alias-input" floatingLabel label="Person Alias (eg: King, Eldest Son, Mooch, etc.)"></paper-input>
+    <paper-input id="birth-year-input" floatingLabel label="Birth Year (eg: 1969)" validate="^[12][0-9][0-9][0-9]$"></paper-input>
+
+    <div center horizontal layout>
+      <paper-button id="add-button" on-click="{{addPerson}}" class="add" label="Add Person"></paper-button>
+    </div><!-- Template content here -->
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

@@ -1,0 +1,29 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/core_elements/core_tooltip.html">
+<link rel="import" href="../../packages/paper_elements/paper_input.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      core-tooltip[hide="true"]:focus::shadow .polymer-tooltip,
+      core-tooltip[hide="true"]:hover::shadow .polymer-tooltip {
+        visibility: hidden !important;
+      }
+    </style>
+    <core-tooltip position="bottom" label="Name can not already be present" hide="{{!isValidationError}}" >
+      <paper-input floatingLabel
+                   id="alias-input"
+                   type="text"
+                   label="Enter Name"
+                   required invalid="{{isValidationError}}"
+          >
+      </paper-input>
+      <span>isError: {{isValidationError}}</span>
+    </core-tooltip>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>
