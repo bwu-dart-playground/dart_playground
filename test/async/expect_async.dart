@@ -29,4 +29,32 @@ void main(List<String> args) {
       expect(sut.i, greaterThan(0));
     }));
   });
+
+  Future<bool> doSomething() {
+//    return new Future.delayed(new Duration(seconds: 5), () {
+//      print('done');
+//      return true;
+//    });
+    var c = new Completer();
+    c.complete(true);
+    return c.future;
+  }
+
+  group('group', () {
+    test('xx', () {
+      return doSomething().then((ok) => expect(ok, equals(true)))
+      .catchError((e, s) {
+        print(e);
+      })
+      .then((_) {
+        expect(new Future.delayed(new Duration(seconds: 5), () {
+        }), completes);
+      });
+    });
+
+    test('xx1', () {
+      var future = doSomething();
+      expect(future, completion(equals(true)));
+    });
+  });
 }

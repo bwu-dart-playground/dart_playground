@@ -7,13 +7,13 @@ governed by a BSD-style license that can be found in the LICENSE file.
 
 <html>
   <head>
-    <title>nohover-onscroll</title>
-    <link rel="import" href="my_select.html">
-    <link rel="import" href="packages/polymer/polymer.html">
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
 
-    <script src="packages/browser/dart.js"></script>
+    <link rel="import" href="my_select.html">
   </head>
   <body>
     <my-select></my-select>
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
   </body>
 </html>

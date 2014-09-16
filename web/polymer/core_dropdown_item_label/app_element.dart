@@ -13,7 +13,7 @@ class AppElement extends PolymerElement {
   }
 
   var yearsList = <int>[ 1, 2, 3, 4];
-  @observable int year = 0;
+  //@observable int year = 0;
 
   var age = new Age();
 
@@ -29,17 +29,18 @@ class AppElement extends PolymerElement {
       int days = duration.inDays;
       age.years = days ~/ 365;
 
-      // attempting to set the PaperItem label to the calculated age
-      var yearsPprItm = $[ 'years-ppr-itm' ] as PaperItem;
-
-      // neither of the following resets the PaperItem label to the age variable
-      yearsPprItm.setAttribute('label', age.years.toString());
-      //year = age.years.toString();
+//      // attempting to set the PaperItem label to the calculated age
+//      var yearsPprItm = $[ 'years-ppr-itm' ] as PaperItem;
+//
+//      // neither of the following resets the PaperItem label to the age variable
+//      yearsPprItm.setAttribute('label', age.years.toString());
+//      //year = age.years.toString();
     }
   }
 }
 
-class Age {
+class Age extends Observable {
+  @observable
   int years = 0;
   String birthday = '';
 }

@@ -1,9 +1,7 @@
 library x;
 
+import 'dart:html' as dom;
 import 'package:polymer/polymer.dart';
-
-
-import 'dart:html';
 
 @CustomTag('my-select')
 class LanguageComboForm extends PolymerElement {
@@ -14,20 +12,20 @@ class LanguageComboForm extends PolymerElement {
 
   LanguageComboForm.created() : super.created();
 
-  bool get applyAuthorStyles => true;
+  void attached() {
+    super.attached();
+    dom.DataListElement o = $['langs'];
+    print(o.innerHtml);
+    print(o.options);
+  }
 
-  void submit(Event e, var detail, Node target) {
-    //$['submit-btn'].click();
-
-    //$['form'].onSubmit.listen((Event e) {
-      e.preventDefault();
-
-      dispatchEvent(new CustomEvent('submit', detail: {
-        'lang': lang
-      }));
-
-      print('submitted from onSubmit: $lang');
-    //});
+  void submit(dom.Event e, var detail, dom.Node target) {
+//    e.preventDefault();
+//    dispatchEvent(new CustomEvent('submit', detail: {
+//      'lang': lang
+//    }));
+//
+//    print('submitted from onSubmit: $lang');
   }
 
 

@@ -36,3 +36,8 @@ double parse(String s) {
   return double.parse(s, (e) => null);
 }
 
+int parseInt(String s) {
+  if(s == null) return 0;
+  return num.parse(s, (v) => 0.0).toInt();
+}
+
