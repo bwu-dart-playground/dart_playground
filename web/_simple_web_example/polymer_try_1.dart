@@ -4,6 +4,7 @@ void main() {
   querySelector("#sample_text_id")
     ..text = "Click me!"
     ..onClick.listen(reverseText);
+  window.history.pushState(null, 'abc');
 }
 
 void reverseText(MouseEvent event) {

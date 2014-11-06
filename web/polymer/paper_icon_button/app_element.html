@@ -1,0 +1,43 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+<link rel="import" href="../../packages/core_elements/core_icon.html">
+<link rel="import" href="../../packages/core_elements/social_icons.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+
+      paper-icon-button[label][required]::shadow div#content > span::after {
+        content: " *";
+        font-weight: bold;
+        font-size: 150%;
+        color: red;
+      }
+    </style>
+    <paper-icon-button
+        id = 'add-btn'
+        label = 'NAME'
+        required
+        icon = 'social:person'
+        on-click = '{{ toggle }}'
+        ></paper-icon-button>
+
+    <paper-icon-button
+        id = 'add-btn'
+        label = 'NAME'
+        icon = 'social:person'
+        on-click = '{{ toggle }}'
+        ></paper-icon-button>
+
+    <paper-icon-button id = 'add-btn' on-click = '{{ toggle }}'>
+        <core-icon icon='social:person'></core-icon>Name
+        </paper-icon-button>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

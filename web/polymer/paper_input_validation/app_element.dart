@@ -9,10 +9,15 @@ class AppElement extends PolymerElement {
 
   void inputHandler(Event e) {
     var inp = ($['custom'] as CoreInput);
+
     if(inp.inputValue.length < 5) {
       inp.jsElement.callMethod('setCustomValidity', ["Give me more!"]);
     } else {
       inp.jsElement.callMethod('setCustomValidity', [""]);
     }
+  }
+
+  void setCustomValidity(CoreInput inp, String message) {
+    inp.jsElement.callMethod('setCustomValidity', ["Give me more!"]);
   }
 }

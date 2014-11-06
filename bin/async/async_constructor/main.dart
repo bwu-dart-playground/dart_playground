@@ -11,6 +11,7 @@ class SomeClass {
 
   Future _load(String val) {
     return new Future.value('bla');
+
   }
 }
 

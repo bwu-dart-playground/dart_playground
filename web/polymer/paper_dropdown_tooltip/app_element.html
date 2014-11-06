@@ -1,0 +1,38 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_dropdown_menu.html">
+<link rel="import" href="../../packages/paper_elements/paper_item.html">
+<link rel="import" href="../../packages/core_elements/core_tooltip.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background: lightblue;
+      }
+
+      core-tooltip:focus {
+        visibility: hidden !important;
+      }
+
+      paper-dropdown-menu {
+        background-color: red;
+      }
+    </style>
+    <core-tooltip position="bottom" label="Choose country of residence">
+      <paper-dropdown-menu>
+        <template repeat="{{name in countries}}">
+          <paper-item label="{{name}}"></paper-item>
+        </template>
+      </paper-dropdown-menu>
+    </core-tooltip>
+    <core-tooltip position="bottom" label="Choose country of residence">
+      <paper-dropdown-menu>
+        <template repeat="{{name in countries}}">
+          <paper-item label="{{name}}"></paper-item>
+        </template>
+      </paper-dropdown-menu>
+    </core-tooltip>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

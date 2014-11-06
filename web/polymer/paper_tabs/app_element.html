@@ -1,0 +1,31 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel='import' href='../../packages/paper_elements/paper_tabs.html'>
+<link rel='import' href='../../packages/paper_elements/paper_tab.html'>
+<link rel='import' href='../../packages/paper_elements/paper_input.html'>
+<link rel='import' href='../../packages/core_elements/core_pages.html'>
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <paper-tabs id="Tabs" style='width:800px; height:175px; color:green;'>
+      <paper-tab>System</paper-tab>
+      <paper-tab>User</paper-tab>
+    </paper-tabs>
+
+    <core-pages selected="{{$['Tabs'].selected}}">
+      <div>
+        <paper-input id='version' label="Version:" readonly></paper-input>
+      </div>
+      <div>
+        <paper-input id='Welcome' label="Display Welcome Page:" readonly></paper-input>
+        <paper-input id='user_name' label="User Name:" readonly></paper-input>
+      </div>
+    </core-pages>
+
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

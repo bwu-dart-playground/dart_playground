@@ -1,0 +1,25 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+      <div>runtimeType: {{model.toString()}}</div> <!-- sanity check -->
+      <div>common: {{model.commonProperty}}</div>
+      <div>model: {{model}}</div>
+      <div>model: {{Bar}}</div>
+      <template if="{{model is Foo)}}">
+        <div style="border: solid 1px red;">{{model.fooSpecificProperty}}</div>
+      </template>
+      <template if="{{model is Bar}}">
+        <div style="border: solid 1px green;">{{model.barSpecificProperty}}</div>
+      </template>
+
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

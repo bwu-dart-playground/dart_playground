@@ -32,6 +32,7 @@ void handle(Event event) {
 
 
 void onDataLoaded(HttpRequest req) {
+
   req.responseHeaders.forEach((k, v) {
     print('Header: $k, value: $v');
   });

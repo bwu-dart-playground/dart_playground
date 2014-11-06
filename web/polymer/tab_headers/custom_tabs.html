@@ -1,0 +1,20 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<polymer-element name="custom-tabs">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <nav>
+      <template repeat="{{tab in tabHeaders}}">
+        <div>{{tab}}</div>
+      </template>
+    </nav>
+    <div class="tabs">
+      <content id="content" select="custom-tab"></content>
+    </div>
+  </template>
+  <script type="application/dart" src="custom_tabs.dart"></script>
+</polymer-element>

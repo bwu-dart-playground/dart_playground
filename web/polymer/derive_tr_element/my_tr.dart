@@ -10,13 +10,14 @@ import 'package:polymer/polymer.dart';
 //}
 
 @CustomTag('my-tr')
-class MyTr extends TableRowElement with Polymer{
+class MyTr extends TableRowElement with Polymer, Observable {
   @observable List<String> values = toObservable(['1', '2', '3', '4']);
 
   MyTr.created() : super.created() {
+    polymerCreated();
     print('MyTr');
     List<int> bytesForIso_8859_2 = new Latin1Encoder().convert("Günter Zöchbauer");
-    var bytesForUTF8 = LATIN1.fuse(UTF8).encode(bytesForIso_8859_2);
+    //var bytesForUTF8 = LATIN1.fuse(UTF8).encode(bytesForIso_8859_2);
   }
 
   void attached() {

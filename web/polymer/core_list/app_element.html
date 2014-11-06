@@ -1,0 +1,28 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="packages/core_elements/core_list_dart.html">
+<link rel="import" href="packages/core_elements/core_item.html">
+<link rel="import" href="foo_element.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <core-list-dart data="{{data}}"  on-core-activate="{{activateHandler}}">
+      <template>
+          <div>{{name}} - selected: {{selected}}</div>
+      </template>
+    </core-list-dart>
+                    xxx
+    <!--<core-list-dart data="{{data}}" selected="{{selected}}">-->
+      <!--<template>-->
+        <!--yyy{{name}}zzz-->
+        <!--&lt;!&ndash;<foo-element foo="{{}}"></foo-element>&ndash;&gt;-->
+      <!--</template>-->
+    <!--</core-list-dart>-->
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

@@ -10,14 +10,21 @@ governed by a BSD-style license that can be found in the LICENSE file.
     <title>nohover-onscroll</title>
 
     <link rel="import" href="my_tr.html">
+    <style>
+      table {
+        border: 1px solid red;
+      }
+      tr {
+        border: 1px solid blue;
+      }
 
-    <script type="application/dart">
-       export 'package:polymer/init.dart';
-    </script>
-    <script src="packages/browser/dart.js"></script>
+
+
+
+    </style>
 
   </head>
-  <body>
+  <body unresolved>
 
   xx
     <table>
@@ -25,6 +32,10 @@ governed by a BSD-style license that can be found in the LICENSE file.
         <td>td1</td><td>td2</td>
       </tr>
     </table>
+    <script type="application/dart">
+       export 'package:polymer/init.dart';
+    </script>
+    <script src="packages/browser/dart.js"></script>
 
   </body>
 </html>

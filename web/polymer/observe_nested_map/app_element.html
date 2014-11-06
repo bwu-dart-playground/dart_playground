@@ -1,0 +1,19 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<polymer-element name="app-element">
+  <template>
+
+    <div>
+      <ul>
+        <template repeat="{{ entry in map.values }}">
+          <li>x{{ entry['name'] }} {{ entry['size']}}</li>
+          <template repeat="{{ item in entry.values}}">
+            y{{item}}
+          </template>
+        </template>
+      </ul>
+      <button on-click="{{change}}">Change</button>
+    </div>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

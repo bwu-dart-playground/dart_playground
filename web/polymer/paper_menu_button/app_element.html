@@ -1,0 +1,22 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_menu_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_item.html">
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    x
+    <paper-menu-button icon="menu" on-core-select="{{ selectedItemHandler }}">
+      <paper-item label="item 1">item 1</paper-item>
+      <paper-item label="item 2">item 2</paper-item>
+    </paper-menu-button>
+    y
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

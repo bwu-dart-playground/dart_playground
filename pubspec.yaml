@@ -2,7 +2,6 @@ name: playground
 description: A sample web application
 dependencies:
   browser: any
-#  bootjack: any
   http: any
   http_server: any
   json_object: any
@@ -10,14 +9,12 @@ dependencies:
 #    path: ../moviesbwu_dartclient/moviesbwu_components
   polymer: '>=0.13.1'
   route: any
-  #vector_math: any
   yaml: any
   csvparser: any
   di:
   json_object: any
   quiver: any
   google_maps: any
-#  fancy_button: any
 #  angular: any
 #    git: git@github.com:angular/angular.dart.git
   web_components: any
@@ -29,6 +26,12 @@ dependencies:
   intl: any
   crypto: any
   charcode: any
+  benchmark_harness: any
+  typed_data: any
+  rikulo_commons: any
+#  bootjack: any
+  #vector_math: any
+#  fancy_button: any
 dev_dependencies:
   unittest: any
   mock: any
@@ -66,3 +69,22 @@ transformers:
     - web/polymer/auto_binding_element/index.html
     - web/polymer/polymer_job/index.html
     - web/polymer/observe_unobservable/index.html
+    - web/polymer/is_operator/index.html
+    - web/polymer/paper_dropdown_tooltip/index.html
+    - web/polymer/tab_headers/index.html
+    - web/polymer/core_list/index.html
+    - web/polymer/paper_tabs/index.html
+    - web/SO/26128452_template_repeat/index.html
+    - web/polymer/paper_icon_button/index.html
+    - web/polymer/core_list_reorderable/index.html
+    - web/polymer/core_pages_nested/index.html
+    - web/polymer/paper_menu_button/index.html
+    - web/polymer/core_submenu/index.html
+    - web/polymer/observe_nested_map/index.html
+    - web/polymer/layout_fullsize/index.html
+    - web/polymer/core_scaffold/index.html
+    - web/polymer/paper_dropdown_menu_update.html
+    - web/polymer/paper_dropdown_menu_update/index.html
+    - web/polymer/extend_dom_element_and_style/index.html
+    - web/polymer/derive_tr_element/index.html
+    - web/polymer/SO_extend_td/index.html
