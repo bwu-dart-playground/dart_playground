@@ -1,0 +1,37 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+
+    <!--A table -->
+    <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+      <tr>
+        <th template repeat='{{column in columns}}'>
+          {{column.displayName}}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr template repeat='{{row in data}}'>
+        <td template repeat='{{ column in columns}}' data-title="{{column.displayName}}">
+           {{row.getValue(column.name, row.dummy)}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--A repeat by binding to the Model properties directly -->
+      <template repeat="{{row in data}}">
+        <p>{{row.fname}} {{row.lname}} {{row.age}}</p>
+      </template>
+
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

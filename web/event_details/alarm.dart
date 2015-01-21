@@ -12,6 +12,15 @@ class MyData {
 }
 
 void main() {
+  final inner = dom.querySelector('#inner');
+  final outer = dom.querySelector('#outer');
+
+  final eventStreamProvider = new dom.EventStreamProvider('xxx-yyy').forTarget(inner);
+
+  outer.on['xxx-yyy'].listen((e) {
+    print('type: ${e.type}, target: ${e.target.id}');
+  });
+  inner.dispatchEvent(new dom.CustomEvent('xxx-yyy'));
 
   var b = dom.querySelector('#button');
   b.onClick.listen((e) {

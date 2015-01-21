@@ -11,6 +11,8 @@ void main(List<String> args) {
   finishedReading.then((text) {
     print(text);
     print(loadYaml(text));
+
+    'xxx'.splnew
   });
 
 }

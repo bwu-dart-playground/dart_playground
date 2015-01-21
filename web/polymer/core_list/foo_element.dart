@@ -15,6 +15,4 @@ class FooElement extends PolymerElement {
   void  set foo(foo) {
     _foo = foo;
   }
-
-
 }

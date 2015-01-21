@@ -4,91 +4,51 @@ packages:
   analyzer:
     description: analyzer
     source: hosted
-    version: "0.21.1"
+    version: "0.22.4"
   args:
     description: args
     source: hosted
-    version: "0.11.0+1"
+    version: "0.12.2+1"
+  backy:
+    description: backy
+    source: hosted
+    version: "0.2.1"
   barback:
     description: barback
     source: hosted
     version: "0.15.2+2"
-  benchmark_harness:
-    description: benchmark_harness
-    source: hosted
-    version: "1.0.4"
   browser:
     description: browser
     source: hosted
     version: "0.10.0+2"
-  charcode:
-    description: charcode
-    source: hosted
-    version: "1.1.0"
   code_transformers:
     description: code_transformers
     source: hosted
-    version: "0.2.3+1"
+    version: "0.2.3+2"
   collection:
     description: collection
     source: hosted
-    version: "0.9.4"
+    version: "1.1.0"
   core_elements:
     description: core_elements
     source: hosted
-    version: "0.4.0+2"
-  crypto:
-    description: crypto
-    source: hosted
-    version: "0.9.0"
+    version: "0.6.0+1"
   csslib:
     description: csslib
     source: hosted
     version: "0.11.0+2"
-  csvparser:
-    description: csvparser
-    source: hosted
-    version: "1.0.8"
   custom_element_apigen:
     description: custom_element_apigen
     source: hosted
-    version: "0.1.1"
+    version: "0.1.3"
   di:
     description: di
     source: hosted
-    version: "3.3.2"
-  google_maps:
-    description: google_maps
-    source: hosted
-    version: "2.0.7"
+    version: "3.3.3"
   html5lib:
     description: html5lib
     source: hosted
     version: "0.12.0"
-  http:
-    description: http
-    source: hosted
-    version: "0.11.1+1"
-  http_parser:
-    description: http_parser
-    source: hosted
-    version: "0.0.2+5"
-  http_server:
-    description: http_server
-    source: hosted
-    version: "0.9.3"
-  intl:
-    description: intl
-    source: hosted
-    version: "0.11.9"
-  js_wrapping:
-    description: js_wrapping
-    source: hosted
-    version: "0.1.2"
-  json_object:
-    description: json_object
-    source: hosted
-    version: "1.0.18+2"
   logging:
     description: logging
     source: hosted
@@ -96,11 +56,7 @@ packages:
   matcher:
     description: matcher
     source: hosted
-    version: "0.11.1"
-  mime:
-    description: mime
-    source: hosted
-    version: "0.9.0+3"
+    version: "0.11.3"
   mock:
     description: mock
     source: hosted
@@ -108,31 +64,27 @@ packages:
   observe:
     description: observe
     source: hosted
-    version: "0.12.1+1"
-  options_file:
-    description: options_file
-    source: hosted
-    version: "0.9.15"
+    version: "0.12.2"
   paper_elements:
     description: paper_elements
     source: hosted
-    version: "0.5.0"
+    version: "0.6.0+4"
   path:
     description: path
     source: hosted
-    version: "1.3.0"
+    version: "1.3.1"
   petitparser:
     description: petitparser
     source: hosted
-    version: "1.2.2"
+    version: "1.3.2"
   polymer:
     description: polymer
     source: hosted
-    version: "0.15.1+3"
+    version: "0.15.3+2"
   polymer_expressions:
     description: polymer_expressions
     source: hosted
-    version: "0.13.0"
+    version: "0.13.0+1"
   pool:
     description: pool
     source: hosted
@@ -141,18 +93,6 @@ packages:
     description: quiver
     source: hosted
     version: "0.18.2"
-  rikulo_commons:
-    description: rikulo_commons
-    source: hosted
-    version: "1.1.2+2"
-  route:
-    description: route
-    source: hosted
-    version: "0.4.6"
-  route_hierarchical:
-    description: route_hierarchical
-    source: hosted
-    version: "0.4.22"
   smoke:
     description: smoke
     source: hosted
@@ -160,15 +100,11 @@ packages:
   source_maps:
     description: source_maps
     source: hosted
-    version: "0.10.0"
+    version: "0.10.0+1"
   source_span:
     description: source_span
     source: hosted
-    version: "1.0.0"
-  sqljocky:
-    description: sqljocky
-    source: hosted
-    version: "0.11.0"
+    version: "1.0.2"
   stack_trace:
     description: stack_trace
     source: hosted
@@ -176,19 +112,15 @@ packages:
   string_scanner:
     description: string_scanner
     source: hosted
-    version: "0.1.1"
+    version: "0.1.3"
   template_binding:
     description: template_binding
     source: hosted
-    version: "0.13.1"
-  typed_data:
-    description: typed_data
-    source: hosted
-    version: "1.0.0"
+    version: "0.14.0"
   unittest:
     description: unittest
     source: hosted
-    version: "0.11.0+5"
+    version: "0.11.4"
   utf:
     description: utf
     source: hosted
@@ -200,8 +132,12 @@ packages:
   web_components:
     description: web_components
     source: hosted
-    version: "0.9.0"
+    version: "0.10.0"
+  xml:
+    description: xml
+    source: hosted
+    version: "2.2.1"
   yaml:
     description: yaml
     source: hosted
-    version: "2.0.1+1"
+    version: "2.1.2"

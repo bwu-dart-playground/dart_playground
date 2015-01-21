@@ -5,6 +5,7 @@ void main() {
 
   (dom.querySelector('button#b') as dom.ButtonElement).onClick.listen((e) {
     var x = ifrm.contentWindow.postMessage("button pressed", "*"); //.document.querySelector('#text');
+    print(ifrm.contentWindow);
   });
 
   ifrm.onLoad.listen((e) {

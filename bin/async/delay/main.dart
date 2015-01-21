@@ -2,7 +2,7 @@ library x;
 
 import 'dart:async';
 
-Future<int> timeconsumingFunctionReturningFuture(int i) {
+Future<int> timeConsumingFunctionReturningFuture(int i) {
   var completer = new Completer();
   //new Future.delayed(Duration.ZERO, computation).
 

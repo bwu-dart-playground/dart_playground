@@ -25,6 +25,8 @@
       <excludeFolder url="file://$MODULE_DIR$/web/SO/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/_simple_web_example/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/animate_manual/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/async_foreach/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/async_one_of/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/background_image/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/blob_uint8list_bytebuffer/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/bootjack/packages" />
@@ -37,6 +39,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/content_editable/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/create_nested_html_elements/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/create_style/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/custom_element/SO2740459/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/custom_element/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/d3/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/datalist/packages" />
@@ -47,6 +50,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/gamepad/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/geolocation/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/get_li_content/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/get_selected_text/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/gps_location/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/html_import/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/httprequest/packages" />
@@ -88,9 +92,11 @@
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/distributednodes/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/element_countdown_clock/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/element_fileupload_multiple/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/polymer/enum_example/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/extend_dom_element_and_style/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/extend_paper_item/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/fancy_button/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/polymer/field_by_string_name/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/filter_with_args/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/font_awesome_icon/font-awesome-4.1.0/css/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/font_awesome_icon/font-awesome-4.1.0/fonts/packages" />
@@ -98,6 +104,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/font_awesome_icon/font-awesome-4.1.0/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/font_awesome_icon/font-awesome-4.1.0/scss/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/font_awesome_icon/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/polymer/get_selected_text/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/inline_element/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/is_operator/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/polymer/layout_fullsize/packages" />
@@ -143,10 +150,12 @@
       <excludeFolder url="file://$MODULE_DIR$/web/radio_button/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/read_download_by_line/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/repeate_if/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/send_message/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/svg/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/svg_image_size/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/temp/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/textarea_setselectionrange/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/textnode/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/user_agent_detection/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/validate_form_field/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/web_animation/packages" />

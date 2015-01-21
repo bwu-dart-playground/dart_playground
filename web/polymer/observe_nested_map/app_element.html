@@ -4,6 +4,11 @@
   <template>
 
     <div>
+      <div>aaa{{map.keys}}bbb</div>
+      <div>ccc{{map.values }}ddd</div>
+      {{map | asString }}
+
+
       <ul>
         <template repeat="{{ entry in map.values }}">
           <li>x{{ entry['name'] }} {{ entry['size']}}</li>

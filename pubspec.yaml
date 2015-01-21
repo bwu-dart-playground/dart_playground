@@ -1,90 +1,96 @@
 name: playground
 description: A sample web application
 dependencies:
-  browser: any
-  http: any
-  http_server: any
-  json_object: any
+#  browser: any
+#  http: any
+#  http_server: any
+#  json_object: any
 #  moviesbwu_components:
 #    path: ../moviesbwu_dartclient/moviesbwu_components
-  polymer: '>=0.13.1'
-  route: any
-  yaml: any
-  csvparser: any
+  polymer: any
+#  route: any
+#  yaml: any
+#  csvparser: any
   di:
-  json_object: any
   quiver: any
-  google_maps: any
+#  google_maps: any
 #  angular: any
 #    git: git@github.com:angular/angular.dart.git
-  web_components: any
-  core_elements: '>=0.0.6'
+#  web_components: any
+  core_elements: any
   paper_elements: any
 #  fontawesome_elements: any
-  route_hierarchical: '>=0.4.21 <0.5.0'
-  sqljocky: any
-  intl: any
-  crypto: any
-  charcode: any
-  benchmark_harness: any
-  typed_data: any
-  rikulo_commons: any
+#  route_hierarchical: any
+#  sqljocky: any
+#  intl: any
+#  crypto: any
+#  charcode: any
+#  benchmark_harness: any
+#  typed_data: any
+#  rikulo_commons: any
+  xml: any
 #  bootjack: any
   #vector_math: any
 #  fancy_button: any
+  backy: any
+
 dev_dependencies:
   unittest: any
   mock: any
 transformers:
 - polymer:
     entry_points:
-    - web/polymer/core_drawer_panel/index.html
-    - web/polymer/core_dropdown_item_label/index.html
-    - web/polymer/core_icon_button/index.html
-    - web/polymer/core_menu/index.html
-    - web/polymer/core_menu_button_responsive/index.html
-    - web/polymer/core_overlay_style/index.html
-    - web/polymer/core_tooltip/index.html
-    - web/polymer/extend_paper_item/index.html
-    - web/polymer/filter_with_args/index.html
-    - web/polymer/font_awesome_icon/index.html
-    - web/polymer/nested_repeat/index.html
-    - web/polymer/observe_property/index.html
-    - web/polymer/paper_button_attribute/index.html
-    - web/polymer/paper_dialog/index.html
-    - web/polymer/paper_input_consume_key/index.html
-    - web/polymer/paper_input_datalist/index.html
-    - web/polymer/paper_input_font/index.html
-    - web/polymer/paper_input_value_binding/index.html
-    - web/polymer/paper_radio_group/index.html
-    - web/polymer/paper_tabs_inside_core_toolbar/index.html
-    - web/polymer/published_property/index.html
-    - web/polymer/routing/index.html
-    - web/polymer/submit/index.html
-    - web/polymer/template_repeat_tr/index.html
-    - web/polymer/template_instance/index.html
-    - web/polymer/paper_input_floating_label/index.html
-    - web/polymer/paper_menu_margin/index.html
-    - web/polymer/paper_input_validation/index.html
-    - web/polymer/auto_binding_element/index.html
-    - web/polymer/polymer_job/index.html
-    - web/polymer/observe_unobservable/index.html
-    - web/polymer/is_operator/index.html
-    - web/polymer/paper_dropdown_tooltip/index.html
-    - web/polymer/tab_headers/index.html
-    - web/polymer/core_list/index.html
-    - web/polymer/paper_tabs/index.html
-    - web/SO/26128452_template_repeat/index.html
-    - web/polymer/paper_icon_button/index.html
-    - web/polymer/core_list_reorderable/index.html
-    - web/polymer/core_pages_nested/index.html
-    - web/polymer/paper_menu_button/index.html
-    - web/polymer/core_submenu/index.html
-    - web/polymer/observe_nested_map/index.html
-    - web/polymer/layout_fullsize/index.html
-    - web/polymer/core_scaffold/index.html
-    - web/polymer/paper_dropdown_menu_update.html
-    - web/polymer/paper_dropdown_menu_update/index.html
-    - web/polymer/extend_dom_element_and_style/index.html
-    - web/polymer/derive_tr_element/index.html
-    - web/polymer/SO_extend_td/index.html
+#    - web/polymer/core_drawer_panel/index.html
+#    - web/polymer/core_dropdown_item_label/index.html
+#    - web/polymer/core_icon_button/index.html
+#    - web/polymer/core_menu/index.html
+#    - web/polymer/core_menu_button_responsive/index.html
+#    - web/polymer/core_overlay_style/index.html
+#    - web/polymer/core_tooltip/index.html
+#    - web/polymer/extend_paper_item/index.html
+#    - web/polymer/filter_with_args/index.html
+#    - web/polymer/font_awesome_icon/index.html
+#    - web/polymer/nested_repeat/index.html
+#    - web/polymer/observe_property/index.html
+#    - web/polymer/paper_button_attribute/index.html
+#    - web/polymer/paper_dialog/index.html
+#    - web/polymer/paper_input_consume_key/index.html
+#    - web/polymer/paper_input_datalist/index.html
+#    - web/polymer/paper_input_font/index.html
+#    - web/polymer/paper_input_value_binding/index.html
+#    - web/polymer/paper_radio_group/index.html
+#    - web/polymer/paper_tabs_inside_core_toolbar/index.html
+#    - web/polymer/published_property/index.html
+#    - web/polymer/routing/index.html
+#    - web/polymer/submit/index.html
+#    - web/polymer/template_repeat_tr/index.html
+#    - web/polymer/template_instance/index.html
+#    - web/polymer/paper_input_floating_label/index.html
+#    - web/polymer/paper_menu_margin/index.html
+#    - web/polymer/paper_input_validation/index.html
+#    - web/polymer/auto_binding_element/index.html
+#    - web/polymer/polymer_job/index.html
+#    - web/polymer/observe_unobservable/index.html
+#    - web/polymer/is_operator/index.html
+#    - web/polymer/paper_dropdown_tooltip/index.html
+#    - web/polymer/tab_headers/index.html
+#    - web/polymer/core_list/index.html
+#    - web/polymer/paper_tabs/index.html
+#    - web/SO/26128452_template_repeat/index.html
+#    - web/polymer/paper_icon_button/index.html
+#    - web/polymer/core_list_reorderable/index.html
+#    - web/polymer/core_pages_nested/index.html
+#    - web/polymer/paper_menu_button/index.html
+#    - web/polymer/core_submenu/index.html
+#    - web/polymer/observe_nested_map/index.html
+#    - web/polymer/layout_fullsize/index.html
+#    - web/polymer/core_scaffold/index.html
+#    - web/polymer/paper_dropdown_menu_update.html
+#    - web/polymer/paper_dropdown_menu_update/index.html
+#    - web/polymer/extend_dom_element_and_style/index.html
+#    - web/polymer/derive_tr_element/index.html
+#    - web/polymer/SO_extend_td/index.html
+#    - web/polymer/get_selected_text.html
+#    - web/polymer/get_selected_text/index.html
+    - web/polymer/enum_example/index.html
+    - web/polymer/field_by_string_name/index.html

@@ -7,5 +7,5 @@ void main(List<String> args ) {
   print(file.absolute);
   var openFuture = file.open(mode: FileMode.READ);
   openFuture.then((raf) => raf.length().then((len) => raf.setPosition(len)
-      .then((raf) => raf.writeString(("blabla\n")))));
+      .then((raf) => raf.readXxx
 }
