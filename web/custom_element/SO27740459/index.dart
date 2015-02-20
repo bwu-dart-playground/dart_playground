@@ -10,8 +10,8 @@ class ViewBase extends HtmlElement {
   ViewBase.created() : super.created() {
     print("ViewBase, ${this.runtimeType}");
     var shadow = this.createShadowRoot();
-    shadow.append(document.importNode((this.querySelector('template') as TemplateElement)
-        .content, true));
+    shadow.append(document.importNode((this.querySelector('template') as TemplateElement).inn
+        .content, true).);
   }
 }
 

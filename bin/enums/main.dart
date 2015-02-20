@@ -14,4 +14,19 @@ void main() {
 
   print('running index: ${Status.values[1]}');
 
+  Status x = Status.paused;
+  switch(x) {
+    case Status.none:
+      print('${x.index}, ${x}');
+      break;
+    case Status.running:
+      print('${x.index}, ${x}');
+      break;
+    case Status.stopped:
+      print('${x.index}, ${x}');
+      break;
+    case Status.paused:
+      print('${x.index}, ${x}');
+      break;
+  }
 }

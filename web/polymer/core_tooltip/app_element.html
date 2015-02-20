@@ -1,5 +1,7 @@
 <link rel="import" href="../../packages/polymer/polymer.html">
 <link rel="import" href="../../packages/core_elements/core_tooltip.html">
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+<link rel="import" href="../../packages/core_elements/core_icon.html">
 <link rel="import" href="../../packages/paper_elements/paper_input.html">
 
 <polymer-element name="app-element">
@@ -9,9 +11,25 @@
         display: block;
       }
 
-      core-tooltip[hide="true"]:focus::shadow .polymer-tooltip,
-      core-tooltip[hide="true"]:hover::shadow .polymer-tooltip {
+      xcore-tooltip[hide="true"]:focus::shadow .polymer-tooltip,
+      xcore-tooltip[hide="true"]:hover::shadow .polymer-tooltip {
         visibility: hidden !important;
+      }
+
+      core-tooltip#clock-icon-tip > [tip],
+      core-tooltip#clock-icon-tip::shadow .core-tooltip {
+        background-color: red;
+        /*width: 100%;
+        height: 100%;*/
+      }
+
+      core-tooltip#clock-icon-tip::shadow .core-tooltip.bottom::after {
+        border-bottom-color: red;
+      }
+
+      /* for the arrow */
+      core-tooltip#clock-icon-tip core-icon {
+        background-color: blue;
       }
     </style>
     <core-tooltip position="bottom" label="Name can not already be present" hide="{{!isValidationError}}" >
@@ -24,6 +42,17 @@
       </paper-input>
       <span>isError: {{isValidationError}}</span>
     </core-tooltip>
+
+
+
+    <core-tooltip id='clock-icon-tip' >
+      <div tip>
+        <p>this is my tool<br> tip</p>
+      </div>
+      <core-icon id='clock-icon' icon='accessibility'></core-icon>
+
+    </core-tooltip>
+
   </template>
   <script type="application/dart" src="app_element.dart"></script>
 </polymer-element>

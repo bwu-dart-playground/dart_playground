@@ -1,48 +1,48 @@
 library x;
 
-import 'dart:html';
+import 'dart:html' as dom;
 
-DivElement editable;
-Range range;
+dom.DivElement editable;
+dom.Range range;
 
 
 void main() {
-  editable = (document.querySelector('#editable') as DivElement);
+  editable = (dom.document.querySelector('#editable') as dom.DivElement);
   //editable.onBlur.listen(getRange);
 
-  document.onSelectionChange.listen(getRange);
+  dom.document.onSelectionChange.listen(getRange);
 
-
-  ButtonElement button = (document.querySelector('#button') as ButtonElement);
+  dom.ButtonElement button = (dom.document.querySelector('#button') as dom.ButtonElement);
   button.onClick.listen((e) => onClick(e));
 
-  AnchorElement a = (document.querySelector('#href') as AnchorElement);
+  dom.AnchorElement a = (dom.document.querySelector('#href') as dom.AnchorElement);
   //a.onFocus.listen(getRange);
   a.onClick.listen(onClick);
 }
 
-void onClick(MouseEvent e, [y, z]) {
-  DivElement div = new DivElement();
+void onClick(dom.MouseEvent e, [y, z]) {
+  dom.DivElement div = new dom.DivElement();
   div.appendText('xxx');
   insertNodeAfterSelection(range, div);
   print('$e $y $z');
 }
 
-void insertNodeAfterSelection(Range range, Node node) {
+void insertNodeAfterSelection(dom.Range range, dom.Node node) {
   range.collapse(false);
   range.insertNode(node);
 }
 
-void getRange(Event e) {
-  if(document.activeElement != editable) {
+void getRange(dom.Event e) {
+  if(dom.document.activeElement != editable) {
     return;
   }
-  print(e);
-  Selection sel;
+  print('SelectionChange: ${e}');
+  dom.Selection sel;
 
-  sel = window.getSelection();
+  sel = dom.window.getSelection();
   if(sel != null) {
     range = sel.getRangeAt(0);
+    print('${range.startOffset} ${range.endOffset}');
   }
 }
 
