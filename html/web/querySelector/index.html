@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Window.pushState</title>
+
+  </head>
+
+  <body>
+
+    <view data-context="testviewmodel">
+       <div>
+         id:<input data-bind-two-way="model.id">
+         name:<input data-bind-two-way="model.name">
+         description:<input data-bind-two-way="model.description">
+       </div>
+
+       <div>
+         id:<input data-bind-two-way="model.id">
+         name:<input data-bind-two-way="model.name">
+         description<input data-bind-two-way="model.description">
+       </div>
+
+       <div>
+         <p>{{model.id}}</p>
+         <p>{{model.name}}</p>
+         <p>{{model.description}}</p>
+       </div>
+    </view>
+
+    <script type="application/dart" src="index.dart"></script>
+    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+    <script src="packages/browser/dart.js"></script>
+
+    <input type="text" name="pseudo">
+    <input type="button" name="push">
+
+  </body>
+</html>

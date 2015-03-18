@@ -1,0 +1,19 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="custom_tab.html">
+<link rel="import" href="custom_tabs.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <custom-tabs selected="three">
+      <custom-tab name="one">... content one ...</custom-tab>
+      <custom-tab name="two">... content two ...</custom-tab>
+      <custom-tab name="three">... content three ...</custom-tab>
+    </custom-tabs>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

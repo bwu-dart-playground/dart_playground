@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_input.html">
+<link rel="import" href="packages/core_elements/core_input.html">
+<link rel="import" href="packages/paper_elements/paper_button.html">
+
+<polymer-element name='paper-input-snippet'>
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div on-mouseout="{{zoom}}">
+      <paper-input
+        label="First" floatinglabel
+        error="Invalid input"
+
+        id="first_name"
+        value='{{val}}'
+        on-change='{{firstNameChangeHandler}}'
+        >
+      </paper-input>
+
+      <paper-input
+        label="Middle" floatinglabel
+        error="Invalid input"
+
+        id="middle_name">
+      </paper-input>
+
+      <paper-input
+        label="Last" floatinglabel
+        error="Invalid input"
+
+        id="last_name">
+      </paper-input>
+
+      <paper-input label="Project Path" inputValue="{{path}}" floatinglabel="true"></paper-input>
+      <paper-button label="Enhance Project at '{{path}}'"></paper-button>
+
+      <paper-input floatinglabel
+        id="ethinic-group"
+        label="Ethnic Group"
+        validate="^[a-zA-Z'\s-]*$"
+        required
+        on-input-valid="{{validHandler}}"
+        on-input-invalid="{{invalidHandler}}"
+        error="Only letters, space and dash are allowed">
+      </paper-input>
+
+      <core-input
+        id="ethinic-group"
+        validate="^[a-zA-Z'\s-]*$"
+        required
+        on-input-valid="{{validHandlerCore}}"
+        on-input-invalid="{{invalidHandlerCore}}">
+      </core-input>
+
+    </div>
+
+  </template>
+
+  <script type="application/dart" src="paper_input_snippet.dart">  </script>
+</polymer-element>

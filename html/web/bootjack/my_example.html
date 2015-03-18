@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<polymer-element name="my-example">
+  <template>
+    <style>
+     
+    </style>
+    <div>
+    <content></content>
+      <ul>
+      <template repeat="{{article in articles}}">
+        <li>({{(article.title)}}) {{article.text}}</li>
+      </template>
+      </ul>
+    </div>
+    
+  </template>
+  <script type="application/dart" src="my_example.dart"></script>
+</polymer-element>

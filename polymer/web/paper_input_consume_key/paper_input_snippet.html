@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_input.html">
+
+<polymer-element name='paper-input-snippet'>
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+  <paper-input floatinglabel
+    id="frequency"
+    label="Frequency"
+    type='number'
+    inputValue='{{frequency | asInteger}}'
+    validate='{{digits_regex}}'
+    error="{{errorMsg}}"
+    on-keydown='{{consumeKey}}'
+    on-mouseout='{{publishInstance}}'>
+  </paper-input>
+
+  </template>
+
+  <script type="application/dart" src="paper_input_snippet.dart">  </script>
+</polymer-element>

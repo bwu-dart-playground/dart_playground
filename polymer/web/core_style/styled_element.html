@@ -1,0 +1,16 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href='../../packages/core_elements/core_style.html'>
+<link rel="import" href='style_provider.html'>
+
+
+<polymer-element name="styled-element">
+  <template>
+    <style-provider></style-provider>
+    <core-style ref='blue-theme'></core-style>
+    <div>blabla</div>
+    <div class="lb-container1">container</div>
+    <!-- Template content here -->
+  </template>
+  <script type="application/dart" src="styled_element.dart"></script>
+</polymer-element>

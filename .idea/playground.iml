@@ -57,6 +57,7 @@
       <excludeFolder url="file://$MODULE_DIR$/html/web/load_image_tobase64/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/media_query/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/memory_leak/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/html/web/menu/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/microphone/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/multiline_text_scroll_bottom/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/node_validator/packages" />
@@ -79,6 +80,7 @@
       <excludeFolder url="file://$MODULE_DIR$/html/web/validate_form_field/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/web_animation/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/web_gl/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/html/web/webanimation/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/websocket_listen/packages" />
       <excludeFolder url="file://$MODULE_DIR$/html/web/window_onunload/packages" />
       <excludeFolder url="file://$MODULE_DIR$/packages/playground" />
@@ -103,6 +105,8 @@
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/core_tooltip/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/custom_element_without_polymer/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/custom_main/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/polymer/web/custom_main2/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/polymer/web/date_input/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/derive_form_element/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/derive_tr_element/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/distributednodes/packages" />
@@ -122,6 +126,7 @@
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/font_awesome_icon/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/get_selected_text/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/inline_element/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/polymer/web/input_blur/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/is_operator/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/layout_fullsize/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/nested/packages" />
@@ -161,8 +166,9 @@
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/template_instance/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/template_repeat_tr/packages" />
       <excludeFolder url="file://$MODULE_DIR$/polymer/web/touch_gesture/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/server/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/server/bin/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/server/packages/playground" />
+      <excludeFolder url="file://$MODULE_DIR$/server/packages/playground_server" />
       <excludeFolder url="file://$MODULE_DIR$/test/angular/packages" />
       <excludeFolder url="file://$MODULE_DIR$/test/async/packages" />
       <excludeFolder url="file://$MODULE_DIR$/test/expectasync_call0times/packages" />

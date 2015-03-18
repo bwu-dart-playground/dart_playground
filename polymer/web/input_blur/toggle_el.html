@@ -1,0 +1,17 @@
+<link rel="import" href="packages/polymer/polymer.html">
+<polymer-element name="toggle-el">
+  <template>
+    <span hidden?="{{editMode}}"
+        on-click="{{switchEdit}}" id="name">{{name}}</span>
+    <div>
+    <input id="nmInput" hidden?="{{!editMode}}"
+        on-blur="{{switchEdit}}" type="text"
+        value="{{name}}"/>
+    </div>
+    <!--<div>
+    <input id="nmInput"
+        value="{{name}}"/>
+    </div> -->
+  </template>
+  <script type="application/dart" src="toggle_el.dart"></script>
+</polymer-element>

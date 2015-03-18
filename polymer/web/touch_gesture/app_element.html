@@ -1,0 +1,117 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<polymer-element name="app-element">
+  <script type="application/dart" src="app_element.dart"></script>
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      * {
+        border: solid 1px red;
+        width: 50px;
+
+      }
+
+      #main-div {
+        height: 25px;
+        width: 150px;
+        background-color: blue;
+      }
+      #slider-track {
+        background-color: gray;
+        width: 100px;
+        height: 10px;
+        /*display: block;*/
+
+      }
+
+      #slider-thumb {
+        background-color: yellow;
+        width: 10px;
+        height: 10px;
+        /*display: block;*/
+      }
+
+      #log {
+        margin-top: 50px;
+        height: 20000px;
+        width: 500px;
+        /*display: block;*/
+      }
+
+      #log * {
+        width: 100%;
+      }
+
+
+      /*      * {
+              -webkit-user-select: none;
+            }
+            body, html {
+              margin: 0;
+              height: 100%;
+              position: relative;
+            }
+            body {
+              overflow: auto;
+            }
+            #capture {
+              background-color: orange;
+              height: 300px;
+              width: 300px;
+              text-align: center;
+            }
+            #enterleave {
+              background-color: blue;
+              height: 150px;
+              width: 150px;
+              text-align: center;
+              vertical-align: center;
+              line-height: 150px;
+              left: 25%;
+              top: 25%;
+              position: relative;
+            }
+            #output {
+              width: 300px;
+              height: 150px;
+              overflow: scroll;
+              white-space: pre;
+            }
+
+
+            [touch-action="none"]{ -ms-touch-action: none; touch-action: none;}
+            body /deep/ [touch-action="none"]{ -ms-touch-action: none; touch-action: none;}
+            [touch-action="auto"]{ -ms-touch-action: auto; touch-action: auto;}
+            body /deep/ [touch-action="auto"]{ -ms-touch-action: auto; touch-action: auto;}
+            [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x;}
+            body /deep/ [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x;}
+            [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y;}
+            body /deep/ [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y;}
+            [touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y;}
+            body /deep/ [touch-action="pan-x pan-y"],body /deep/ [touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y;}
+            [touch-action="manipulation"]{ -ms-touch-action: manipulation; touch-action: manipulation;}
+            body /deep/ [touch-action="manipulation"]{ -ms-touch-action: manipulation; touch-action: manipulation;}
+            */
+    </style>
+
+    <div id="main-div">
+      <div id="slider-track"></div>
+      <div id="slider-thumb" on-trackstart="{{trackStartHandler}}"
+           on-trackend="{{trackEndHandler}}" on-track="{{trackHandler}}">
+      </div>
+    </div>
+
+
+    <div id="log">
+    </div>
+
+      <!--<div id="capture" touch-action="none" on-trackstart="{{trackStartHandler}}">-->
+      <!--<div id="enterleave" on-track="{{trackHandler}}" on-track-end="{{trackEndHandler}}"></div>-->
+      <!--</div>-->
+      <!--<div id="output"></div>-->
+  </template>
+</polymer-element>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Window.pushState</title>
+  </head>
+
+  <body>
+
+    <button id='button'>Click</button>
+    <div id="dates">
+      Start Date: <input type="date" id="start" name="start">
+      Start Time: <input type="time" id="timestamp1" name="timestamp1" step="1">
+      <br/>
+      End Date:   <input type="date" id="end" name="end">
+      End Time:   <input type="time" id="timestamp2" name="timestamp2" step="1">
+    </div>
+
+    <script type="application/dart" src="index.dart"></script>
+    <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+    <script src="packages/browser/dart.js"></script>
+
+  </body>
+</html>

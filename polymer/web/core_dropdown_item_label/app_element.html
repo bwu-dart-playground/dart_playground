@@ -1,0 +1,35 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/core_elements/core_dropdown.html">
+<link rel="import" href="../../packages/paper_elements/paper_item.html">
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <input required
+           id='birthday'
+           name='birthday'
+           type='date'
+           value="{{age.birthday}}"
+           on-change='{{inputHandler}}'>
+
+    <div layout horizontal>
+      <div layout vertical self-center
+           id='years-div'>Years
+        <core-dropdown  disabled
+                        id='years-core-ddwn'
+                        halign="left"
+                        label='0'
+                        valueattr="label" selected="{{age.years}}">
+          <template repeat="{{year in yearsList}}">
+            <paper-item label="{{year}}"></paper-item>
+          </template>
+        </core-dropdown>
+      </div>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

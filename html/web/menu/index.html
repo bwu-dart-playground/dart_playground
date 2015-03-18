@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Polymer try 1</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+      menu {
+          display: block;
+          list-style-type: disc;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type=checkbox id=checkbox1 checked>
+    <input type=radio id=radio1 checked>
+    <section id="noninteractive" contextmenu="imagemenu">
+
+      <img src="html5.png" alt="HTML5" id="menudemo">
+
+        <menu type="context" id="imagemenu" >
+          <menuitem id="cb" type="checkbox" checked label="rotate" onclick="rotate()"
+                    icon="arrow_rotate_clockwise.png">
+
+          </menuitem>
+          <menuitem label="rotate" onclick="rotate()"
+                    icon="arrow_rotate_clockwise.png">
+          </menuitem>
+          <menuitem label="resize" onclick="resize()"
+                    icon="image-resize.png">
+          </menuitem>
+          <menu label="share">
+            <menuitem label="twitter" onclick="alert('not yet')"></menuitem>
+            <menuitem label="facebook" onclick="alert('not yet')"></menuitem>
+          </menu>
+        </menu>
+
+    </section>
+
+    <script type="application/dart" src="index.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
