@@ -1,0 +1,16 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../packages/polymer/polymer.html">
+
+<polymer-element name="init-item">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    init
+    <input type="button" on-click="{{remove}}" value="Remove">
+    <div>{{name}}</div>
+  </template>
+  <script type="application/dart" src="init_item.dart"></script>
+</polymer-element>

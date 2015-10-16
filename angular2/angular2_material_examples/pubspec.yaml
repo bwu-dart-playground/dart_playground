@@ -1,0 +1,25 @@
+name: angular2_material_examples
+dependencies:
+
+  angular2: "^2.0.0-alpha"
+  browser: "0.10.0+2"
+  angular2_material: '>=2.0.0-alpha.37 <3.0.0'
+transformers:
+- angular2:
+    entry_points:
+    - web/button/main.dart
+    - web/checkbox/main.dart
+    - web/dialog/main.dart
+    - web/grid_list/main.dart
+    - web/input/main.dart
+    - web/progress-linear/main.dart
+    - web/radio/main.dart
+    - web/switcher/main.dart
+    mirror_mode: verbose
+- $dart2js:
+    minify: true
+    commandLineOptions:
+    - --dump-info
+    - --show-package-warnings
+    - --trust-type-annotations
+    - --trust-primitives

@@ -1,0 +1,8 @@
+name: pubspec_test
+dependencies:
+  di: any
+  polymer: any
+transformers:
+- di
+- polymer:
+    entry_points: web/e01_simple.html

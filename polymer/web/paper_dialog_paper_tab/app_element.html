@@ -1,0 +1,44 @@
+<link rel="import" href="../packages/polymer/polymer.html">
+<link rel="import" href="../packages/paper_elements/paper_dialog.html">
+<link rel="import" href="../packages/paper_elements/paper_button.html">
+<link rel="import" href="../packages/paper_elements/paper_tabs.html">
+<link rel="import" href="../packages/paper_elements/paper_tab.html">
+<link rel="import" href="../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../packages/core_elements/core_pages.html">
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+    </style>
+    <div>x<span>{{selected}}</span>x</div>
+    <button on-click="{{handleOpenClick}}">open</button>
+
+    <paper-button on-click="{{open}}">Open Dialog</paper-button>
+    <paper-dialog id="dialog" transition="core-transition-bottom" backdrop
+                  sizingTarget="{{$['tabs']}}">
+      <paper-tabs id="tabs" selected="{{selected}}">
+        <paper-tab>Page 1</paper-tab>
+        <paper-tab>Page 2</paper-tab>
+      </paper-tabs>
+      <section>
+        <core-pages selected="{{selected}}" style="width: 400px; height: 400px;">
+          <div>
+            <div>Page 1: 100x100</div>
+            <paper-button on-click="{{notifyResize}}">Call 'notifyResize'
+            </paper-button>
+          </div>
+          <div style="width: 400px; height: 400px;" position: relative>
+            <div>Page 2: 400x400</div>
+            <paper-button on-click="{{notifyResize}}">Call 'notifyResize'
+            </paper-button>
+          </div>
+        </core-pages>
+      </section>
+    </paper-dialog>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>
