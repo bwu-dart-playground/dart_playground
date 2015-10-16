@@ -39,7 +39,7 @@ dependency_overrides:
 #  analyzer: ^0.24.0-dev.1
 
 dev_dependencies:
-  unittest: any
+  test: any
   mock: any
 #  dart_lint:
 #    git: git@github.com:dart-lang/dart_lint.git

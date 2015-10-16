@@ -16,4 +16,7 @@ void main(List<String> args) {
   } else {
     print(path.absolute(io.Platform.environment['HOME']));
   }
+
+  print(Uri.base);
+  print(io.Directory.current);
 }

@@ -1,7 +1,7 @@
 void main() {
   checkOrElse(['bar', 'bla']);
   checkOrElse(['bar', 'bla', 'foo']);
-
+  checkOrElse2();
 
 }
 
@@ -13,4 +13,8 @@ void checkOrElse(List<String> values) {
   } else {
     print('nothing found');
   }
+}
+
+void checkOrElse2() {
+  print(['a', 'b', 'c'].firstWhere((e) => e == 'x', orElse: () => false) == false);
 }

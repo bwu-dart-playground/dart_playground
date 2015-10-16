@@ -63,6 +63,7 @@ void btnClickHandler(MouseEvent e) {
 }
 
 main () {
+
   (querySelector('[name="push"]') as ButtonInputElement).onClick.first.then(btnClickHandler);
 //  var request = new HttpRequest();
 //  request.open('GET', 'http://127.0.0.1:3030/playground/web/animate_manual/index.html');

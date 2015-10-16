@@ -2,6 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/angular2/angular2-dart-router-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/angular_playground" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/polymer1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/projects" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/projects/build_variables" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/projects/dart_issue_polymer_angular2_cordova" vcs="Git" />
   </component>
 </project>
-

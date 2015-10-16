@@ -51,13 +51,13 @@
         error="Only letters, space and dash are allowed">
       </paper-input>
 
-      <core-input
+      <input is="core-input"
         id="ethinic-group"
         validate="^[a-zA-Z'\s-]*$"
         required
         on-input-valid="{{validHandlerCore}}"
         on-input-invalid="{{invalidHandlerCore}}">
-      </core-input>
+      </input>
 
     </div>
 

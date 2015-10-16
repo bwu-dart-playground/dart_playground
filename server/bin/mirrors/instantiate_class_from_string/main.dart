@@ -10,4 +10,8 @@ void main(args) {
   InstanceMirror testClassInstanceMirror = classMirror.newInstance(new Symbol(''), []);
   testClassInstanceMirror.invoke(new Symbol('hello'), []);
 
+  ClassMirror classMirror = libraryMirror.declarations[new Symbol('MyClass')];
+  InstanceMirror testClassInstanceMirror = classMirror.newInstance(new Symbol(''), []);
+  testClassInstanceMirror.invoke(new Symbol('hello'), []);
+
 }

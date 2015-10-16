@@ -1,0 +1,28 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+
+<polymer-element name="tr-rep">
+  <template>
+
+    <style>
+         :host {
+           display: block;
+         }
+       p {
+           margin: 20px;
+           padding: 80px 20px;
+           border-radius: 20px;
+           background-color: #eee;
+       }
+       </style>
+    <table>
+      <tr template repeat="{{project in projects}}">
+        <td><p>Name and Date
+          {{project.name}}
+          {{project.dateCreated}}</p></td>
+
+      </tr>
+    </table>
+    <div>xxx</div>
+  </template>
+  <script type="application/dart" src="tr_rep.dart"></script>
+</polymer-element>

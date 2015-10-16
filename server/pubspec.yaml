@@ -4,18 +4,13 @@ dependencies:
 #  http: any
 #  http_server: any
 #  json_object: any
-#  moviesbwu_components:
-#    path: ../moviesbwu_dartclient/moviesbwu_components
-  polymer: any
 #  route: any
 #  yaml: any
 #  csvparser: any
-  di:
+#  couchclient: any
+  di: any
   quiver: any
-#  google_maps: any
-#  angular: any
-#    git: git@github.com:angular/angular.dart.git
-#  web_components: any
+  sqljocky: any
 #  route_hierarchical: any
 #  sqljocky: any
 #  intl: any
@@ -24,11 +19,13 @@ dependencies:
 #  benchmark_harness: any
 #  typed_data: any
   xml: any
-#  bootjack: any
   #vector_math: any
-#  fancy_button: any
   backy: any
   stack_trace: any
+  cipher: '>=0.7.1 <0.8.0'
+  bignum: '>=0.0.6 <0.1.0'
+  reflectable: '>=0.1.0 <0.2.0'
+  http: '>=0.11.3 <0.12.0'
 
 dependency_overrides:
 #  analyzer: ^0.24.0-dev.1
@@ -38,3 +35,8 @@ dev_dependencies:
   mock: any
 #  dart_lint:
 #    git: git@github.com:dart-lang/dart_lint.git
+
+transformers:
+- reflectable:
+    entry_points:
+      - bin/reflectable/instance_of/main.dart

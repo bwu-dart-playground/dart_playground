@@ -35,5 +35,4 @@ void main() {
   dom.querySelector('button')
     ..onClick.listen(clickHandler)
     ..onDoubleClick.listen(dblClickHandler);
-
 }

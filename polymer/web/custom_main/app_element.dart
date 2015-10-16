@@ -9,6 +9,7 @@ class AppElement extends PolymerElement {
   @override
   void attached() {
     super.attached();
-    throw "some error";
+    //throw "some error";
+    children.forEach((c) => print(c));
   }
 }

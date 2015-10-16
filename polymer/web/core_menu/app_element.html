@@ -11,34 +11,18 @@
       <core-item icon="search" label="Two"></core-item>
     </core-menu>
 
+    <paper-dropdown-menu
+      label='Click to select..'
+      on-core-select='{{onCoreSelectCountryHandler}}'>
+      <paper-dropdown class='dropdown'>
+        <core-menu id='country' class='menu'>
+          <template repeat='{{country in countries}}'>
+            <paper-item>{{country.name}}</paper-item>
+          </template>
+        </core-menu>
+      </paper-dropdown>
+    </paper-dropdown-menu>
   </template>
 
-  <script type="application/dart">
-
-    import 'package:polymer/polymer.dart';
-    import 'dart:html';
-
-    import 'package:paper_elements/paper_input.dart';
-
-    @CustomTag('app-element')
-    class AppElement extends PolymerElement {
-      AppElement.created() : super.created();
-
-      @observable int selectedMenuIndex;
-
-      void togglePanelButton(MouseEvent e) {
-        print('clicked');
-      }
-
-      void selectedMenuIndexChanged(old) {
-        print(selectedMenuIndex);
-      }
-
-      @override
-      void attached() {
-         super.attached();
-      }
-    }
-
-  </script>
+  <script type="application/dart" src="app_element.dart"></script>
 </polymer-element>

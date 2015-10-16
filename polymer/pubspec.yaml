@@ -1,22 +1,14 @@
 name: playground_polymer
 description: A sample web application
 dependencies:
-#  angular: ^1.1.0
-#  browser: any
+  browser: any
 #  http: any
 #  http_server: any
 #  json_object: any
-#  moviesbwu_components:
-#    path: ../moviesbwu_dartclient/moviesbwu_components
-  polymer: ^0.16.0
-#  route: any
-#  yaml: any
-#  csvparser: any
-  di:
+  polymer: ^0.16.0+5
+  di: any
   quiver: any
 #  google_maps: any
-#  angular: any
-#    git: git@github.com:angular/angular.dart.git
 #  web_components: any
   core_elements: any
   paper_elements: any
@@ -26,30 +18,42 @@ dependencies:
 #  intl: any
 #  crypto: any
 #  charcode: any
-#  benchmark_harness: any
 #  typed_data: any
 #  rikulo_commons: any
-  xml: any
+#  xml: any
 #  bootjack: any
   #vector_math: any
 #  fancy_button: any
-  backy: any
+#  backy: any
 
 dependency_overrides:
 #  analyzer: ^0.24.0-dev.1
 
 dev_dependencies:
-  unittest: any
-  mock: any
-#  dart_lint:
-#    git: git@github.com:dart-lang/dart_lint.git
+#  unittest: any
+
+dependency_overrides:
+#  polymer: ^0.16.0+5
+#  core_elements: ^0.6.1+1
+#  paper_elements: ^0.6.2+1
+#  web_components: ^0.11.0
 
 transformers:
 - polymer:
     entry_points:
-    - web/polymer/contenteditable/index.html
-    - web/polymer/touch_gesture/index.html
-    - web/polymer/custom_main/index.html
-    - web/date_input/index.html
-    - web/custom_main2/index.html
-    - web/input_blur/index.html
+#    - web/contenteditable/index.html
+#    - web/core_drawer_panel/index.html
+    - web/core_icon_transition/index.html
+#    - web/core_menu/index.html
+#    - web/custom_main/index.html
+#    - web/custom_main2/index.html
+#    - web/date_input/index.html
+#    - web/global_element/index.html
+#    - web/input_blur/index.html
+#    - web/paper_input_floating_label/index.html
+#    - web/template_repeat_tr/index.html
+#    - web/touch_gesture/index.html
+#    - web/remove_self/index.html
+    - web/paper_dialog_paper_tab/index.html
+    - web/core_icon_transition/index.html
+    - web/core_label_for/index.html

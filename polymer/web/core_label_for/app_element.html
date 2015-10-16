@@ -1,0 +1,27 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/core_elements/core_label.html">
+<link rel="import" href="../../packages/paper_elements/paper_checkbox.dart">
+<link rel="import" href="custom_one.html">
+<link rel="import" href="custom_two.html">
+
+<polymer-element name="app-element">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+
+  <template>
+    <paper-checkbox class="xcls"></paper-checkbox>
+    <custom-one>
+      <core-label for=".cls{{forTarget}}" type="checkbox">xxx</core-label>
+    </custom-one>
+
+    <custom-two>
+      <input class="cls{{forTarget}}" type="checkbox">
+      <!--<paper-checkbox class="cls"></paper-checkbox>-->
+    </custom-two>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>

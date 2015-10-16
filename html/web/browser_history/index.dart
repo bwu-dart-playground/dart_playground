@@ -5,6 +5,7 @@ void main() {
   InputElement input = querySelector('#input');
   ButtonElement changeUrl = querySelector('#changeurl');
 
+  changeUrl.attributes.addAll
   changeUrl.onClick.listen((event) {
     print('input: ${input.value}');
     //window.history.pushState('${input.value}', 'test tile', '#${input.value}');

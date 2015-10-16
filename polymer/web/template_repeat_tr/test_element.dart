@@ -23,6 +23,7 @@ class PeopleElement extends PolymerElement {
   filterChanged(old) {
     print(filter);
   }
+
   //http://stackoverflow.com/questions/21379167
   List filterRow(List l, [a]) {
     if(filter == null) {

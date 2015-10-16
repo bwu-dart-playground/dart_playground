@@ -1,21 +1,35 @@
-library x;
-
 import 'dart:html';
 
+String dangerousHtml(String name) {
+  return '''
+  <div>
+    <span>Some text</span>
+    <script type="text/javascript">
+      window.alert("bla");
+    </script>
+    <input type="button" text="xxx" onclick="window.alert('bla');" value="$name"></button>
+  </div>''';
+
+}
 void main() {
-  String dangerousHtml = "<div><span>Günter Zöchbauer</span><script>window.alert('bla')</script><input type='button' text='xxx'>ldskjf</button></div>";
   window.onClick.listen((e) => print("click"));
-  querySelector('#div1').setInnerHtml(dangerousHtml);
 
-  querySelector('#div2').innerHtml = dangerousHtml;
+  print('setInnerHtml'); // removes
+  querySelector('#div1').setInnerHtml(dangerousHtml('setInnerHtml'));
 
-  querySelector('#div3').append(new Element.html(dangerousHtml));
+  print('innerHtml'); // removes
+  querySelector('#div2').innerHtml = dangerousHtml('innerHtml');;
 
-  var df = new DocumentFragment.html(dangerousHtml);
+  print('new Element.html'); // removes
+  querySelector('#div3').append(new Element.html(dangerousHtml('new Element.html')));
+
+  print('new DocumentFragment.html');   // removes
+  var df = new DocumentFragment.html(dangerousHtml('new DocumentFragment.html'));
   querySelector('#div4').append(df);
 
-  querySelector('#div5').appendHtml(dangerousHtml);
+  print('appendHtml'); //
+  querySelector('#div5').appendHtml(dangerousHtml('appendHtml'));
 
-  querySelector('#div6').appendText(dangerousHtml);
-
+  print('appendText');
+  querySelector('#div6').appendText(dangerousHtml('appendText'));
 }

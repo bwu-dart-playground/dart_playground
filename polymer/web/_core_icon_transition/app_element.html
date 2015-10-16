@@ -1,0 +1,41 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/core_elements/core_icons.html">
+
+
+<polymer-element name="app-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #section-back {
+        fill: black;
+        cursor: pointer;
+        /*-webkit-transition: fill 0.35s ease-in-out;*/
+        transition: fill 0.35s ease-in-out;
+      }
+
+      #section-back:hover {
+        fill: #E89C23;
+      }
+
+      #div {
+          cursor: pointer;
+          /*-webkit-transition: color 0.35s ease-in-out;*/
+          transition: color 0.35s ease-in-out;
+      }
+
+      #div:hover {
+          color: #E89C23;
+      }
+
+    </style>
+    <core-icon id="section-back"
+               icon="accessibility"
+               on-click="{{sectionBack}}"></core-icon>
+    <div id="div">blabla</div>
+  </template>
+  <script type="application/dart" src="app_element.dart"></script>
+</polymer-element>
