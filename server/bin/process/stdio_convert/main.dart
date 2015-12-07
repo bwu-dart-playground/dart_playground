@@ -6,7 +6,7 @@ void main() {
   StreamController<String> input = new StreamController<String>.broadcast();
 
   print('start');
-  Process.run("/bin/bash", ['-c', '/usr/bin/python -V']/*, runInShell: true*/).then((Process p) {
+  Process.start("/bin/bash", ['-c', '/usr/bin/python -V']/*, runInShell: true*/).then((Process p) {
     print(p.pid);
     p.stdout.listen((stdOut) => print(UTF8.decoder.convert(stdOut)));
     p.stderr.listen((stdOut) => print(UTF8.decoder.convert(stdOut)));

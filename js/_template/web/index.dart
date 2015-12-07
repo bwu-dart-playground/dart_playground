@@ -1,11 +1,7 @@
 library _template.web;
 
-//import 'dart:html';
-import 'package:polymer/polymer.dart';
-import 'app_element.dart';
+import 'dart:html' as dom;
 
-/// [AppElement]
 main() async {
-  await initPolymer();
 }
 

@@ -22,3 +22,5 @@ build
 lib/docs/
 .settings/
 _from_packages
+polymer1/
+bug_repo/

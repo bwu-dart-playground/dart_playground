@@ -15,4 +15,7 @@ void main() {
   for (Country country in Country.values) {
     print(country.name);
   }
+
+  List x = [];
+  x.map((y) => y);
 }
