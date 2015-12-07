@@ -1,5 +1,5 @@
 @HtmlImport('app_element.html')
-library _template.web.app_element;
+library nested_repeat.web.app_element;
 
 import 'dart:html' as dom;
 import 'package:web_components/web_components.dart' show HtmlImport;
@@ -13,7 +13,7 @@ class AppElement extends PolymerElement {
 
   @property List<List<int>> items = [["1","2"],["3","4"]];
 
-  @eventHandler
+  @reflectable
   test([dom.Event event, _]) {
     // First model
     ($['firstRepeat'] as DomRepeat).modelForElement(event.target);

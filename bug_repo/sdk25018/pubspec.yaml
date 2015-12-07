@@ -1,0 +1,4 @@
+name: sdk25018
+dev_dependencies:
+  webdriver: '^0.10.0-pre'
+  test: '^0.12.0'
