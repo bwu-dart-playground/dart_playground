@@ -8,11 +8,11 @@ packages:
   angular2:
     description: angular2
     source: hosted
-    version: "2.0.0-alpha.50"
+    version: "2.0.0-alpha.51"
   angular2_material:
     description: angular2_material
     source: hosted
-    version: "2.0.0-alpha.50"
+    version: "2.0.0-alpha.51"
   args:
     description: args
     source: hosted
@@ -57,6 +57,10 @@ packages:
     description: dart_style
     source: hosted
     version: "0.2.1"
+  dart_to_js_script_rewriter:
+    description: dart_to_js_script_rewriter
+    source: hosted
+    version: "0.1.0+4"
   fixnum:
     description: fixnum
     source: hosted
@@ -72,7 +76,7 @@ packages:
   intl:
     description: intl
     source: hosted
-    version: "0.12.4+2"
+    version: "0.12.4+3"
   logging:
     description: logging
     source: hosted

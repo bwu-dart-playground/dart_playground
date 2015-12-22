@@ -1,4 +1,4 @@
-name: attribute_binding
+name: two_way_binding_ng_model
 dependencies:
   angular2: ^2.0.0-alpha.47
   browser: ^0.10.0

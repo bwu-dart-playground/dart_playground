@@ -4,15 +4,11 @@ packages:
   analyzer:
     description: analyzer
     source: hosted
-    version: "0.26.4"
+    version: "0.26.3"
   angular2:
     description: angular2
     source: hosted
-    version: "2.0.0-alpha.50"
-  angular2_material:
-    description: angular2_material
-    source: hosted
-    version: "2.0.0-alpha.50"
+    version: "2.0.0-alpha.48"
   args:
     description: args
     source: hosted
@@ -56,7 +52,11 @@ packages:
   dart_style:
     description: dart_style
     source: hosted
-    version: "0.2.1"
+    version: "0.2.0"
+  dart_to_js_script_rewriter:
+    description: dart_to_js_script_rewriter
+    source: hosted
+    version: "0.1.0+4"
   fixnum:
     description: fixnum
     source: hosted
@@ -84,7 +84,7 @@ packages:
   observe:
     description: observe
     source: hosted
-    version: "0.13.1+3"
+    version: "0.13.1+2"
   package_config:
     description: package_config
     source: hosted

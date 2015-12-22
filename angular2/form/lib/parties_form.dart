@@ -30,7 +30,7 @@ class PartiesForm {
         print(partiesForm.value);
     }
 
-    addParty(party) {
+    void addParty(party) {
         print('assParty ${party}');
         return true;
 //        if (this.partiesForm.valid) {
