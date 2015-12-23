@@ -32,7 +32,7 @@ class VideoModel {
   ElementRef _element;
   VideoModel(this._element) {
     VideoElement video = _element.nativeElement as VideoElement;
-    video.onDurationChange.listen((e) => duration = video.duration);
+    video.onDurationChange.listen((_) => duration = video.duration);
   }
 
   num duration;

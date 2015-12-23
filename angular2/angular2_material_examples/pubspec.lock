@@ -8,11 +8,11 @@ packages:
   angular2:
     description: angular2
     source: hosted
-    version: "2.0.0-alpha.50"
+    version: "2.0.0-beta.0"
   angular2_material:
     description: angular2_material
     source: hosted
-    version: "2.0.0-alpha.50"
+    version: "2.0.0-beta.0"
   args:
     description: args
     source: hosted
@@ -20,7 +20,7 @@ packages:
   async:
     description: async
     source: hosted
-    version: "1.4.0"
+    version: "1.5.0"
   barback:
     description: barback
     source: hosted
@@ -68,11 +68,11 @@ packages:
   html:
     description: html
     source: hosted
-    version: "0.12.2"
+    version: "0.12.2+1"
   intl:
     description: intl
     source: hosted
-    version: "0.12.4+2"
+    version: "0.12.5"
   logging:
     description: logging
     source: hosted

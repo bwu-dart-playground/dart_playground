@@ -1,9 +1,9 @@
 name: angular2_material_examples
 dependencies:
 
-  angular2: "^2.0.0-alpha"
-  browser: "0.10.0+2"
-  angular2_material: '>=2.0.0-alpha.37 <3.0.0'
+  angular2: ^2.0.0-beta
+  browser: ^0.10.0+2
+  angular2_material: ^2.0.0-beta
 transformers:
 - angular2:
     entry_points:

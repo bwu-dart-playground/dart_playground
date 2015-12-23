@@ -20,7 +20,7 @@ class PartiesForm {
   ControlGroup partiesForm;
 
   PartiesForm() {
-        var fb = new FormBuilder();
+        FormBuilder fb = new FormBuilder();
         this.partiesForm = fb.group({
             'name': ['', Validators.required],
             'description': [''],
@@ -30,9 +30,9 @@ class PartiesForm {
         print(partiesForm.value);
     }
 
-    void addParty(party) {
+    void addParty(Map party) {
         print('assParty ${party}');
-        return true;
+        return;
 //        if (this.partiesForm.valid) {
 //            Parties.insert({
 //                name: party.name,

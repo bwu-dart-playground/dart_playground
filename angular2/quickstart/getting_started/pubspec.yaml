@@ -1,6 +1,6 @@
 name: getting_started
 dependencies:
-  angular2: ^2.0.0-alpha
+  angular2: ^2.0.0-beta
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^0.1.0
 transformers:
