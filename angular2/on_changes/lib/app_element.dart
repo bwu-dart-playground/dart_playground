@@ -11,7 +11,6 @@ import 'dart:math' show Random;
     )
 class AppElement implements OnInit {
 
-//  @Output('fixed-change')EventEmitter fixedChanged = new EventEmitter();
   bool fixed = true;
 
   Random _rnd = new Random();
@@ -19,10 +18,9 @@ class AppElement implements OnInit {
   void ngOnInit() {
     _timer = new Timer.periodic(
         const Duration(milliseconds: 1700), (_) {
-//      fixed = _rnd.nextDouble() > 0.5;
-//      fixed = false;
-//      fixedChanged.add(fixed);
-//      print('app $fixed');
+//      fixedChange.add(_rnd.nextDouble() > 0.5);
+      fixed = _rnd.nextDouble() > 0.5;
+      print('app $fixed');
     });
   }
 }
@@ -30,7 +28,7 @@ class AppElement implements OnInit {
 @Component(selector: 'sub-component')
 @View(template: '<div>sub-component <span>{{fixed}}</span></div>')
 class SubComponent implements OnChanges, OnInit {
-  @Output('fixed-change')EventEmitter fixedChanged = new EventEmitter();
+  @Output()EventEmitter fixedChange = new EventEmitter();
   @Input() bool fixed;
 
   @override
@@ -45,11 +43,8 @@ class SubComponent implements OnChanges, OnInit {
   void ngOnInit() {
     _timer = new Timer.periodic(
         const Duration(milliseconds: 1300), (_) {
-//      fixed = true;
-      fixed =_rnd.nextDouble() > 0.5;
-      fixedChanged.add(fixed);
+      fixedChange.add(_rnd.nextDouble() > 0.5);
       print('sub $fixed');
     });
-
   }
 }

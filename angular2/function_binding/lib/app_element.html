@@ -1,0 +1,4 @@
+<h1>app-element</h1>
+<h1 [hidden]="firstName == null || firstName.isEmpty || lastName == null || lastName.isEmpty">Hello {{fullName()}}!</h1>
+<button ngClick="alertFullName()">show full name</button>
+<button (click)="alertFullName()">show full name</button>
