@@ -1,2 +1,9 @@
 <h1>app-element</h1>
-<div>input:<input (keyup.alt.a)="keyUpHandler($event)"></div>
+<div>input (Alt+a):<input (keydown.alt.a)="keyUpHandler($event)"></div>
+<div>input (Ctrl+k):<input (keydown.control.k)="keyUpHandler($event)"></div>
+<div contentEditable="true">input (Ctrl+k):>blabla</div>
+<div>
+  <div *ngFor="#msg of messages">
+    <div>{{msg}}</div>
+  </div>
+</div>

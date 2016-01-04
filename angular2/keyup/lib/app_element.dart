@@ -7,11 +7,13 @@ import 'package:angular2/angular2.dart';
     selector: 'app-element'
 )
 @View(
-    templateUrl: 'app_element.html' //,
-//    directives: const [FORM_DIRECTIVES]
+    templateUrl: 'app_element.html' ,
+    directives: const [NgFor]
 )
 class AppElement {
+  List<String> messages = [];
+  @HostListener('keydown.control.k', const ['\$event'])
   void keyUpHandler(dom.KeyboardEvent event) {
-    print(event);
+    messages.add('${event.type} ctrl: ${event.ctrlKey}+${event.keyCode}');
   }
 }
