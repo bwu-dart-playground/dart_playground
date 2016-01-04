@@ -16,10 +16,16 @@ class AppElement extends PolymerElement with InputConverterBehavior {
   @reflectable set intValue2(value) => convertToInt(value, 'intValue2');
 
   @property Model model = new Model();
+
+
 }
 
 @behavior
-abstract class InputConverterBehavior implements PolymerBase {
+abstract class InputConverterBehavior implements PolymerBase, dom.Element {
+  attached() {
+    super.attached();
+  }
+
   @reflectable
   void convertToInt(dom.Event e, _) {
     final input = (e.target as dom.NumberInputElement);
