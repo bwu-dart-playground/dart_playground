@@ -1,0 +1,24 @@
+<h1>app-element</h1>
+<span hidden #constants [attr.someConstant]="'someValue'"></span>
+<p class="text-center vertical-center white">
+  {{constants.getAttribute('someConstant')}}</p>
+
+<div>
+  <my-header></my-header>
+</div>
+<nav class="nav-bar">
+  <div class="nav-bar-top-spacer"></div>
+  <ul>
+    <li *ngFor="#group of navigation" class="nav-option-group">
+      <div class="nav-option-group"></div>
+      <div (click)="hideGroup(group)" class="nav-option-group-name">{{ group.Croatian }}</div>
+      <ul [ngClass]="{displayNone: !group.visible}">
+        <li [routerLink]="[comp.componentName]" *ngFor="#comp of group.components" class="option-group-item">{{ comp.Croatian }}</li>
+      </ul>
+    </li>
+    <li class="nav-option-group">
+      <div class="nav-option-group-name">Odjavi se</div>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

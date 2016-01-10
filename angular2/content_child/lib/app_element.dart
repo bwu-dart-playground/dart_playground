@@ -5,7 +5,6 @@ import 'package:angular2/angular2.dart';
 
 @Component(selector: 'app-element')
 @View(
-//    templateUrl: 'app_element.html',
 template: '''
 <h1>app-element</h1>
 <my-comp>

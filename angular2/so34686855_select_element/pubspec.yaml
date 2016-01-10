@@ -1,7 +1,8 @@
-name: ng_for
+name: so34686855_select_element
 dependencies:
-  angular2: 2.0.0-beta.0
+  angular2: ^2.0.0-beta
   browser: ^0.10.0
+dev_dependencies:
   dart_to_js_script_rewriter: ^0.1.0
 transformers:
 - angular2:

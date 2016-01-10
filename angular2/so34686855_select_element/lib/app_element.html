@@ -1,0 +1,12 @@
+<h1>app-element</h1>
+<h1>title: {{title}}</h1>
+<div>hero: {{selectedHero}}</div>
+<form>
+  <select (change)="onHeroChange($event)">
+      <option *ngFor="#hero of heros; #i=index"
+    [value]="hero.id">
+        <!-- [value]="i" -->
+          {{hero.name}}
+      </option>
+  </select>
+</form>
