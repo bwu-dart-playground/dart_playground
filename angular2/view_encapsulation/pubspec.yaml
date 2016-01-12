@@ -1,4 +1,4 @@
-name: _template
+name: view_encapsulation
 dependencies:
   angular2: ^2.0.0-beta
   browser: ^0.10.0

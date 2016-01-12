@@ -12,18 +12,7 @@ transformers:
     - web/main.dart
     mirror_mode: verbose
     platform_pipes: 'package:angular2/src/common/pipes.dart#COMMON_PIPES'
-# pipes
-# https://github.com/angular/angular/blob/3191fd144016c0873de4e3e24f0d8695a7d101c2/modules/angular2/src/common/pipes.ts
-#    - AsyncPipe
-#    - UpperCasePipe
-#    - LowerCasePipe
-#    - JsonPipe
-#    - SlicePipe
-#    - DecimalPipe
-#    - PercentPipe
-#    - CurrencyPipe
-#    - NumberPipe
-#    - DatePipe
+z# https://github.com/angular/angular/blob/3191fd144016c0873de4e3e24f0d8695a7d101c2/modules/angular2/src/common/pipes.ts
     gen_change_detection_debug_info: true
     platform_directives: 'package:angular2/src/common/directives.dart#CORE_DIRECTIVES'
 - $dart2js:

@@ -1,7 +1,7 @@
 <!-- `form` will be renamed to `ngForm` - probably alpha.49
 <form [ng-form-model]="partiesForm" #f="ngForm" (submit)="addParty(f.value)">
 -->
-<form [ng-form-model]="partiesForm" #f="form" (submit)="addParty(f.value)">
+<form [ngFormModel]="partiesForm" #f="form" (submit)="addParty(f.value)">
   <label>Name</label>
   <input type="text" ng-control="name">
   <label>Description</label>
