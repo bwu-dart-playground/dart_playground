@@ -1,4 +1,4 @@
-name: _template
+name: ng_for_length
 dependencies:
   angular2: ^2.0.0-beta
   browser: ^0.10.0

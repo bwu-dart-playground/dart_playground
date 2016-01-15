@@ -33,6 +33,7 @@ class AppElement {
 class LongPress {
   ElementRef _elementRef;
   LongPress(this._elementRef) {
+    print('longpress');
     (_elementRef.nativeElement as Element).onKeyDown.listen(keyEventHandler);
     (_elementRef.nativeElement as Element).onKeyUp.listen(keyEventHandler);
   }

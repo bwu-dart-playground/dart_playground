@@ -5,14 +5,10 @@ packages:
     description: analyzer
     source: hosted
     version: "0.26.4"
-  ansicolor:
-    description: ansicolor
+  angular2:
+    description: angular2
     source: hosted
-    version: "0.0.9"
-  archive:
-    description: archive
-    source: hosted
-    version: "1.0.20"
+    version: "2.0.0-beta.1"
   args:
     description: args
     source: hosted
@@ -21,10 +17,6 @@ packages:
     description: async
     source: hosted
     version: "1.6.0"
-  backy:
-    description: backy
-    source: hosted
-    version: "0.2.1"
   barback:
     description: barback
     source: hosted
@@ -44,7 +36,7 @@ packages:
   code_transformers:
     description: code_transformers
     source: hosted
-    version: "0.2.11"
+    version: "0.2.9+4"
   collection:
     description: collection
     source: hosted
@@ -57,37 +49,30 @@ packages:
     description: csslib
     source: hosted
     version: "0.12.2"
-  di:
-    description: di
+  dart_style:
+    description: dart_style
     source: hosted
-    version: "3.3.5+1"
+    version: "0.2.1"
+  dart_to_js_script_rewriter:
+    description: dart_to_js_script_rewriter
+    source: hosted
+    version: "0.1.0+4"
+  fixnum:
+    description: fixnum
+    source: hosted
+    version: "0.10.2"
   glob:
     description: glob
     source: hosted
-    version: "1.1.0"
-  grinder:
-    description:
-      ref: HEAD
-      resolved-ref: "43eab8c4766d43886f18dfc632eb9a9bc618bf3a"
-      url: "git@github.com:google/grinder.dart.git"
-    source: git
-    version: "0.8.0+1"
+    version: "1.0.5"
   html:
     description: html
     source: hosted
     version: "0.12.2+1"
-  http:
-    description: http
+  intl:
+    description: intl
     source: hosted
-    version: "0.11.3+3"
-  http_parser:
-    description: http_parser
-    source: hosted
-    version: "2.0.0"
-  http_server:
-    description: http_server
-    source: hosted
-    version: "0.9.5+1"
+    version: "0.12.5"
   logging:
     description: logging
     source: hosted
@@ -96,18 +81,10 @@ packages:
     description: matcher
     source: hosted
     version: "0.12.0+1"
-  mime:
-    description: mime
+  observe:
+    description: observe
     source: hosted
-    version: "0.9.3"
-  mock:
-    description: mock
-    source: hosted
-    version: "0.12.0"
-  mockable_filesystem:
-    description: mockable_filesystem
-    source: hosted
-    version: "0.0.3"
+    version: "0.13.1+3"
   package_config:
     description: package_config
     source: hosted
@@ -128,10 +105,18 @@ packages:
     description: pool
     source: hosted
     version: "1.2.1"
+  protobuf:
+    description: protobuf
+    source: hosted
+    version: "0.5.0+1"
   quiver:
     description: quiver
     source: hosted
     version: "0.21.4"
+  smoke:
+    description: smoke
+    source: hosted
+    version: "0.3.5"
   source_maps:
     description: source_maps
     source: hosted
@@ -143,23 +128,11 @@ packages:
   stack_trace:
     description: stack_trace
     source: hosted
-    version: "1.6.0"
+    version: "1.5.1"
   string_scanner:
     description: string_scanner
     source: hosted
     version: "0.1.4"
-  supports_color:
-    description: supports_color
-    source: hosted
-    version: "0.1.1"
-  unittest:
-    description: unittest
-    source: hosted
-    version: "0.11.6+1"
-  unscripted:
-    description: unscripted
-    source: hosted
-    version: "0.6.2"
   utf:
     description: utf
     source: hosted
@@ -176,10 +149,6 @@ packages:
     description: which
     source: hosted
     version: "0.1.3"
-  xml:
-    description: xml
-    source: hosted
-    version: "2.4.0"
   yaml:
     description: yaml
     source: hosted

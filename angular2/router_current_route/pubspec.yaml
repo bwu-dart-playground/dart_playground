@@ -1,4 +1,4 @@
-name: _template
+name: router_current_route
 dependencies:
   angular2: ^2.0.0-beta
   browser: ^0.10.0
