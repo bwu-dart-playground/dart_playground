@@ -11,9 +11,9 @@ import 'dart:math';
   border: 1px solid red;
 }
 '''],
-    template: '''
+    template: r'''
 <h1>app-element</h1>
-<form [ngFormModel]="newListingForm" (ngSubmit)="submitListing(newListingForm)">
+<form [ngFormModel]="newListingForm" (ngSubmit)="submitListing(newListingForm)" (changes)="unSubmit($event)">
 
    <div class="form-group form-group-sm"
        [ngClass]="{'has-error':!newListingForm.controls['mainTitleInput'].valid}">
@@ -24,12 +24,14 @@ import 'dart:math';
              [ngFormControl]="newListingForm.controls['mainTitleInput']"
              [(ngModel)]="newListing.mainTitleInput">
              <div>errors: {{newListingForm.controls['errors']}}, valid: {{newListingForm.controls['mainTitleInput'].valid}}</div>
-         <span *ngIf="!newListingForm.controls['mainTitleInput'].valid"
-             class="help-block text-danger">
+             <div>x {{!newListingForm.controls['mainTitleInput'].valid}}</div>
+         <span *ngIf="!newListingForm.controls['mainTitleInput'].valid && isFormSubmitted"
+             class="help-block text-danger">error
            <span *ngIf="newListingForm.controls['errors'] != null ? newListingForm.controls['errors'].required : false">
              The field is required
            </span>
          </span>
+         <div>y</div>
 <!--
   <input type="radio" #typeRadio="ngForm" [ngFormControl]="newListingForm.controls['typeRadio']" value="Event" id="type-event_radio" required>
   <input type="radio" #typeRadio="ngForm" [ngFormControl]="newListingForm.controls['typeRadio']" value="Venue" id="type-venue_radio" required>
@@ -68,8 +70,13 @@ class AppElement {
     arr = fb.array([newListingForm.controls['mainTitleInput']], ArrayErrorCollector.validate);
   }
 
+  void unSubmit() {
+    isFormSubmitted = false;
+  }
+  bool isFormSubmitted = false;
   //TODO Form submission
   void submitListing(ControlGroup value) {
+    isFormSubmitted = true;
     print("Form Submited");
   }
 

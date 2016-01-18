@@ -47,6 +47,13 @@ cont.subscribe(adjustwidth);
  https://groups.google.com/forum/#!topic/angular/dKVV_yXQ07s
  https://github.com/angular/angular/issues/6174#issuecomment-169556490
 
+- pushstate 404
+That's a browser feature.
+Angular by default uses HTML5 pushstate (PathLocationStrategy in Angular slang). 
+You either need a server that processes all requests like it were requesting `index.html` or you switch to `HashLocationStrategy` (with # in the URL for routes)
+https://angular.io/docs/js/latest/api/router/HashLocationStrategy-class.html
+See also https://ngmilk.rocks/2015/03/09/angularjs-html5-mode-or-pretty-urls-on-apache-using-htaccess/
+
 - Plunker example
 TS template https://plnkr.co/edit/tpl:AvJOMERrnz94ekVua0u5
 ng-content (extending element) http://plnkr.co/edit/jS8JHmD0xibJ8UGOKlCC?p=preview
@@ -58,3 +65,4 @@ wildcard in route: http://plnkr.co/edit/YLtfbHgmufFSqTJp6gju?p=info
 
 - WebWorkers
 https://github.com/angular/angular/blob/master/modules/angular2/docs/web_workers/web_workers.md
+
