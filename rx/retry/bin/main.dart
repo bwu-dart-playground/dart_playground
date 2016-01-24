@@ -50,17 +50,10 @@ class RetryableStream<T> extends Stream<T> {
   }
 
   Timer _timer;
-  bool _sendMore = true;
 
   Future _onListen() async {
-    _timer = new Timer.periodic(const Duration(milliseconds: 10), (_) async {
-      if (_sendMore) {
-        _sendMore = false;
-        _try();
-      }
-    });
-
-    new Future.delayed(const Duration(seconds: 30), () {});
+    _timer = new Timer.periodic(const Duration(seconds: 1000), (_) {});
+    _try();
   }
 
   Future _try() async {
@@ -76,11 +69,10 @@ class RetryableStream<T> extends Stream<T> {
   }
 
   void _onPause() {
-    _sendMore = false;
   }
 
   void _onResume() {
-    _sendMore = true;
+    _try();
   }
 }
 
@@ -140,59 +132,59 @@ class RetryTransformer<S, T> implements StreamTransformer<S, T> {
 
 ///////////////////////////
 
-class Repeat {
-  bool isPaused = true;
-  bool isCancelled = false;
-  StreamController _controller;
-  final Function f;
-  final dynamic onError;
-  Repeat(this.f, {this.onError: null}) {
-    _controller = new StreamController(
-        onListen: _onListen,
-        onPause: _onPause,
-        onResume: _onResume,
-        onCancel: _onCancel);
-  }
-  Stream get stream => _controller.stream;
-
-  Future _onListen() async {
-    print('listen');
-    while (!isCancelled) {
-      while (!isPaused) {
-        _controller.add(await f());
-      }
-    }
-  }
-
-  void _onPause() {
-    print('pause');
-    isPaused = true;
-  }
-
-  void _onResume() {
-    print('resume');
-    isPaused = false;
-  }
-
-  void _onCancel() {
-    isCancelled = true;
-    _controller.close();
-  }
-
-  static Stream task2(Function f, {dynamic onError: null}) async* {
-    int i = 0;
-    while (true) {
-      try {
-//         just to emulate failure
-        while (i++ < 2) {
-          print('throw');
-          throw '';
-        }
-        ////////////////////////
-        yield await f();
-      } catch (e) {
-        yield onError;
-      }
-    }
-  }
-}
+//class Repeat {
+//  bool isPaused = true;
+//  bool isCancelled = false;
+//  StreamController _controller;
+//  final Function f;
+//  final dynamic onError;
+//  Repeat(this.f, {this.onError: null}) {
+//    _controller = new StreamController(
+//        onListen: _onListen,
+//        onPause: _onPause,
+//        onResume: _onResume,
+//        onCancel: _onCancel);
+//  }
+//  Stream get stream => _controller.stream;
+//
+//  Future _onListen() async {
+//    print('listen');
+//    while (!isCancelled) {
+//      while (!isPaused) {
+//        _controller.add(await f());
+//      }
+//    }
+//  }
+//
+//  void _onPause() {
+//    print('pause');
+//    isPaused = true;
+//  }
+//
+//  void _onResume() {
+//    print('resume');
+//    isPaused = false;
+//  }
+//
+//  void _onCancel() {
+//    isCancelled = true;
+//    _controller.close();
+//  }
+//
+//  static Stream task2(Function f, {dynamic onError: null}) async* {
+//    int i = 0;
+//    while (true) {
+//      try {
+////         just to emulate failure
+//        while (i++ < 2) {
+//          print('throw');
+//          throw '';
+//        }
+//        ////////////////////////
+//        yield await f();
+//      } catch (e) {
+//        yield onError;
+//      }
+//    }
+//  }
+//}
