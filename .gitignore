@@ -10,6 +10,7 @@
 # Dart global
 ###################
 packages
+**/.packages
 build
 .pub
 .buildlog

@@ -28,6 +28,9 @@ class FormTest1 {
       'test1': ['', Validators.required],
       'test2': ['', Validators.required]
     });
+    heroForm.valueChanges.listen((Map changes) {
+      print(changes);
+    });
   }
   Map input = {'test1': '', 'test2': ''};
 }
@@ -39,7 +42,15 @@ class FormTest1 {
 <label>sdsd</label>
 <input type="text" [(ngModel)]="data['test2']" [ngFormControl]="hForm.controls['test2']" required>
 ''')
-class FormInput {
+class FormInput implements OnInit {
   @Input() ControlGroup hForm;
   @Input() Map data;
+
+
+  @override
+  void ngOnInit() {
+    hForm.valueChanges.listen((Map changes) {
+      print(changes);
+    });
+  }
 }

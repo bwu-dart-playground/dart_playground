@@ -1,0 +1,93 @@
+- async https://pub.dartlang.org/packages/async 
+   - async_memoizer
+   - cancelable_operation
+     - allows users to benotified when an operation is canceled elsewhere
+   - future_group
+   - lazy_stream
+   - restartable_timer
+   - result_future
+   - single_subscription_transformer
+     - a `StreamTransformer` that converts a broadcast stream into a single-subscription stream
+   - stream_completer
+   - stream_group
+     - class for merging the events of a group of streams
+   - stream_queue
+   - stream_sink_completer
+     - for creating a `StreamSink` now and providing its destination later as another sink
+   - stream_sink_transformer
+   - stream_splitter
+     - create multiple streams that emit the same events
+   - stream_zip
+     - combine streams
+   - subscription_stream
+   
+
+- quiver_async https://pub.dartlang.org/packages/quiver_async
+  - FutureGroup
+  - FutureStream
+  - StreamRouter 
+    - splits a Stream into mulltiple streams based on a set of predicates
+  - doWhileAsync
+  - reduceAsync 
+  - forEachAsync
+  
+- rxdart  https://pub.dartlang.org/packages/rxdart
+  - Observable 
+  - bufferWithCount
+  - debounce
+  - flatMapLatest
+  - flatMap
+  - interval
+  - max
+  - min
+  - pluck
+  - repeat
+  - replay
+  - retry
+  - reverse
+  - sample
+  - scan
+  - startWith
+  - takeUntil
+  - timeInterval
+  - tap
+  - throttle
+  - windowWithCount
+  
+- stream_ext https://pub.dartlang.org/packages/stream_ext
+  - buffer
+  - delay
+  - scan
+  - select
+  - throttle
+  - where
+  - zip
+  - merge
+
+- stream_transformers https://pub.dartlang.org/packages/stream_transformers
+  - BufferWhen
+  - Combine
+  - Concat
+  - ConcatAll
+  - Debounce
+  - Delay
+  - DoAction
+  - FlatMap
+  - FlatMapLatest
+  - Merge
+  - MergeAll
+  - SampleOn
+  - SamplePeriodically
+  - Scan
+  - SelectFirst
+  - SkipUntil
+  - StartWith
+  - TakeUntil
+  - When
+  - Zip
+  
+- frappe https://pub.dartlang.org/packages/frappe
+  - EventStream
+  - Property 
+  - Reactable
+  

@@ -6,13 +6,14 @@ import 'package:angular2/router.dart'
         LocationStrategy,
         ROUTER_PROVIDERS;
 import 'package:angular2/bootstrap.dart' show bootstrap;
-import 'package:_template/app_element.dart' show AppElement;
+import 'package:so34877364_ngif_with_directive/app_element.dart' show AppElement, MyIsClickedService;
 
 void main() {
 //  enableProdMode();
   bootstrap(AppElement, [
     ROUTER_PROVIDERS,
-    provide(APP_BASE_HREF, useValue'/'),
-//    provide(LocationStrategy, useClass: HashLocationStrategy)
+    bind(APP_BASE_HREF).toValue('/'),
+    MyIsClickedService,
+//    bind(LocationStrategy).toClass(HashLocationStrategy)
   ]);
 }

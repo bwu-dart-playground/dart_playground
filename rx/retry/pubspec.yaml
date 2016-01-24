@@ -1,0 +1,9 @@
+name: retry
+dependencies:
+  browser: ^0.10.0
+  rxdart: '>=0.3.10 <0.4.0'
+  frappe: '>=0.4.0+6 <0.5.0'
+  async: '>=1.7.0 <2.0.0'
+  stream_transformers: '>=0.3.0+3 <0.4.0'
+dev_dependencies:
+  dart_to_js_script_rewriter: ^0.1.0

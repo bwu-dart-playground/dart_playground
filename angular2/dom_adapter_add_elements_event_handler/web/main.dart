@@ -12,7 +12,7 @@ void main() {
 //  enableProdMode();
   bootstrap(AppElement, [
     ROUTER_PROVIDERS,
-    provide(APP_BASE_HREF, useValue'/'),
-//    provide(LocationStrategy, useClass: HashLocationStrategy)
+    bind(APP_BASE_HREF).toValue('/'),
+//    bind(LocationStrategy).toClass(HashLocationStrategy)
   ]);
 }

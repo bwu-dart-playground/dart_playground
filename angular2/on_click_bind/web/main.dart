@@ -6,13 +6,13 @@ import 'package:angular2/router.dart'
         LocationStrategy,
         ROUTER_PROVIDERS;
 import 'package:angular2/bootstrap.dart' show bootstrap;
-import 'package:_template/app_element.dart' show AppElement;
+import 'package:on_click_bind/app_element.dart' show AppElement;
 
 void main() {
 //  enableProdMode();
   bootstrap(AppElement, [
     ROUTER_PROVIDERS,
-    provide(APP_BASE_HREF, useValue'/'),
-//    provide(LocationStrategy, useClass: HashLocationStrategy)
+    bind(APP_BASE_HREF).toValue('/'),
+//    bind(LocationStrategy).toClass(HashLocationStrategy)
   ]);
 }

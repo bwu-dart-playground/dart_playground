@@ -10,7 +10,8 @@ import 'package:angular2/angular2.dart';
     directives: const [SecondComponent]
 )
 class AppElement {
-
+  SomeService _someService;
+  AppElement(this._someService);
 }
 
 @Component(selector: 'second', template: '''

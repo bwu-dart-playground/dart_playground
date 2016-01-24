@@ -1,0 +1,7 @@
+name: _template
+dependencies:
+  browser: ^0.10.0
+  rxdart: '>=0.3.10 <0.4.0'
+  frappe: '>=0.4.0+6 <0.5.0'
+#dev_dependencies:
+#  dart_to_js_script_rewriter: ^0.1.0
