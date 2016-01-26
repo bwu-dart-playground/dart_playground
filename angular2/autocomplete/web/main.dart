@@ -6,7 +6,7 @@ import 'package:angular2/router.dart'
         LocationStrategy,
         ROUTER_PROVIDERS;
 import 'package:angular2/bootstrap.dart' show bootstrap;
-import 'package:_template/app_element.dart' show AppElement;
+import 'package:autocomplete/app_element.dart' show AppElement, TickerLoader;
 
 void main() {
 //  enableProdMode();
@@ -14,5 +14,6 @@ void main() {
     ROUTER_PROVIDERS,
     provide(APP_BASE_HREF, useValue: '/'),
 //    provide(LocationStrategy, useClass: HashLocationStrategy)
+    TickerLoader
   ]);
 }

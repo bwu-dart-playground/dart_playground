@@ -15,9 +15,13 @@ void main() {
       .transform(retry(3))
       .map(print)
       .listen((String e) => print('done'));
+
+  new RetryableHttp()
+      .transform(retry(3))
+      .map(print)
+      .listen((String e) => print('done'));
 }
 
-Random rnd = new Random();
 Future<String> httpRequest() async {
   final HttpClientRequest request =
       await new HttpClient().getUrl(Uri.parse('http://www.github.com'));
@@ -27,6 +31,21 @@ Future<String> httpRequest() async {
           .transform(UTF8.decoder as StreamTransformer<List<int>, dynamic>)
           .toList())
       .join();
+}
+
+class RetryableHttp extends RetryableStream {
+  RetryableHttp({bool sync: false}) : super(httpRequest, sync: sync);
+
+  static Future<String> httpRequest() async {
+    final HttpClientRequest request =
+        await new HttpClient().getUrl(Uri.parse('http://www.github.com'));
+    final HttpClientResponse response = await request.close();
+
+    return (await response
+            .transform(UTF8.decoder as StreamTransformer<List<int>, dynamic>)
+            .toList())
+        .join();
+  }
 }
 
 class RetryableStream<T> extends Stream<T> {
@@ -68,16 +87,15 @@ class RetryableStream<T> extends Stream<T> {
     _timer.cancel();
   }
 
-  void _onPause() {
-  }
+  void _onPause() {}
 
   void _onResume() {
     _try();
   }
 }
 
-
-RetryTransformer/*<S, T>*/ retry/*<S,T>*/([int numRetries = 3]) => new RetryTransformer/*<S,T>*/(numRetries);
+RetryTransformer/*<S, T>*/ retry/*<S,T>*/([int numRetries = 3]) =>
+    new RetryTransformer/*<S,T>*/(numRetries);
 
 class RetryTransformer<S, T> implements StreamTransformer<S, T> {
   StreamController<T> _controller;

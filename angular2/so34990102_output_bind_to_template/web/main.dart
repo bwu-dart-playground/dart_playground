@@ -6,7 +6,7 @@ import 'package:angular2/router.dart'
         LocationStrategy,
         ROUTER_PROVIDERS;
 import 'package:angular2/bootstrap.dart' show bootstrap;
-import 'package:_template/app_element.dart' show AppElement;
+import 'package:so34990102_output_bind_to_template/app_element.dart' show AppElement;
 
 void main() {
 //  enableProdMode();

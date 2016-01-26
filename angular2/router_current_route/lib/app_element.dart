@@ -13,9 +13,7 @@ import 'package:angular2/router.dart' show Router;
     )
 class AppElement {
 
-  /**
-   * incomplete, just copied the code how to get instruction
-   */
+  /// incomplete, just copied the code how to get instruction
   Router _router;
   AppElement(this._router) {
     _router.subscribe(print);
