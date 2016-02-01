@@ -74,6 +74,7 @@ cont.subscribe(adjustwidth);
   - child routes ttps://plnkr.co/edit/3dnBZEDhpGvVO5aQQswA?p=preview
   - CanActivate and DI https://github.com/angular/angular/issues/4112#issuecomment-153811572
     - http://plnkr.co/edit/Bim8OGO7oddxBaa26WzR?p=preview
+    - http://plnkr.co/edit/SF8gsYN1SvmUbkosHjqQ?p=preview (brandonroberts)
   - Router Huge Flaw - Does not allow more than 1 level of nesting 
     - http://plnkr.co/edit/yKEyfZz6Xf2l7rRtCXdY?p=preview
     - http://plnkr.co/edit/PzoKVgbZO0Xx6IE3grnG?p=preview

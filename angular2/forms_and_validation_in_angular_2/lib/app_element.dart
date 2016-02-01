@@ -101,6 +101,7 @@ class FormElement {
       ],
       "type": ['home']
     });
+    print('x');
   }
 
   void onSubmit() {

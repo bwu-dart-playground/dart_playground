@@ -25,7 +25,7 @@ class AppElement {
 
 @Pipe(name: 'filter')
 class SearchPipe extends PipeTransform {
-  transform(value, List args) {
+  void transform(dynamic value, List args) {
     print(args[0]);
 
   }

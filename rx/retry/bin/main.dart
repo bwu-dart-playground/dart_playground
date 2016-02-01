@@ -11,6 +11,7 @@ import 'dart:convert' show UTF8;
 import 'dart:math' show Random;
 
 void main() {
+  Comparable c;
   new RetryableStream(httpRequest)
       .transform(retry(3))
       .map(print)
