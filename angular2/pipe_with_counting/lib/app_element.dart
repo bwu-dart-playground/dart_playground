@@ -26,7 +26,8 @@ class AppElement {
   List customerData = [
     {'customerId': 'xxxxxx'},
     {'customerId': 'aaaaa'},
-    {'customerId': 'bbbbb'}
+    {'customerId': 'bbbbb'},
+    {'customerId': 'gggggg'},
   ];
   String searchTerm = '.*[abcde].*';
 }
