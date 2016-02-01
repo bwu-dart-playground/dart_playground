@@ -11,6 +11,7 @@ Debounce debounce(int milliseconds) =>
     new Debounce(new Duration(milliseconds: milliseconds));
 // seems to be a different name for switchMap
 FlatMapLatest flatMapLatest(Mapper f) => new FlatMapLatest(f);
+FlatMapLatest flatMap(Mapper f) => new FlatMap(f);
 
 @Component(selector: 'app-element')
 @View(
@@ -18,23 +19,28 @@ FlatMapLatest flatMapLatest(Mapper f) => new FlatMapLatest(f);
 <h1>app-element</h1>
 <input type="text" #symbol [ngFormControl]="searchText" placeholder="ticker symbol">
 <ul>
-  <li *ngFor="#tick of tickers | async">{{tick.name}}</li>
+  <li *ngFor="#tick of tickers.toList() | async">ticker: {{tick.name}}</li>
 </ul>
-{{symbol.value}} - {{outputText}}
+<div>input: {{symbol.value}}</div>
+<div>tickers: {{tickers.toList() | async}}</div>
 ''',
     directives: const [FORM_DIRECTIVES])
 class AppElement {
   Control searchText = new Control();
   String outputText;
   TickerLoader _tickerLoader;
-  Stream tickers;
+  Stream<Stream<Item>> tickers;
   AppElement(this._tickerLoader) {
     tickers = searchText.valueChanges
         .transform(debounce(200))
-        .transform(flatMapLatest((String value) => _tickerLoader.load(value)));
+        .transform(flatMapLatest((String value) {
+      var result = _tickerLoader.load(value);
+      print(result);
+      return result;
+    })).asBroadcastStream();
 
-
-        //.listen((String value) => outputText = value);
+    tickers.listen((value) =>
+        print(value));
   }
 }
 

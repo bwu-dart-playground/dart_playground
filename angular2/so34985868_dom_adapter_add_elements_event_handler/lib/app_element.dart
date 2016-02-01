@@ -1,4 +1,4 @@
-library _template.app_element;
+library so34985868_dom_adapter_add_elements_event_handler.app_element;
 
 import 'dart:html' show window;
 import 'package:angular2/core.dart' show Component, View, Input, Output;

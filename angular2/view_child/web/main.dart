@@ -4,5 +4,5 @@ import 'package:view_child/app_element.dart';
 
 void main() {
 //  enableProdMode();
-  bootstrap(AppElement, Parent);
+  bootstrap(AppElement);
 }

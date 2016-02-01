@@ -5,7 +5,14 @@ import 'package:angular2/angular2.dart';
 
 @Component(selector: 'app-element')
 @View(
-    templateUrl: 'app_element.html',
+    template: '''
+<h1>app-element</h1>
+<my-comp>
+</my-comp>
+<some-child></some-child>
+<div #someChild></div>
+<some-other-child #otherChild></some-other-child>
+    ''',
     directives: const [MyComponent, SomeChild, SomeOtherChild])
 class AppElement implements AfterViewInit {
 

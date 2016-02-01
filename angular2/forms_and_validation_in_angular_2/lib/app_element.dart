@@ -29,14 +29,15 @@ class AppElement {
   ControlGroup form;
   AppElement(FormBuilder fb) {
     form = fb.group({
-      "firstName": ['', Validators.required],
-      "streetAddress": ['', Validators.required],
+      "firstName": ['xxx__', Validators.required],
+      "streetAddress": ['yyy__', Validators.required],
       "zip": [
-        '',
+        '12345',
         Validators.compose([ZipValidator.validate])
       ],
       "type": ['home']
     });
+    print('x');
   }
 }
 
@@ -61,12 +62,12 @@ class ZipValidator {
     </div>
     <div>
         <div class="formHeading">Street Address</div>
-        <input type="text" id="firstName" ngControl="streetAddress">
+        <input type="text" id="streetAddress" ngControl="streetAddress">
         <div class="errorMessage" *ngIf="f.form.controls['streetAddress'].touched && !f.form.controls['streetAddress'].valid">Street Address is required</div>
     </div>
     <div>
         <div class="formHeading">Zip Code</div>
-        <input type="text" id="zip" ngControl="zip">
+        <input type="text" id="zip" ngControl="zip" #zip>  x: {{zip.value}}
         <div class="errorMessage" *ngIf="f.form.controls['zip'].touched && !f.form.controls['zip'].valid">Zip code has to be 5 digits long</div>
     </div>
     <div>
@@ -92,7 +93,7 @@ class FormElement {
   String payLoad;
   FormElement(FormBuilder fb) {
     form = fb.group({
-      "firstName": ['', Validators.required],
+      "firstName": ['', Validators.required], // first list item is the initial value for the control
       "streetAddress": ['', Validators.required],
       "zip": [
         '',

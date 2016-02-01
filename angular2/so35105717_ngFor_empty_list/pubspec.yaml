@@ -1,4 +1,4 @@
-name: dom_adapter_add_elements_event_handler
+name: so35105717_ngFor_empty_list
 dependencies:
   angular2: ^2.0.0-beta
   browser: ^0.10.0

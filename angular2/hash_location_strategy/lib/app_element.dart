@@ -7,7 +7,7 @@ import 'package:angular2/router.dart'
 @Component(selector: 'app-element',
    providers: const [
      ROUTER_PROVIDERS,
-     const Provider(APP_BASE_HREF, useValue: '/'),
+     const Provider(APP_BASE_HREF, useValue: '/'), // I guess this should be in bootstrap()
      const Provider(LocationStrategy, useClass: HashLocationStrategy)
    ])
 @View(templateUrl: 'app_element.html',

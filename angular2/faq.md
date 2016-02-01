@@ -65,6 +65,7 @@ cont.subscribe(adjustwidth);
 
 
 - Router
+
   - https://github.com/brandonroberts/angular2-router-example/search?utf8=%E2%9C%93&q=modal
   - https://github.com/brandonroberts/angular2-router-example/blob/81a727d501b4f87e35611c572b864d3ca4a6834c/app/components/app/app.ts
   - route visited 2nd time elementRef different http://plnkr.co/edit/bevGpMAbviaugvNmoFso?p=preview
@@ -80,9 +81,21 @@ cont.subscribe(adjustwidth);
     - https://github.com/angular/angular/issues/6272#issuecomment-173176154   
     - https://plnkr.co/edit/N8YwjiBOnAGarRXtRJJO
   - Aux routes
+    - http://plnkr.co/edit/5mp8pXsWuLt2yAIQgV3p?p=preview von brandonroberts
     - http://plnkr.co/edit/lquMdagaVfIoAT83w1pl?p=preview
     - https://github.com/angular/angular/issues/4945
     - http://stackoverflow.com/questions/33442363/is-angular-2-auxiliary-router-broken
+    ```
+    @RouteConfig([
+        { path: "/dashboard", component: DashboardComponent, name: "Dashboard", useAsDefault: true },
+        { path: "/login", component: LoginComponent, name: "Login” },
+        { aux: “/chat", component: ChatComponent, name: “Chat” }
+    ])
+    ```
+    The aux path matches the name of your secondary outlet
+    `<router-outlet name=“chat”></router-outlet>`
+    https://github.com/angular/angular/issues/4945
+        
   - Top navigation example
     - http://plnkr.co/edit/N4OqwUEFFf1f54g3GQPh?p=preview (looks interesting, nice example)
   - Angular — Introduction to ngNewRouter vs ui-router (Read)
@@ -143,9 +156,15 @@ cont.subscribe(adjustwidth);
     - http://stackoverflow.com/questions/34394708/in-angular-2-0-0-beta-0-map-and-filter-are-missing-from-a-form-inputs-obser
     - http://stackoverflow.com/questions/34855992/observable-map-function-not-running-angular2-http
   - communicate between siblings
+    - https://github.com/escardin/angular2-community-faq/blob/master/services.md#how-do-i-communicate-between-components-using-a-shared-service
     - http://stackoverflow.com/questions/34700438/global-events-in-angular-2
   - pushstate 404
-    - http://stackoverflow.com/questions/31415052/angular-2-0-router-not-working-on-reloading-the-browser
+    - http://stackoverflow.com/questions/31415052/angular-2-0-router-not-working-on-reloading-the-browser (main)
+    - http://stackoverflow.com/questions/35077977/angular2-when-refresh-the-page-url-remains-same-but-appropriate-view-doesnt-g  (duplicated)
+    - http://stackoverflow.com/questions/34415725/when-i-refresh-my-website-i-get-a-404-this-is-with-angular2-and-firebase/34416946#34416946 (firebase)
+    - http://stackoverflow.com/questions/34703343/pathlocationstrategy-vs-hashlocationstrategy-in-web-apps/34703613#34703613 (duplication requested)
+    - http://stackoverflow.com/questions/34541532/is-angular-2s-router-broken-when-using-html5-routes/34543822#34543822 (duplicated)
+    - http://stackoverflow.com/questions/35052663/routing-and-navigation-in-angular-2/35057576#35057576 (duplication requested)
     That's a browser feature.
     Angular by default uses HTML5 pushstate (PathLocationStrategy in Angular slang). 
     You either need a server that processes all requests like it were requesting `index.html` or you switch to `HashLocationStrategy` (with # in the URL for routes)
@@ -156,3 +175,14 @@ cont.subscribe(adjustwidth);
   - test routing
     - http://stackoverflow.com/questions/34658526/trouble-unit-testing-service-with-the-router-injected-in-the-constructor-in-angu
     - http://stackoverflow.com/questions/35011972/component-undefined-has-no-route-config-aka-how-to-configure-angular-2-router-fo
+    - since beta.2
+    ```
+    // Somewhere in the test setup
+    import {setBaseTestProviders} from 'angular2/testing';
+    import {
+      TEST_BROWSER_PLATFORM_PROVIDERS,
+      TEST_BROWSER_APPLICATION_PROVIDERS
+    } from 'angular2/platform/testing/browser';
+    setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS,
+                         TEST_BROWSER_APPLICATION_PROVIDERS);
+    ```
