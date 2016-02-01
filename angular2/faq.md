@@ -71,6 +71,7 @@ cont.subscribe(adjustwidth);
   - route visited 2nd time elementRef different http://plnkr.co/edit/bevGpMAbviaugvNmoFso?p=preview
   - bunch of router examples from brandonroberts
     - https://plnkr.co/edit/Bim8OGO7oddxBaa26WzR?p=preview
+  - child routes ttps://plnkr.co/edit/3dnBZEDhpGvVO5aQQswA?p=preview
   - CanActivate and DI https://github.com/angular/angular/issues/4112#issuecomment-153811572
     - http://plnkr.co/edit/Bim8OGO7oddxBaa26WzR?p=preview
   - Router Huge Flaw - Does not allow more than 1 level of nesting 
@@ -144,6 +145,23 @@ cont.subscribe(adjustwidth);
 - view compiler
   - Angular 2.0: Life of a Template https://docs.google.com/document/d/19_9pshmkAQOA67UWTm41bzWbvikwerVjnCD97D0JS7g/edit
 
+- unittest
+  - routing
+    - http://stackoverflow.com/questions/34658526/trouble-unit-testing-service-with-the-router-injected-in-the-constructor-in-angu
+    - http://stackoverflow.com/questions/35011972/component-undefined-has-no-route-config-aka-how-to-configure-angular-2-router-fo
+    - since beta.2
+    ```
+    // Somewhere in the test setup
+    import {setBaseTestProviders} from 'angular2/testing';
+    import {
+      TEST_BROWSER_PLATFORM_PROVIDERS,
+      TEST_BROWSER_APPLICATION_PROVIDERS
+    } from 'angular2/platform/testing/browser';
+    setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS,
+                         TEST_BROWSER_APPLICATION_PROVIDERS);
+    ```
+
+
 - FAQ
   - escardin community FAQ 
     - https://github.com/escardin/angular2-community-faq#what-are-observables-and-where-can-i-learn-more-about-them-and-rx
@@ -172,17 +190,4 @@ cont.subscribe(adjustwidth);
     See also https://ngmilk.rocks/2015/03/09/angularjs-html5-mode-or-pretty-urls-on-apache-using-htaccess/
     - Dart
       - https://github.com/adaojunior/pub_serve_rewrites
-  - test routing
-    - http://stackoverflow.com/questions/34658526/trouble-unit-testing-service-with-the-router-injected-in-the-constructor-in-angu
-    - http://stackoverflow.com/questions/35011972/component-undefined-has-no-route-config-aka-how-to-configure-angular-2-router-fo
-    - since beta.2
-    ```
-    // Somewhere in the test setup
-    import {setBaseTestProviders} from 'angular2/testing';
-    import {
-      TEST_BROWSER_PLATFORM_PROVIDERS,
-      TEST_BROWSER_APPLICATION_PROVIDERS
-    } from 'angular2/platform/testing/browser';
-    setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS,
-                         TEST_BROWSER_APPLICATION_PROVIDERS);
-    ```
+  
