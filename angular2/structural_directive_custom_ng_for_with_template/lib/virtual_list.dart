@@ -18,78 +18,79 @@ class NgFor implements DoCheck {
   TemplateRef _templateRef;
   IterableDiffers _iterableDiffers;
   ChangeDetectorRef _cdr;
-  /** @internal */
+  /// @internal
   dynamic _ngForOf;
   IterableDiffer _differ;
   NgFor(this._viewContainer, this._templateRef, this._iterableDiffers,
-      this._cdr) {}
-  set ngForOf(dynamic value) {
+      this._cdr);
+
+  void set ngForOf(dynamic value) {
     this._ngForOf = value;
     if (isBlank(this._differ) && isPresent(value)) {
       this._differ = this._iterableDiffers.find(value).create(this._cdr);
     }
   }
 
-  set ngForTemplate(TemplateRef value) {
+  void set ngForTemplate(TemplateRef value) {
     if (isPresent(value)) {
       this._templateRef = value;
     }
   }
 
-  ngDoCheck() {
+  void ngDoCheck() {
     if (isPresent(this._differ)) {
-      var changes = this._differ.diff(this._ngForOf);
+      dynamic changes = this._differ.diff(this._ngForOf);
       if (isPresent(changes)) this._applyChanges(changes);
     }
   }
 
-  _applyChanges(changes) {
+  void _applyChanges(dynamic changes) {
     // TODO(rado): check if change detection can produce a change record that is
 
     // easier to consume than current.
-    var recordViewTuples = [];
+    List<RecordViewTuple> recordViewTuples = <RecordViewTuple>[];
     changes.forEachRemovedItem((removedRecord) =>
         recordViewTuples.add(new RecordViewTuple(removedRecord, null)));
     changes.forEachMovedItem((movedRecord) =>
         recordViewTuples.add(new RecordViewTuple(movedRecord, null)));
-    var insertTuples = this._bulkRemove(recordViewTuples);
+    List<RecordViewTuple> insertTuples = this._bulkRemove(recordViewTuples);
     changes.forEachAddedItem((addedRecord) =>
         insertTuples.add(new RecordViewTuple(addedRecord, null)));
     this._bulkInsert(insertTuples);
-    for (var i = 0; i < insertTuples.length; i++) {
+    for (int i = 0; i < insertTuples.length; i++) {
       this._perViewChange(insertTuples[i].view, insertTuples[i].record);
     }
-    for (var i = 0, ilen = this._viewContainer.length; i < ilen; i++) {
-      var viewRef = (this._viewContainer.get(i) as EmbeddedViewRef);
+    for (int i = 0, ilen = this._viewContainer.length; i < ilen; i++) {
+      EmbeddedViewRef viewRef = (this._viewContainer.get(i) as EmbeddedViewRef);
       viewRef.setLocal("last", identical(i, ilen - 1));
     }
   }
 
-  _perViewChange(view, record) {
-    view.setLocal("\$implicit", record.item);
-    view.setLocal("index", record.currentIndex);
-    view.setLocal("even", (record.currentIndex % 2 == 0));
-    view.setLocal("odd", (record.currentIndex % 2 == 1));
+  void _perViewChange(EmbeddedViewRef view, Map record) {
+    view.setLocal("\$implicit", record['item']);
+    view.setLocal("index", record['currentIndex']);
+    view.setLocal("even", (record['currentIndex'] % 2 == 0));
+    view.setLocal("odd", (record['currentIndex'] % 2 == 1));
   }
 
   List<RecordViewTuple> _bulkRemove(List<RecordViewTuple> tuples) {
-    tuples.sort((a, b) => a.record.previousIndex - b.record.previousIndex);
-    var movedTuples = [];
-    for (var i = tuples.length - 1; i >= 0; i--) {
-      var tuple = tuples[i];
+    tuples.sort((RecordViewTuple a, RecordViewTuple b) => a.record['previousIndex'] - b.record['previousIndex']);
+    List<RecordViewTuple> movedTuples = [];
+    for (int i = tuples.length - 1; i >= 0; i--) {
+      RecordViewTuple tuple = tuples[i];
       // separate moved views from removed views.
-      if (isPresent(tuple.record.currentIndex)) {
-        tuple.view = this._viewContainer.detach(tuple.record.previousIndex);
+      if (isPresent(tuple.record['currentIndex'])) {
+        tuple.view = this._viewContainer.detach(tuple.record['previousIndex']);
         movedTuples.add(tuple);
       } else {
-        this._viewContainer.remove(tuple.record.previousIndex);
+        this._viewContainer.remove(tuple.record['previousIndex']);
       }
     }
     return movedTuples;
   }
 
   List<RecordViewTuple> _bulkInsert(List<RecordViewTuple> tuples) {
-    tuples.sort((a, b) => a.record.currentIndex - b.record.currentIndex);
+    tuples.sort((RecordViewTuple a, RecordViewTuple b) => a.record.currentIndex - b.record.currentIndex);
     for (var i = 0; i < tuples.length; i++) {
       var tuple = tuples[i];
       if (isPresent(tuple.view)) {

@@ -121,6 +121,9 @@
       <excludeFolder url="file://$MODULE_DIR$/angular2/outside_dom_access/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/outside_dom_access/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/outside_dom_access/web/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/pipe_with_counting/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/pipe_with_counting/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/pipe_with_counting/web/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/quickstart/displaying_data/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/quickstart/displaying_data/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/quickstart/displaying_data/web/packages" />
@@ -200,6 +203,9 @@
       <excludeFolder url="file://$MODULE_DIR$/angular2/so34881401_style_body/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/so34881401_style_body/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/so34881401_style_body/web/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/so34907719_paper_heading/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/so34907719_paper_heading/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/so34907719_paper_heading/web/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/so34959905_router_named_outlet/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/so34959905_router_named_outlet/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/so34959905_router_named_outlet/web/packages" />
@@ -218,6 +224,12 @@
       <excludeFolder url="file://$MODULE_DIR$/angular2/so35105717_ngFor_empty_list/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/so35105717_ngFor_empty_list/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/so35105717_ngFor_empty_list/web/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/so35135260_ng_form_model_reference/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/so35135260_ng_form_model_reference/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/so35135260_ng_form_model_reference/web/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/structural_directive_custom_ng_for_with_template/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/structural_directive_custom_ng_for_with_template/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/angular2/structural_directive_custom_ng_for_with_template/web/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/template_ref/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/template_ref/packages" />
       <excludeFolder url="file://$MODULE_DIR$/angular2/template_ref/web/packages" />

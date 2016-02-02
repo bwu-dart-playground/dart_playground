@@ -6,6 +6,9 @@ void main() {
     var inp = document.querySelector('input');
     print(inp.runtimeType);
   });
+
+  NodeValidator validator = new NodeValidatorBuilder()..allowCustomElement('INPUT', attributes: ['is']);
+  document.querySelector('body').appendHtml("<input type='text' id='enum' is='db-edit' size=15>", validator: validator);
 }
 
 class DBEditText extends InputElement {
