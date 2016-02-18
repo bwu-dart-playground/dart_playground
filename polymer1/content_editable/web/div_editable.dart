@@ -11,5 +11,6 @@ class DivEditable extends dom.DivElement
 
   DivEditable.created() : super.created() {
     polymerCreated();
+
   }
 }
