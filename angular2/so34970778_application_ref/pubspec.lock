@@ -8,11 +8,11 @@ packages:
   angular2:
     description: angular2
     source: hosted
-    version: "2.0.0-beta.2"
+    version: "2.0.0-beta.3"
   args:
     description: args
     source: hosted
-    version: "0.13.3+1"
+    version: "0.13.3+2"
   async:
     description: async
     source: hosted

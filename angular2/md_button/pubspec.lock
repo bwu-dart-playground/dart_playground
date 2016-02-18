@@ -8,15 +8,15 @@ packages:
   angular2:
     description: angular2
     source: hosted
-    version: "2.0.0-beta.2"
+    version: "2.0.0-beta.3"
   angular2_material:
     description: angular2_material
     source: hosted
-    version: "2.0.0-beta.2"
+    version: "2.0.0-beta.3"
   args:
     description: args
     source: hosted
-    version: "0.13.3+1"
+    version: "0.13.3+2"
   async:
     description: async
     source: hosted
@@ -136,7 +136,7 @@ packages:
   stack_trace:
     description: stack_trace
     source: hosted
-    version: "1.6.0"
+    version: "1.6.1"
   string_scanner:
     description: string_scanner
     source: hosted
@@ -161,4 +161,4 @@ packages:
     description: yaml
     source: hosted
     version: "2.1.8"
-sdk: ">=1.12.0 <2.0.0"
+sdk: ">=1.14.0 <2.0.0"

@@ -1,0 +1,26 @@
+name: so35366132_reset_bound_value
+dependencies:
+  angular2: ^2.0.0-beta
+  browser: ^0.10.0
+dev_dependencies:
+  dart_to_js_script_rewriter: ^0.1.0
+transformers:
+# transformer options
+# https://github.com/angular/angular/blob/master/modules_dart/transform/lib/src/transform/common/options.dart#L20
+- angular2:
+    entry_points:
+    - web/main.dart
+    mirror_mode: verbose
+    platform_pipes: 'package:angular2/common.dart#COMMON_PIPES'
+# https://github.com/angular/angular/blob/3191fd144016c0873de4e3e24f0d8695a7d101c2/modules/angular2/src/common/pipes.ts
+    gen_change_detection_debug_info: true
+    platform_directives: 'package:angular2/common.dart#COMMON_DIRECTIVES'
+#    platform_directives: 'package:angular2/common.dart/directives.dart#FORM_DIRECTIVES'
+- $dart2js:
+    minify: true
+    commandLineOptions:
+    - --dump-info
+    - --show-package-warnings
+    - --trust-type-annotations
+    - --trust-primitives
+- dart_to_js_script_rewriter

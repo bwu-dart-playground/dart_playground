@@ -1,6 +1,8 @@
 library class_from_component.app_element;
 
-import 'package:angular2/angular2.dart';
+import 'package:angular2/core.dart' show Component, View, Input, Inject, Injectable, PLATFORM_INITIALIZER;
+import 'package:angular2/platform/common_dom.dart' show DOM;
+//import 'package:angular2/src/platform/dom/dom_adapter.dart' show DOM;
 
 @Component(selector: 'app-element')
 @View(templateUrl: 'app_element.html', directives: const [SecondComponent])
@@ -29,9 +31,9 @@ class SecondComponent {
 // different topic
 @Injectable()
 class SomeService {
-  DomAdapter dom;
-  SomeService(this.dom) {
-    dom
+  dynamic initializer;
+  SomeService() {
+    DOM
         .getGlobalEventTarget('window')
         .addEventListener('message', function, false);
   }

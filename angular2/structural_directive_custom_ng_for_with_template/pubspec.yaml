@@ -15,6 +15,7 @@ transformers:
 # https://github.com/angular/angular/blob/3191fd144016c0873de4e3e24f0d8695a7d101c2/modules/angular2/src/common/pipes.ts
     gen_change_detection_debug_info: true
     platform_directives: 'package:angular2/common.dart#COMMON_DIRECTIVES'
+    platform_directives: 'package:structural_directive_custom_ng_for_with_template/virtual_list.dart#VirtualList'
 #    platform_directives: 'package:angular2/common.dart/directives.dart#FORM_DIRECTIVES'
 - $dart2js:
     minify: true

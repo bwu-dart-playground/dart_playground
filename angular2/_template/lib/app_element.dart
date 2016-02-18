@@ -1,6 +1,6 @@
 library _template.app_element;
 
-import 'package:angular2/angular2.dart' show Component, View, Input, Output, FORM_DIRECTIVES, ControlGroup;
+import 'package:angular2/core.dart' show Component, View, Input, Output, FORM_DIRECTIVES, ControlGroup;
 
 @Component(
     selector: 'app-element'

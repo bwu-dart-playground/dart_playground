@@ -1,16 +1,22 @@
 library structural_directive_custom_ng_for_with_template.app_element;
 
 import 'package:angular2/angular2.dart'
-    show Component, ControlGroup, FORM_DIRECTIVES, Input, NgFor, Output, View;
+    show Component, ControlGroup, ExceptionHandler, FORM_DIRECTIVES, Input, NgFor, Output, View;
+
+import 'virtual_list.dart';
 
 @Component(selector: 'app-element')
 @View(
     template: '''
 <h1>app-element</h1>
-  <div *virualList="data of dataList">
+<!--<div *virtualList="#data of dataList">{{data}}</div>-->
+<child-element>
+  <div *virtualList="#data of dataList">{{data}}</div>
+</child-element>
 ''',
-    directives: const [ChildElement])
+    directives: const [ChildElement, VirtualList])
 class AppElement {
+  ExceptionHandler h;
   List<String> dataList = [
     'a',
     'b',
@@ -44,6 +50,7 @@ class AppElement {
 @Component(selector: 'child-element')
 @View(template: '''
 <h1>child-element</h1>
+<ng-content></ng-content>
 ''' //,
 //    directives: const [FORM_DIRECTIVES]
     )

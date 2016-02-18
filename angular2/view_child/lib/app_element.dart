@@ -12,10 +12,10 @@ import 'package:angular2/angular2.dart';
 <some-child></some-child>
 <div #someChild></div>
 <some-other-child #otherChild></some-other-child>
+<div someDirective>bla</div>
     ''',
-    directives: const [MyComponent, SomeChild, SomeOtherChild])
+    directives: const [MyComponent, SomeChild, SomeOtherChild, SomeDirective])
 class AppElement implements AfterViewInit {
-
   @ViewChild('someChild')
   var someChild;
 
@@ -31,6 +31,9 @@ class AppElement implements AfterViewInit {
   @ViewChild(SomeOtherChild)
   var otherChild2;
 
+  @ViewChild(SomeDirective)
+  var someDirective;
+
   void ngAfterViewInit() {
     new Future(() {
       print('someChild: $someChild');
@@ -38,13 +41,13 @@ class AppElement implements AfterViewInit {
       print('someChild3: $someChild3');
       print('otherChild: $otherChild');
       print('otherChild2: $otherChild2');
+      print('someDirective: $someDirective');
     });
   }
 }
 
 @Component(selector: 'my-comp')
-@View(
-    template: '''
+@View(template: '''
 <h3>my-comp</h3>
 <ng-content></ng-content>
 <content></content>
@@ -60,11 +63,17 @@ class MyComponent {}
 class SomeChild {}
 
 @Component(selector: 'some-other-child')
-@View(
-    template: '''
+@View(template: '''
 <h3>some-other-child</h3>
 <div #someChild></div>
 ''' //,
 //    directives: const [FORM_DIRECTIVES]
     )
 class SomeOtherChild {}
+
+@Directive(selector: '[someDirective]')
+class SomeDirective {
+  SomeDirective() {
+    print('someDirective');
+  }
+}

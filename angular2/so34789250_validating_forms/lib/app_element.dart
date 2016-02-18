@@ -68,6 +68,9 @@ class AppElement {
 //      'emailAddressInput': ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(40)])],
     });
     arr = fb.array([newListingForm.controls['mainTitleInput']], ArrayErrorCollector.validate);
+    newListingForm.statusChanges.listen((dynamic status) {
+      print(status);
+    });
   }
 
   void unSubmit() {

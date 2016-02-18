@@ -7,8 +7,8 @@ import 'package:angular2/router.dart'
         ROUTER_PROVIDERS;
 import 'package:angular2/bootstrap.dart' show bootstrap;
 import 'package:template_runtime_compiler/app_element.dart' show AppElement;
-import 'package:angular2/src/compiler/compiler' show TemplateCompiler;
-import 'package:angular2/src/compiler/runtime_compiler' show RuntimeCompiler, RuntimeCompiler_;
+import 'package:angular2/src/compiler/compiler.dart' show TemplateCompiler;
+import 'package:angular2/src/compiler/runtime_compiler.dart' show RuntimeCompiler, RuntimeCompiler_;
 
 void main() {
 //  enableProdMode();
