@@ -43,6 +43,7 @@ class AppElement {
 
 class ZipValidator {
   static Map<String, bool> validate(Control zip) {
+    print('zipValidator.validate');
     bool valid = new RegExp(r'^\d{5}$').hasMatch(zip.value);
     if (valid) {
       return null;
@@ -97,7 +98,7 @@ class FormElement {
       "streetAddress": ['', Validators.required],
       "zip": [
         '',
-        Validators.compose([ZipValidator.validate])
+        /*Validators.compose([*/ZipValidator.validate/*])*/
       ],
       "type": ['home']
     });

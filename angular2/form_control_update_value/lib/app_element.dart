@@ -22,6 +22,7 @@ class AppElement {
   String i1='blabla';
   void onSubmit(NgForm form) {
     print(form.value);
+    f
   }
 
   void updateValue() {

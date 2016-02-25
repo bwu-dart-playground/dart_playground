@@ -54,7 +54,7 @@ class ZipValidator {
 @Component(selector: 'form-element')
 @View(template: '''
 <h1>form-element</h1>
-<form (ngSubmit)="onSubmit()" [ngFormModel]="form" #f="ngForm">
+<form (ngSubmit)="onSubmit(\$event)" [ngFormModel]="form" #f="ngForm">
     <div>
         <div class="formHeading">First Name</div>
         <input type="text" id="firstName" ngControl="firstName">
@@ -103,7 +103,7 @@ class FormElement {
     });
   }
 
-  void onSubmit() {
+  void onSubmit(event) {
     payLoad = JSON.encode(this.form.value);
   }
 }

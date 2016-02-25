@@ -19,6 +19,8 @@
   - Using Pipes (Read)
     - https://egghead.io/lessons/angular-2-using-pipes-to-filter-data
     - filter pipe http://plnkr.co/edit/ienTN54PdS3bydfDgRGI?p=preview
+    - filter pipe (own example) https://plnkr.co/edit/4Il8QMlh9UYQ4hyrnU3W?p=preview
+      http://stackoverflow.com/questions/35571269/angular-2-searchtext
   
   - async validator 
     - http://plnkr.co/edit/vlzDapiOgVWLNqltEbGb?p=preview
@@ -115,7 +117,8 @@ cont.subscribe(adjustwidth);
   - Angular — Introduction to ngNewRouter vs ui-router (Read)
     - https://medium.com/angularjs-meetup-south-london/angular-just-another-introduction-to-ngnewrouter-vs-ui-router-72bfcb228017#.akvz1asr4   
   - Wildcard in route: http://plnkr.co/edit/YLtfbHgmufFSqTJp6gju?p=info
-
+  - get all router params also from parent routes https://github.com/angular/angular/issues/5330#issuecomment-188278642
+  - get current route https://github.com/angular/angular/issues/7122#issuecomment-185388662 
 
 - forms
   - different ways of building a form http://stackoverflow.com/questions/35383765/angular2-forms-validations-ngcontrol-ngmodel-etc
@@ -188,6 +191,7 @@ cont.subscribe(adjustwidth);
 
 - Animation
   - Using Animation and AnimationBuilder https://plnkr.co/edit/f9X2UfWdExhCh6oAX9hc?p=preview
+  - Simple keyframes, ngFor http://plnkr.co/edit/SXzyyN?p=preview
 
 - FAQ
   - escardin community FAQ 
@@ -223,3 +227,5 @@ cont.subscribe(adjustwidth);
     - DI config setting http://stackoverflow.com/questions/35215112/pass-page-global-variables-into-angular2-app-for-use-with-services/35217704#35217704  
   - ngFor trackBy https://github.com/angular/angular/issues/6907#issuecomment-182359285  
   - ES6 DI Dependency Injection http://stackoverflow.com/questions/33034930/how-to-use-angular2-dynamiccomponentloader-in-es6
+  - status of multiple checkboxes http://plnkr.co/edit/N9NXBYcwhon6ITr8RP5y?p=preview
+    http://stackoverflow.com/questions/35592529/why-did-deleting-my-web-assets-folder-also-delete-all-source-in-lib/35598277?noredirect=1#comment58922781_35598277

@@ -19,10 +19,10 @@ void main() {
     ROUTER_PROVIDERS,
     provide(APP_BASE_HREF, useValue: '/'),
 //    bind(LocationStrategy).toClass(HashLocationStrategy)
-    ELEMENT_PROBE_PROVIDERS,
-    provide(AppViewManager, useClass: DebugElement)
+//    ELEMENT_PROBE_PROVIDERS,
+//    provide(AppViewManager, useClass: DebugElement)
   ]).then((ComponentRef appRef) {
-    initDomAdapter();
-    enableDebugTools(appRef);
+//    initDomAdapter();
+//    enableDebugTools(appRef);
   });
 }
