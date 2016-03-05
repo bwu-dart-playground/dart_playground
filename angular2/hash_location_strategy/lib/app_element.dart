@@ -2,7 +2,7 @@ library hash_location_strategy.app_element;
 
 import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart'
-    show Router, ROUTER_PROVIDERS, APP_BASE_HREF, LocationStrategy, HashLocationStrategy, ROUTER_DIRECTIVES, RouteConfig, Route;
+    show Router, ROUTER_PROVIDERS, APP_BASE_HREF, LocationStrategy, HashLocationStrategy, ROUTER_DIRECTIVES, RouteConfig, Route, Location;
 
 @Component(selector: 'app-element',
    providers: const [

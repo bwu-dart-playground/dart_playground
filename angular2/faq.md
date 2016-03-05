@@ -1,4 +1,25 @@
 - TODO
+  - debug
+    var ngRootEl = window.getAllAngularRootElements()[0];
+    var rootNgProbe = window.ng.probe(ngRootEl);
+    var appRef = rootNgProbe.inject(window.ng.probe.coreTokens.ApplicationRef);
+    appRef.tick();
+    
+    var ngZone = rootNgProbe.inject(window.ng.probe.coreTokens.NgZone);
+    ngZone.onEventDone.subscribe(function() { console.log('Angular did some work'); });
+
+  - Observables
+    obs=new Subject().startWith(4);
+    obs.subscribe();
+    obs.next(3);
+    //prints 4 3
+    
+    //not the same as
+    obs=new BehaviourSubject(4);
+    obs.subscribe(); //prints 4
+    obs.next(3); //prints 3
+    obs.subscribe(); //prints 3
+
   - Forms
     - form test not getting valid (Gitter binarious)
     - use custom components as form inputs with `ngModel` (uses ControlValueAccessor)
@@ -10,7 +31,7 @@
       - http://www.bennadel.com/blog/3007-failure-using-ngmodel-with-a-custom-component-in-angular-2-beta-1.htm
     - getcontrol group values of a component loaded using DCL
       - http://stackoverflow.com/questions/35008412/how-to-get-the-control-group-values-of-a-component-loaded-using-dcl-loadintoloca#35008527
-    - dynamic properties http://stackoverflow.com/questions/34632603/dynamic-properties-on-ngformmodel#35227285 mit Plunker from Thierry  
+    - dynamic properties http://stackoverflow.com/questions/34632603/dynamic-properties-on-ngformmodel#35227285 mit Plnkr from Thierry  
 
   - Template Variables
     - add using BrowserDomAdapter
@@ -21,6 +42,7 @@
     - filter pipe http://plnkr.co/edit/ienTN54PdS3bydfDgRGI?p=preview
     - filter pipe (own example) https://plnkr.co/edit/4Il8QMlh9UYQ4hyrnU3W?p=preview
       http://stackoverflow.com/questions/35571269/angular-2-searchtext
+    - orderBy pipe http://embed.plnkr.co/DHLVc0 (see also https://github.com/angular/angular.io/issues/570#issuecomment-191036213)
   
   - async validator 
     - http://plnkr.co/edit/vlzDapiOgVWLNqltEbGb?p=preview
@@ -42,6 +64,7 @@ You can. Call `markForCheck` on a change detector ref, and then call LifeCycle.t
 
 - DynamicComponentLoader 
   - with data binding http://plnkr.co/edit/yzKAiXQQQwKi88g6wIdY?p=preview
+  - eigenes (set id) http://plnkr.co/edit/ihb7dzRlz1DO5piUvoXw?p=preview
   - simple loadNextToLocation example https://plnkr.co/edit/LwrrrEcn4rDqWs3bXu3K?p=preview
 
 - custom validators
@@ -65,8 +88,11 @@ cont.subscribe(adjustwidth);
  https://github.com/angular/angular/issues/6174#issuecomment-169556490
 
 - Plunker example
-  - TS template https://plnkr.co/edit/tpl:AvJOMERrnz94ekVua0u5
+  - TS template (public) https://plnkr.co/edit/wnLWAW?p
+    (private) https://plnkr.co/edit/uRW34w?p=catalogue
+    (old https://plnkr.co/edit/tpl:AvJOMERrnz94ekVua0u5)
   - ng-content (extending element) http://plnkr.co/edit/jS8JHmD0xibJ8UGOKlCC?p=preview
+    (ng-content two levels) https://plnkr.co/edit/uRW34w?p=preview
   - form validation http://plnkr.co/edit/S8AUiDzuDDdaLpgxhbK6?p=preview 
     http://plnkr.co/edit/riokbSny09yiV17400ip?p=preview
   - @Input() and `@HostBinding()` on the same field https://plnkr.co/edit/JyhQFJfSRLUwNYcENC2M?p=preview
@@ -120,13 +146,19 @@ cont.subscribe(adjustwidth);
   - get all router params also from parent routes https://github.com/angular/angular/issues/5330#issuecomment-188278642
   - get current route https://github.com/angular/angular/issues/7122#issuecomment-185388662 
 
+
 - forms
   - different ways of building a form http://stackoverflow.com/questions/35383765/angular2-forms-validations-ngcontrol-ngmodel-etc
   - Model-driven forms using ControlGroup http://plnkr.co/edit/UClEl7ly2LRjYRf7MvY6?p=info
   - forms 
   http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
-  - valueaccessor http://plnkr.co/edit/slVMz6Kgv6KlnUNMDe3o?p=preview
+  - valueaccessor
+    - https://github.com/angular/angular/issues/2543 (eigenes funktionierendes Beispiel)
+    - http://plnkr.co/edit/slVMz6Kgv6KlnUNMDe3o?p=preview
+    - see also https://github.com/angular/angular/issues/2543  (https://plnkr.co/edit/Bz7wLC5qq7s6Fph1UwpC?p=preview)
+  
   - radio buttons http://plnkr.co/edit/B1WPUs36Gkq0ipI8Bvsi?p=preview
+  - https://plnkr.co/edit/988PSJKXCfrUXfLOGgyg?p=preview (http://stackoverflow.com/questions/35653175/how-to-bind-to-radio-buttons-in-angular2-beta-6)
                   
   
   - multiple validators
@@ -149,6 +181,7 @@ cont.subscribe(adjustwidth);
   you can also implement the Validator interface from angular2/core (and decorate it with @Directive) and use it directly on the template
   /// https://plnkr.co/edit/5yO4HviXD7xIgMQQ8WKs?p=preview
   
+  - number validator example with different ways to access to valid state https://plnkr.co/edit/As15rN9GfgkoprVQ1rOq?p=preview 
 - custom injectable annotation
 ```
 - angular2:
@@ -163,6 +196,7 @@ cont.subscribe(adjustwidth);
 
 - view compiler
   - Angular 2.0: Life of a Template https://docs.google.com/document/d/19_9pshmkAQOA67UWTm41bzWbvikwerVjnCD97D0JS7g/edit
+  - viewContainer createEmbeddedView (https://github.com/angular/angular/issues/7443) http://plnkr.co/edit/LK1Aa3vhawd2sMl0Wj6F 
 
 - unittest
   - routing
@@ -180,10 +214,14 @@ cont.subscribe(adjustwidth);
                          TEST_BROWSER_APPLICATION_PROVIDERS);
     ```
     - test eventemitter http://stackoverflow.com/questions/35319476/any-way-to-test-eventemitter-in-angular2
+    - test http https://github.com/angular/http/issues/58 
+       https://github.com/angular/angular/issues/5570#issuecomment-189852510
+      
 
 - Polymer
   - http://plnkr.co/edit/1Gx2G2utKwgnNFvf0I8c?p=preview bind to selected of `<paper-lightbox>`
   - http://stackoverflow.com/questions/35356888/polymer-paper-menu-with-angular2 `<paper-menu>`, `<paper-dropdown-menu>` 
+  - http://plnkr.co/edit/kMuyWiNfDwrLSSc3JGDx?p=preview (selbst zusammengebastelt)
 
 - client-server-communication
   - HTTP interceptors https://github.com/angular/angular/issues/2684
@@ -192,6 +230,7 @@ cont.subscribe(adjustwidth);
 - Animation
   - Using Animation and AnimationBuilder https://plnkr.co/edit/f9X2UfWdExhCh6oAX9hc?p=preview
   - Simple keyframes, ngFor http://plnkr.co/edit/SXzyyN?p=preview
+  - page transition animation http://plnkr.co/edit/FikHIEPONMYhr6COD9Ou?p=info
 
 - FAQ
   - escardin community FAQ 
@@ -223,9 +262,14 @@ cont.subscribe(adjustwidth);
     - Dart
       - https://github.com/adaojunior/pub_serve_rewrites
     - GitHub issues are for bug reports and feature requests. 
-      For support questions please use other channels like [StackOverflow](http://stackoverflow.com/questions/tagged/angular2), [Gitter](https://gitter.im/angular/angular), [Google groups](https://groups.google.com/forum/#!forum/angular), ...
+      For support questions please use other channels like the ones listed in [CONTRIBUTING - Got a Question or Problem?](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#question)
     - DI config setting http://stackoverflow.com/questions/35215112/pass-page-global-variables-into-angular2-app-for-use-with-services/35217704#35217704  
   - ngFor trackBy https://github.com/angular/angular/issues/6907#issuecomment-182359285  
   - ES6 DI Dependency Injection http://stackoverflow.com/questions/33034930/how-to-use-angular2-dynamiccomponentloader-in-es6
   - status of multiple checkboxes http://plnkr.co/edit/N9NXBYcwhon6ITr8RP5y?p=preview
     http://stackoverflow.com/questions/35592529/why-did-deleting-my-web-assets-folder-also-delete-all-source-in-lib/35598277?noredirect=1#comment58922781_35598277
+    similar with buttons http://plnkr.co/edit/bhHbSd5ReCxtxRNI9ogx?p=preview
+
+   - Google doesn't provide timelines. As you know it's hard to make estimates for software project.
+     You can follow https://docs.google.com/document/d/150lerb1LmNLuau_a_EznPV1I1UHMTbEl61t4hZ7ZpS0/edit to see what next steps are planned.
+     See also https://github.com/escardin/angular2-community-faq
