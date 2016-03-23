@@ -4,7 +4,7 @@
     var rootNgProbe = window.ng.probe(ngRootEl);
     var appRef = rootNgProbe.inject(window.ng.probe.coreTokens.ApplicationRef);
     appRef.tick();
-    
+
     var ngZone = rootNgProbe.inject(window.ng.probe.coreTokens.NgZone);
     ngZone.onEventDone.subscribe(function() { console.log('Angular did some work'); });
 
@@ -13,7 +13,7 @@
     obs.subscribe();
     obs.next(3);
     //prints 4 3
-    
+
     //not the same as
     obs=new BehaviourSubject(4);
     obs.subscribe(); //prints 4
@@ -31,7 +31,7 @@
       - http://www.bennadel.com/blog/3007-failure-using-ngmodel-with-a-custom-component-in-angular-2-beta-1.htm
     - getcontrol group values of a component loaded using DCL
       - http://stackoverflow.com/questions/35008412/how-to-get-the-control-group-values-of-a-component-loaded-using-dcl-loadintoloca#35008527
-    - dynamic properties http://stackoverflow.com/questions/34632603/dynamic-properties-on-ngformmodel#35227285 mit Plnkr from Thierry  
+    - dynamic properties http://stackoverflow.com/questions/34632603/dynamic-properties-on-ngformmodel#35227285 mit Plnkr from Thierry
 
   - Template Variables
     - add using BrowserDomAdapter
@@ -43,11 +43,12 @@
     - filter pipe (own example) https://plnkr.co/edit/4Il8QMlh9UYQ4hyrnU3W?p=preview
       http://stackoverflow.com/questions/35571269/angular-2-searchtext
     - orderBy pipe http://embed.plnkr.co/DHLVc0 (see also https://github.com/angular/angular.io/issues/570#issuecomment-191036213)
-  
-  - async validator 
+    - pipe that returns a promise https://plnkr.co/edit/2LupLi?p=preview
+
+  - async validator
     - http://plnkr.co/edit/vlzDapiOgVWLNqltEbGb?p=preview
-    
-    
+
+
 - Resources
   - escardin/angular2-community-faq https://github.com/escardin/angular2-community-faq#any-good-tutorials-for-the-router
   - angular2 modal source https://github.com/shlomiassaf/angular2-modal/blob/master/src/angular2-modal/providers/Modal.ts#L46
@@ -62,10 +63,15 @@ You can. Call `markForCheck` on a change detector ref, and then call LifeCycle.t
   - observables and onPush https://plnkr.co/edit/oUQW5DzrLdUUThIkxLGG?p=preview
 
 
-- DynamicComponentLoader 
+- DynamicComponentLoader
   - with data binding http://plnkr.co/edit/yzKAiXQQQwKi88g6wIdY?p=preview
   - eigenes (set id) http://plnkr.co/edit/ihb7dzRlz1DO5piUvoXw?p=preview
   - simple loadNextToLocation example https://plnkr.co/edit/LwrrrEcn4rDqWs3bXu3K?p=preview
+  - loadAsRoot workaround
+    - https://github.com/angular/angular/issues/6223#issuecomment-195155190
+    - https://github.com/angular/angular/issues/6370#issuecomment-193896657 (good example)
+    - http://plnkr.co/edit/tcgbI2?p=preview  (https://github.com/angular/angular/issues/7453#issuecomment-193138577)
+  - load by name https://plnkr.co/edit/C0U5IIflrMnqxuXVbdw8?p=preview (https://github.com/angular/angular/issues/7652#issuecomment-198365577)
 
 - custom validators
 ```
@@ -77,7 +83,7 @@ emailValidator(control: Control) {
   - https://github.com/angular/angular/blob/master/modules/angular2/src/common/forms/directives/validators.ts#L10
   - https://gist.github.com/qdouble/21cd8448d882c446aca1
 
-- observe inputs 
+- observe inputs
 <input [ngControl]='cont'>
 constructor(){
 cont=new Control();
@@ -93,34 +99,39 @@ cont.subscribe(adjustwidth);
     (old https://plnkr.co/edit/tpl:AvJOMERrnz94ekVua0u5)
   - ng-content (extending element) http://plnkr.co/edit/jS8JHmD0xibJ8UGOKlCC?p=preview
     (ng-content two levels) https://plnkr.co/edit/uRW34w?p=preview
-  - form validation http://plnkr.co/edit/S8AUiDzuDDdaLpgxhbK6?p=preview 
+  - form validation http://plnkr.co/edit/S8AUiDzuDDdaLpgxhbK6?p=preview
     http://plnkr.co/edit/riokbSny09yiV17400ip?p=preview
   - @Input() and `@HostBinding()` on the same field https://plnkr.co/edit/JyhQFJfSRLUwNYcENC2M?p=preview
+  - Promise, map https://plnkr.co/edit/02OTUm?p=preview
 
 - WebWorkers
   - https://github.com/angular/angular/blob/master/modules/angular2/docs/web_workers/web_workers.md
 
 
 - Router
-
+  - Get query parameters / redirect after login http://stackoverflow.com/questions/36160118/angular2-redirect-after-login
+  - Child routes https://plnkr.co/edit/nt8Zzi?p=preview (zoechi)
+  - check if route exists before re-adding it http://plnkr.co/edit/ya8M0spq5ayOvWAeOtYh?p=preview (eigner) http://stackoverflow.com/questions/36114571/configuration-name-conflicts-with-existing-route-name/36114986#36114986
+  - navigate to root route http://stackoverflow.com/questions/35896308/angular-2-add-routerlink-in-child-which-points-to-root-router/35896818#35896818
+  - regex http://plnkr.co/edit/mk8wPfoqS66Qsuu2yN4F?p=preview brandonroberts
   - https://github.com/brandonroberts/angular2-router-example/search?utf8=%E2%9C%93&q=modal
   - https://github.com/brandonroberts/angular2-router-example/blob/81a727d501b4f87e35611c572b864d3ca4a6834c/app/components/app/app.ts
   - route visited 2nd time elementRef different http://plnkr.co/edit/bevGpMAbviaugvNmoFso?p=preview
   - bunch of router examples from brandonroberts
     - https://plnkr.co/edit/Bim8OGO7oddxBaa26WzR?p=preview
-  - child routes ttps://plnkr.co/edit/3dnBZEDhpGvVO5aQQswA?p=preview
+  - child routes https://plnkr.co/edit/3dnBZEDhpGvVO5aQQswA?p=preview
   - CanActivate and DI https://github.com/angular/angular/issues/4112#issuecomment-153811572
     - http://plnkr.co/edit/Bim8OGO7oddxBaa26WzR?p=preview
     - http://plnkr.co/edit/SF8gsYN1SvmUbkosHjqQ?p=preview (brandonroberts)
 
-  - Router Huge Flaw - Does not allow more than 1 level of nesting 
+  - Router Huge Flaw - Does not allow more than 1 level of nesting
     - http://plnkr.co/edit/ZM5sltrwn0HdATYjOzlD?p=preview brandonroberts issue #7063
     - http://plnkr.co/edit/yKEyfZz6Xf2l7rRtCXdY?p=preview
     - http://plnkr.co/edit/PzoKVgbZO0Xx6IE3grnG?p=preview
     - https://github.com/angular/angular/issues/6204#issuecomment-173146870
     - http://plnkr.co/edit/Bim8OGO7oddxBaa26WzR?p=preview
   - Async routes cause route data to be lost
-    - https://github.com/angular/angular/issues/6272#issuecomment-173176154   
+    - https://github.com/angular/angular/issues/6272#issuecomment-173176154
     - https://plnkr.co/edit/N8YwjiBOnAGarRXtRJJO
   - Aux routes
     - http://plnkr.co/edit/5mp8pXsWuLt2yAIQgV3p?p=preview von brandonroberts
@@ -137,30 +148,34 @@ cont.subscribe(adjustwidth);
     The aux path matches the name of your secondary outlet
     `<router-outlet name=“chat”></router-outlet>`
     https://github.com/angular/angular/issues/4945
-        
+
   - Top navigation example
     - http://plnkr.co/edit/N4OqwUEFFf1f54g3GQPh?p=preview (looks interesting, nice example)
   - Angular — Introduction to ngNewRouter vs ui-router (Read)
-    - https://medium.com/angularjs-meetup-south-london/angular-just-another-introduction-to-ngnewrouter-vs-ui-router-72bfcb228017#.akvz1asr4   
+    - https://medium.com/angularjs-meetup-south-london/angular-just-another-introduction-to-ngnewrouter-vs-ui-router-72bfcb228017#.akvz1asr4
   - Wildcard in route: http://plnkr.co/edit/YLtfbHgmufFSqTJp6gju?p=info
   - get all router params also from parent routes https://github.com/angular/angular/issues/5330#issuecomment-188278642
-  - get current route https://github.com/angular/angular/issues/7122#issuecomment-185388662 
+  - get current route
+    - https://github.com/angular/angular/issues/7122#issuecomment-185388662
+    - https://github.com/angular/angular/issues/5335#issuecomment-170088933
+  - Is current route active (Instruction alias) https://github.com/angular/angular/issues/7476 `router.isRouteActive(router.generate(['Parent', 'Child']))`
 
 
 - forms
+  - uppercase directive https://plnkr.co/edit/MzVOCK?p=preview (eigener)
   - different ways of building a form http://stackoverflow.com/questions/35383765/angular2-forms-validations-ngcontrol-ngmodel-etc
   - Model-driven forms using ControlGroup http://plnkr.co/edit/UClEl7ly2LRjYRf7MvY6?p=info
-  - forms 
+  - forms
   http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
   - valueaccessor
     - https://github.com/angular/angular/issues/2543 (eigenes funktionierendes Beispiel)
     - http://plnkr.co/edit/slVMz6Kgv6KlnUNMDe3o?p=preview
     - see also https://github.com/angular/angular/issues/2543  (https://plnkr.co/edit/Bz7wLC5qq7s6Fph1UwpC?p=preview)
-  
-  - radio buttons http://plnkr.co/edit/B1WPUs36Gkq0ipI8Bvsi?p=preview
+
+  - radio buttons http://plnkr.co/edit/B1WPUs36Gkq0ipI8Bvsi?p=preview (custom value accessor for radio)
   - https://plnkr.co/edit/988PSJKXCfrUXfLOGgyg?p=preview (http://stackoverflow.com/questions/35653175/how-to-bind-to-radio-buttons-in-angular2-beta-6)
-                  
-  
+  - validator for depending fields (password repeat) http://plnkr.co/edit/NqQhBPJJo1PzHfisvh9J?p=preview  (@escardin)
+
   - multiple validators
   @weizlini email: ["", Validators.compose([ Validators.required, Validators.minLength(2), Validators.maxLength(40), Utilities.emailValidator ])],
   /////
@@ -180,8 +195,8 @@ cont.subscribe(adjustwidth);
   //////
   you can also implement the Validator interface from angular2/core (and decorate it with @Directive) and use it directly on the template
   /// https://plnkr.co/edit/5yO4HviXD7xIgMQQ8WKs?p=preview
-  
-  - number validator example with different ways to access to valid state https://plnkr.co/edit/As15rN9GfgkoprVQ1rOq?p=preview 
+
+  - number validator example with different ways to access to valid state https://plnkr.co/edit/As15rN9GfgkoprVQ1rOq?p=preview
 - custom injectable annotation
 ```
 - angular2:
@@ -190,13 +205,14 @@ cont.subscribe(adjustwidth);
         import: 'package:mathedit/providers/injectable.dart'
         superClass: Injectable
 ```
-        
+
 - transformers
-  - https://github.com/angular/angular/wiki/Angular-2-Dart-Transformer        
+  - https://github.com/angular/angular/wiki/Angular-2-Dart-Transformer
 
 - view compiler
   - Angular 2.0: Life of a Template https://docs.google.com/document/d/19_9pshmkAQOA67UWTm41bzWbvikwerVjnCD97D0JS7g/edit
-  - viewContainer createEmbeddedView (https://github.com/angular/angular/issues/7443) http://plnkr.co/edit/LK1Aa3vhawd2sMl0Wj6F 
+  - viewContainer createEmbeddedView (https://github.com/angular/angular/issues/7443) http://plnkr.co/edit/LK1Aa3vhawd2sMl0Wj6F
+  - http://plnkr.co/edit/fwd1kh9TXfemagpuDnLZ?p=preview (TemplateRef, ViewContainerRef)
 
 - unittest
   - routing
@@ -214,14 +230,22 @@ cont.subscribe(adjustwidth);
                          TEST_BROWSER_APPLICATION_PROVIDERS);
     ```
     - test eventemitter http://stackoverflow.com/questions/35319476/any-way-to-test-eventemitter-in-angular2
-    - test http https://github.com/angular/http/issues/58 
+    - test http https://github.com/angular/http/issues/58
        https://github.com/angular/angular/issues/5570#issuecomment-189852510
-      
+    - TestComponentBuilder get reference to the element (2 ways same effect)
+      ```
+      fixture.detectChanges();
+      // get a copy of our miniDOM
+      let compiled = fixture.elementRef.nativeElement;
+      // get a reference tot he component(controller)
+      let component = fixture.debugElement.componentInstance;
+      ```
 
 - Polymer
   - http://plnkr.co/edit/1Gx2G2utKwgnNFvf0I8c?p=preview bind to selected of `<paper-lightbox>`
-  - http://stackoverflow.com/questions/35356888/polymer-paper-menu-with-angular2 `<paper-menu>`, `<paper-dropdown-menu>` 
+  - http://stackoverflow.com/questions/35356888/polymer-paper-menu-with-angular2 `<paper-menu>`, `<paper-dropdown-menu>`
   - http://plnkr.co/edit/kMuyWiNfDwrLSSc3JGDx?p=preview (selbst zusammengebastelt)
+  - paper-input https://github.com/angular/angular/issues/5360, http://stackoverflow.com/questions/35867952/how-to-use-angular2-ngmodel-for-polymer-paper-input-error-no-value-accessor-fo
 
 - client-server-communication
   - HTTP interceptors https://github.com/angular/angular/issues/2684
@@ -232,12 +256,55 @@ cont.subscribe(adjustwidth);
   - Simple keyframes, ngFor http://plnkr.co/edit/SXzyyN?p=preview
   - page transition animation http://plnkr.co/edit/FikHIEPONMYhr6COD9Ou?p=info
 
+- Project setup
+  - cannot find Promise
+  - Internet Explorer
+    - https://github.com/angular/angular/issues/6391, https://github.com/angular/angular/issues/7144#issuecomment-190012839
+
+- Aria roles https://github.com/angular/angular/issues/754
+
+- Dart Transformers
+  - https://github.com/angular/angular/wiki/Advanced-Transformer-Configuration
+  - https://github.com/angular/angular/pull/7464/files
+  ```
+  # from https://github.com/kegluneq/angular/blob/use_split_transformers/modules/playground/pubspec.yaml
+  transformers:
+  - angular2/transform/codegen:
+      platform_directives: 'package:angular2/src/common/directives.dart#CORE_DIRECTIVES'
+  - angular2/transform/reflection_remover:
+      $include:
+          - web/src/animate/index.dart
+          - web/src/async/index.dart
+
+  - angular2/transform/deferred_rewriter:
+      # No playground apps use deferred imports, but in general
+      # all libraries with deferred imports should be included.
+      $include: []
+
+  - $dart2js:
+      $include:
+          - web/src/**
+      $exclude:
+          # web worker code compiled separately; see below
+          - web/src/web_workers/**
+      minify: false
+      commandLineOptions:
+          - --show-package-warnings
+          - --trust-type-annotations
+          - --trust-primitives
+          - --enable-experimental-mirrors
+```
+
+
 - FAQ
-  - escardin community FAQ 
+  - GitHub issues are for bug reports and feature requests.
+    For support questions please use other channels like the ones listed in [CONTRIBUTING - Got a Question or Problem?](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#question)
+
+  - escardin community FAQ
     - https://github.com/escardin/angular2-community-faq#what-are-observables-and-where-can-i-learn-more-about-them-and-rx
   - unsubscribe stream subscriptions
     - https://github.com/angular/angular/pull/6686/files
-  - prevent rendering until async data is available  
+  - prevent rendering until async data is available
     - https://github.com/angular/angular/issues/6674#issuecomment-174699245
   - map(), filter() are missing from Observable
     // maybe update question about `first()` not being available
@@ -246,7 +313,7 @@ cont.subscribe(adjustwidth);
   - communicate between siblings
     - https://github.com/escardin/angular2-community-faq/blob/master/services.md#how-do-i-communicate-between-components-using-a-shared-service
     - http://stackoverflow.com/questions/34700438/global-events-in-angular-2
-    - eigner Plunker https://plnkr.co/edit/o88z1FFYcZsNebbcGBsF?p=preview
+    - eigner Plnkr https://plnkr.co/edit/o88z1FFYcZsNebbcGBsF?p=preview
   - pushstate 404
     - http://stackoverflow.com/questions/31415052/angular-2-0-router-not-working-on-reloading-the-browser (main)
     - http://stackoverflow.com/questions/35077977/angular2-when-refresh-the-page-url-remains-same-but-appropriate-view-doesnt-g  (duplicated)
@@ -255,21 +322,23 @@ cont.subscribe(adjustwidth);
     - http://stackoverflow.com/questions/34541532/is-angular-2s-router-broken-when-using-html5-routes/34543822#34543822 (duplicated)
     - http://stackoverflow.com/questions/35052663/routing-aeednd-navigation-in-angular-2/35057576#35057576 (duplication requested)
     That's a browser feature.
-    Angular by default uses HTML5 pushstate (PathLocationStrategy in Angular slang). 
+    Angular by default uses HTML5 pushstate (PathLocationStrategy in Angular slang).
     You either need a server that processes all requests like it were requesting `index.html` or you switch to `HashLocationStrategy` (with # in the URL for routes)
     https://angular.io/docs/js/latest/api/router/HashLocationStrategy-class.html
     See also https://ngmilk.rocks/2015/03/09/angularjs-html5-mode-or-pretty-urls-on-apache-using-htaccess/
     - Dart
       - https://github.com/adaojunior/pub_serve_rewrites
-    - GitHub issues are for bug reports and feature requests. 
-      For support questions please use other channels like the ones listed in [CONTRIBUTING - Got a Question or Problem?](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#question)
-    - DI config setting http://stackoverflow.com/questions/35215112/pass-page-global-variables-into-angular2-app-for-use-with-services/35217704#35217704  
-  - ngFor trackBy https://github.com/angular/angular/issues/6907#issuecomment-182359285  
+    - DI config setting http://stackoverflow.com/questions/35215112/pass-page-global-variables-into-angular2-app-for-use-with-services/35217704#35217704
+  - ngFor trackBy https://github.com/angular/angular/issues/6907#issuecomment-182359285
   - ES6 DI Dependency Injection http://stackoverflow.com/questions/33034930/how-to-use-angular2-dynamiccomponentloader-in-es6
   - status of multiple checkboxes http://plnkr.co/edit/N9NXBYcwhon6ITr8RP5y?p=preview
     http://stackoverflow.com/questions/35592529/why-did-deleting-my-web-assets-folder-also-delete-all-source-in-lib/35598277?noredirect=1#comment58922781_35598277
     similar with buttons http://plnkr.co/edit/bhHbSd5ReCxtxRNI9ogx?p=preview
-
-   - Google doesn't provide timelines. As you know it's hard to make estimates for software project.
+  - dynamic templates https://github.com/angular/angular/issues/7596#issuecomment-196881527
+   - http://stackoverflow.com/questions/36008476/how-to-realize-website-with-hundreds-of-pages-in-angular2
+  - Google doesn't provide timelines. As you know it's hard to make estimates for software project.
      You can follow https://docs.google.com/document/d/150lerb1LmNLuau_a_EznPV1I1UHMTbEl61t4hZ7ZpS0/edit to see what next steps are planned.
      See also https://github.com/escardin/angular2-community-faq
+  - ngFor with JSON
+
+

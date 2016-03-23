@@ -1,0 +1,47 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /*background-color: #434343;*/
+    /*background-image:linear-gradient(#434343, #282828);*/
+    background-image: linear-gradient(#fff, #fff);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+#content {
+    z-index: 1000;
+    position: absolute;
+    opacity: 0.7;
+    background-color: transparent;
+    background-image: linear-gradient(0deg, transparent 24%,
+        rgba(255, 0, 0, .08) 25%,
+        rgba(255, 0, 0, .08) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(255, 0, 0, .08) 75%,
+        rgba(255, 0, 0, .08) 76%,
+        transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%,
+        rgba(255, 0, 0, .08) 25%,
+        rgba(255, 0, 0, .08) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(0, 0, 0, .08) 75%,
+        rgba(0, 0, 0, .08) 76%,
+        transparent 77%, transparent);
+    height: 100%;
+    background-size: 50px 50px;
+}
+
+.follow-me {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
