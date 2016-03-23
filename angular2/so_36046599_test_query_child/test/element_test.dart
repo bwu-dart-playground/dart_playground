@@ -20,13 +20,13 @@ void main() {
       return tcb.createAsync(CustomListComponentDemo).then((
           ComponentFixture fixture) {
         el = fixture.debugElement.nativeElement;
-        regularListEl = fixture.debugElement.query(By.css(".list-unstyled"));
-        dropdownListEl = fixture.debugElement
-            .query(By.css(".dropdown-menu"))
-            .nativeElement;
-        dropdownToggleBtn = fixture.debugElement
-            .query(By.css(".btn"))
-            .nativeElement;
+//        regularListEl = fixture.debugElement.query(By.css(".list-unstyled"));
+//        dropdownListEl = fixture.debugElement
+//            .query(By.css(".dropdown-menu"))
+//            .nativeElement;
+//        dropdownToggleBtn = fixture.debugElement
+//            .query(By.css(".btn"))
+//            .nativeElement;
         fixture.detectChanges();
 
         return fixture;
