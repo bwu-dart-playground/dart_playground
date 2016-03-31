@@ -12,8 +12,7 @@ import 'package:angular2/angular2.dart'
         View;
 import 'dart:html' show Element;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <parent-element>{{someContent}}</parent-element>
@@ -26,8 +25,7 @@ class AppElement {
   updateContent() => someContent = "++ something else ++";
 }
 
-@Component(selector: 'parent-element')
-@View(template: '''
+@Component(selector: 'parent-element',template: '''
 <h1>parent-element</h1>
 <ng-content></ng-content>
 ''')

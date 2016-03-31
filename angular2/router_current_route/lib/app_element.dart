@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart'
     show Component, View, Input, Output, FORM_DIRECTIVES, ControlGroup;
 import 'package:angular2/router.dart' show Router;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 ''' //,

@@ -4,8 +4,7 @@ import 'package:angular2/core.dart' show Component, View, Input, Output, FORM_DI
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <div>value: {{someValue}}</div>

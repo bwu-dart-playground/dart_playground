@@ -11,8 +11,7 @@ import 'package:angular2/angular2.dart';
 
 @Component(
     selector: 'parties-form'
-)
-@View(
+,
     templateUrl: 'parties_form.html',
     directives: const [FORM_DIRECTIVES]
 )

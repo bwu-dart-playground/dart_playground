@@ -2,8 +2,7 @@ library so34705010_form.app_element;
 
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'app-element')
-@View(template: '<form-test></form-test>', directives: const [FormTest1])
+@Component(selector: 'app-element',template: '<form-test></form-test>', directives: const [FormTest1])
 class AppElement {}
 
 @Component(

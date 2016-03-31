@@ -11,8 +11,7 @@ import 'package:angular2/angular2.dart'
         Output,
         View;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: r'''
 <h1>app-element</h1>
 <dev-table (complete)="onSelect($event)"></dev-table>

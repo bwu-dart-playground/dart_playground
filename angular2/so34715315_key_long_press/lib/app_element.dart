@@ -16,8 +16,7 @@ import 'package:angular2/angular2.dart'
         Output,
         View;
 
-@Component(selector: 'app-element')
-@View(templateUrl: 'app_element.html', directives: const [LongPress])
+@Component(selector: 'app-element',templateUrl: 'app_element.html', directives: const [LongPress])
 class AppElement {
   int keyCode;
   bool longPressed(KeyboardEvent event) {

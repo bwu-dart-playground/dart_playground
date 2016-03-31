@@ -12,13 +12,13 @@ packages:
       name: angular2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-beta.11"
+    version: "2.0.0-beta.12"
   angular2_testing:
     description:
       name: angular2_testing
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-beta.11"
+    version: "2.0.0-beta.12"
   args:
     description:
       name: args
@@ -72,13 +72,13 @@ packages:
       name: code_transformers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.1"
+    version: "0.4.2"
   collection:
     description:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "1.4.1"
   convert:
     description:
       name: convert
@@ -90,7 +90,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.2"
+    version: "0.9.2+1"
   csslib:
     description:
       name: csslib
@@ -144,7 +144,7 @@ packages:
       name: http_parser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.1"
   intl:
     description:
       name: intl
@@ -162,7 +162,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.0+1"
+    version: "0.12.0+2"
   mime:
     description:
       name: mime
@@ -174,7 +174,7 @@ packages:
       name: observe
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.4"
+    version: "0.13.5"
   package_config:
     description:
       name: package_config
@@ -252,7 +252,7 @@ packages:
       name: source_maps
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.1"
+    version: "0.10.1+1"
   source_span:
     description:
       name: source_span
@@ -264,7 +264,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.1"
+    version: "1.6.4"
   stream_channel:
     description:
       name: stream_channel
@@ -282,7 +282,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.12"
+    version: "0.12.13"
   typed_data:
     description:
       name: typed_data
@@ -306,7 +306,7 @@ packages:
       name: web_socket_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.2"
   when:
     description:
       name: when

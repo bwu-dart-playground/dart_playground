@@ -6,8 +6,7 @@ import 'package:angular2/angular2.dart' show Component, ControlGroup, Directive,
 /// on the template can't reference a directive from a child.
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <button (click)="clicked()">click me</button>

@@ -2,8 +2,7 @@ library so34561951_on_changes.app_element;
 
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <button (click)="doSomething()">Do something</button>
@@ -26,8 +25,7 @@ class AppElement {
   }
 }
 
-@Component(selector: 'child-component')
-@View(template: '''
+@Component(selector: 'child-component',template: '''
 <h1>child</h1>
 <div>value: {{message}}
     ''' //,

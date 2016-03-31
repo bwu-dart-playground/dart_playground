@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart';
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     templateUrl: 'app_element.html' ,
     directives: const [ChildElement1, ChildElement2]
 )
@@ -16,8 +15,7 @@ class AppElement {
 
 @Component(
     selector: 'child-element-1'
-)
-@View(
+,
     template: 'child-element-1' //,
 )
 class ChildElement1 {
@@ -30,8 +28,7 @@ class ChildElement1 {
 
 @Component(
     selector: 'child-element-2'
-)
-@View(
+,
     template: 'child-element-2' //,
 )
 class ChildElement2 {

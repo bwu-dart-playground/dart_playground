@@ -3,8 +3,7 @@ library event_emitter_as_stream.app_element;
 import 'package:angular2/core.dart'
     show Component, View, Input, Output, FORM_DIRECTIVES, ControlGroup;
 
-@Component(selector: 'my-over')
-@View(
+@Component(selector: 'my-over',
     styles: const ['div: { width: 500px; height: 500px; }'],
     template: '''
 <h1>app-element</h1>
@@ -14,8 +13,7 @@ import 'package:angular2/core.dart'
     )
 class MyOver {}
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     directives: const [MyOver],
     template: '''
 <h1>app-element</h1>

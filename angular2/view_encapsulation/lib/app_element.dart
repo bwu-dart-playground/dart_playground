@@ -2,12 +2,10 @@ library view_encapsulation.app_element;
 
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'app-element')
-@View(template: '<some-element><child-element></child-element></some-element>', directives: const [SomeElement,ChildElement])
+@Component(selector: 'app-element',template: '<some-element><child-element></child-element></some-element>', directives: const [SomeElement,ChildElement])
 class AppElement {}
 
-@Component(selector: 'some-element', host: const {'class': 'container'}, directives: const [])
-@View(template: '<div>some-element</div><ng-content></ng-content>', styles: const [
+@Component(selector: 'some-element', host: const {'class': 'container'}, directives: const [],template: '<div>some-element</div><ng-content></ng-content>', styles: const [
   '''
   :host(.container) {
     display: block;
@@ -21,8 +19,7 @@ class AppElement {}
 ])
 class SomeElement {}
 
-@Component(selector: 'child-element', host: const {'class': 'container'})
-@View(template: '<div>child-element</div>', styles: const [
+@Component(selector: 'child-element', host: const {'class': 'container'},template: '<div>child-element</div>', styles: const [
   '''
   :host(.container) {
     display: block;

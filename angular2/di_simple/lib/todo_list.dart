@@ -3,8 +3,7 @@ library di_simple.todo_list;
 import 'package:angular2/angular2.dart';
 import 'package:di_simple/authentication_service.dart';
 
-@Component(selector: 'todo-list', providers: const [AuthenticationService])
-@View(
+@Component(selector: 'todo-list', providers: const [AuthenticationService],
     // An alternative to using \$event is to use a raw string instead.
     // For example, change "template: '''" to "template: r'''".
     template: '''

@@ -7,8 +7,7 @@ import 'package:angular2/platform/browser.dart' show BrowserDomAdapter;
 // Gitter private message
 // http://plnkr.co/edit/AwkUHItsauXS4x5JISis?p=preview
 
-@Component(selector: 'app-element')
-@View(template: '''
+@Component(selector: 'app-element',template: '''
 <h1>app-element</h1>
 <button (click)="add()">Add</button>
 ''' //,

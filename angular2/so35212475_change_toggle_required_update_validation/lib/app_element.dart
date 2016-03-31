@@ -12,8 +12,7 @@ import 'package:angular2/core.dart'
         ViewChild;
 import 'dart:html' show window, InputElement;
 
-@Component(selector: 'app-element')
-@View(template: '''
+@Component(selector: 'app-element',template: '''
 <h1>app-element</h1>
    <div>
     <form #f="ngForm">

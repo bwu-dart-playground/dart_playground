@@ -13,7 +13,7 @@ dependencies:
   sqljocky: any
 #  route_hierarchical: any
 #  sqljocky: any
-#  intl: any
+  intl: any
 #  crypto: any
 #  charcode: any
 #  benchmark_harness: any

@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart' show Component, View, Input, Output, FOR
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <!-- <button onClick="onSave()">save</button> -->

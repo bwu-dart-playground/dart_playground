@@ -16,8 +16,7 @@ import 'dart:async' show Timer;
 
 /// from https://angular.io/docs/js/latest/api/core/DoCheck-interface.html
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
   <button (click)="list.add(list.length)">Add</button>
@@ -35,8 +34,7 @@ class AppElement implements DoCheck {
   }
 }
 
-@Component(selector: 'custom-check')
-@View(
+@Component(selector: 'custom-check',
     template: '''
     <div>value: {{value}}</div>
 

@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart'
     show AbstractControl, Component, Control, ControlArray, ControlGroup, FORM_DIRECTIVES, FormBuilder, Input, NgForm, NgFormModel, Output, Validators, View;
 import 'dart:math';
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     styles: const ['''
 .has-error input {
   border: 1px solid red;

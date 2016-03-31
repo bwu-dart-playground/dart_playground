@@ -10,8 +10,7 @@ import 'package:angular2/angular2.dart'
         Validators,
         View;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     styles: const [
       '''
 .has-error input {

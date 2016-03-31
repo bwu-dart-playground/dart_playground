@@ -5,8 +5,7 @@ import 'package:angular2/angular2.dart'
 
 import 'virtual_list.dart';
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <!--<div *virtualList="#data of dataList">{{data}}</div>-->
@@ -47,8 +46,7 @@ class AppElement {
   ];
 }
 
-@Component(selector: 'child-element')
-@View(template: '''
+@Component(selector: 'child-element',template: '''
 <h1>child-element</h1>
 <ng-content></ng-content>
 ''' //,

@@ -2,8 +2,7 @@ library form_control_update_value.app_element;
 
 import 'package:angular2/angular2.dart' show Component, Control, ControlGroup, FORM_DIRECTIVES, Input, NgControl, NgForm, Output, View, ViewChild;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: r'''
 <h1>app-element</h1>
 <form #f="ngForm"

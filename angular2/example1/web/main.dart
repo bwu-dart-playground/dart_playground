@@ -10,8 +10,7 @@ import 'package:angular2/angular2.dart';
 //    show ReflectionCapabilities;
 //import 'package:bwu_angular_example_1/components/display.dart';
 
-@Component(selector: 'display')
-@View(
+@Component(selector: 'display',
 //  templateUrl: 'packages/bwu_angular_example_1/components/display.html',
     template: '''
 <p>My name: {{ myName }}</p>

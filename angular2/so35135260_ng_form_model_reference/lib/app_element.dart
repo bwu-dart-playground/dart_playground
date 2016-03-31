@@ -12,8 +12,7 @@ import 'package:angular2/angular2.dart'
         FormBuilder,
         Validators;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <form [ngFormModel]="myForm"

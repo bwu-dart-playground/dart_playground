@@ -18,8 +18,7 @@ import 'package:angular2/platform/browser.dart';
   '[class.some-class]': 'someClass',
 //  '[style.background-image]': 'bodyBackgroundImage()'
   '[style.background-color]': 'bodyBackgroundColor()'
-})
-@View(
+},
     template: '''
 <h1>app-element</h1>
 <div> is logged-in: {{isLoggedIn}}</div>
@@ -40,8 +39,7 @@ class AppElement {
   String bodyBackgroundColor() => isLoggedIn ? 'blue' : '';
 }
 
-@Component(selector: 'login-element')
-@View(
+@Component(selector: 'login-element',
     styles: const [
       '''
 body {

@@ -1,8 +1,7 @@
 library xxx.display;
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'display')
-@View(
+@Component(selector: 'display',
 //  templateUrl: 'packages/bwu_angular_example_1/components/display.html',
   templateUrl: 'display.html',
 //    template: '''

@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart' show Attribute, Component, Directive, In
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <some-element type="text"></some-element>
 ''',

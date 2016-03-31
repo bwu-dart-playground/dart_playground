@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart'
     show Component, View, Input, Output, FORM_DIRECTIVES, ControlGroup;
 import 'dart:html' show Event, CheckboxInputElement;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: r'''
 <div>
   <h2>Hello {{name}}</h2>

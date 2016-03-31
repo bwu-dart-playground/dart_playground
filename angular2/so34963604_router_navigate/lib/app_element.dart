@@ -4,8 +4,7 @@ import 'package:angular2/core.dart' show Component, View, Input, Output;
 import 'package:angular2/router.dart'
     show ROUTER_DIRECTIVES, Route, RouteConfig, Router;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <a [routerLink]="['Friends']">Friends</a>
@@ -32,8 +31,7 @@ class AppElement {
   }
 }
 
-@Component(selector: 'friends-component')
-@View(template: '''
+@Component(selector: 'friends-component',template: '''
         friends list:
         <ul>
             <li *ngFor="#friend of friends">
@@ -49,7 +47,6 @@ class FriendsComponent {
   ];
 }
 
-@Component(selector: 'some-component')
-@View(template: '''<div>some-component</div>
+@Component(selector: 'some-component',template: '''<div>some-component</div>
 ''')
 class SomeComponent {}

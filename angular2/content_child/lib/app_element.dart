@@ -3,8 +3,7 @@ library content_child.app_element;
 import 'dart:async' show Future;
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
 template: '''
 <h1>app-element</h1>
 <my-comp>
@@ -17,8 +16,7 @@ template: '''
     directives: const [MyComponent, SomeChild, SomeOtherChild])
 class AppElement {}
 
-@Component(selector: 'my-comp')
-@View(
+@Component(selector: 'my-comp',
     template: '''
 <h3>my-comp</h3>
 <ng-content></ng-content>
@@ -64,16 +62,14 @@ class MyComponent implements AfterContentInit, AfterViewInit {
   }
 }
 
-@Component(selector: 'some-child')
-@View(
+@Component(selector: 'some-child',
     template: '''
 <h3>some-child</h3>
 ''',
     directives: const [SomeOtherChild])
 class SomeChild {}
 
-@Component(selector: 'some-other-child')
-@View(
+@Component(selector: 'some-other-child',
     template: '''
 <h3>some-other-child</h3>
 <div #someChild></div>

@@ -10,8 +10,7 @@ import 'package:angular2/angular2.dart'
         View,
         ViewEncapsulation;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <list-component><li>item 2</li><div class="c">c2</div></list-component>
@@ -20,8 +19,7 @@ import 'package:angular2/angular2.dart'
     encapsulation: ViewEncapsulation.Native)
 class AppElement {}
 
-@Component(selector: 'list-component')
-@View(
+@Component(selector: 'list-component',
     styles: const [
       '''
 :host li {

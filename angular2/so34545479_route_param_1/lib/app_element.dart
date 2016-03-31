@@ -5,8 +5,7 @@ import 'package:angular2/angular2.dart';
 import 'package:angular2/router.dart'
     show ROUTER_DIRECTIVES, Route, RouteConfig, RouteParams, Router;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     templateUrl: 'app_element.html',
     directives: const [ROUTER_DIRECTIVES, ShellComponent])
 @RouteConfig(const [const Route(path: '/', component: ShellComponent, name: 'Browse')])
@@ -18,8 +17,7 @@ class AppElement {
   }
 }
 
-@Component(selector: 'shell-component')
-@View(template: '')
+@Component(selector: 'shell-component',template: '')
 class ShellComponent implements OnInit {
   Router router;
   RouteParams params;

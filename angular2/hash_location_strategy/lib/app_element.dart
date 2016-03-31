@@ -9,8 +9,7 @@ import 'package:angular2/router.dart'
      ROUTER_PROVIDERS,
      const Provider(APP_BASE_HREF, useValue: '/'), // I guess this should be in bootstrap()
      const Provider(LocationStrategy, useClass: HashLocationStrategy)
-   ])
-@View(templateUrl: 'app_element.html',
+   ],templateUrl: 'app_element.html',
    directives: const [ROUTER_DIRECTIVES])
 @RouteConfig(const [
  const Route(path: '/person-list',
@@ -19,6 +18,5 @@ import 'package:angular2/router.dart'
 ])
 class AppElement {}
 
-@Component(selector: 'person-list')
-@View(template: '<h3>person-list</h3>')
+@Component(selector: 'person-list',template: '<h3>person-list</h3>')
 class PersonListComponent {}

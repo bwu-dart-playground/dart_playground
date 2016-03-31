@@ -15,8 +15,7 @@ import 'package:angular2/angular2.dart'
         Renderer,
         View;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <div replaceClass class="class1" [ngClass]="someClass">c1</div>

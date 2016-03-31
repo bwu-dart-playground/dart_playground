@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart';
 
 @Component(
     selector: 'body'
-)
-@View(
+,
     templateUrl: 'app_element.html' //,
 //    directives: const [FORM_DIRECTIVES]
 )

@@ -5,8 +5,7 @@ import 'package:angular2/angular2.dart'
 import 'package:angular2/router.dart'
     show OnActivate, ROUTER_DIRECTIVES, Route, RouteConfig, RouteRegistry, Router;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <router-outlet></router-outlet>
@@ -31,6 +30,5 @@ class AppElement implements OnActivate {
   }
 }
 
-@Component(selector: 'some-component')
-@View(template: 'some-component')
+@Component(selector: 'some-component',template: 'some-component')
 class SomeComponent {}

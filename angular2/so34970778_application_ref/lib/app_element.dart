@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart' show ApplicationRef, Component, ControlG
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <child-element></child-element>
@@ -17,8 +16,7 @@ class AppElement {
 
 @Component(
     selector: 'child-element'
-)
-@View(
+,
     template: '''
 <h1>child-element</h1>
 <grandchild-element></grandchild-element>
@@ -30,8 +28,7 @@ class ChildElement {
 
 @Component(
     selector: 'grandchild-element'
-)
-@View(
+,
     template: '''
 <h1>grandchild-element</h1>
 '''

@@ -7,8 +7,7 @@ import 'package:angular2/src/common/forms/directives/number_value_accessor.dart'
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <div>num:<input type="number" [(ngModel)]="numberValue"></div>

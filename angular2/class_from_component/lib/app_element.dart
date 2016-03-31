@@ -4,8 +4,7 @@ import 'package:angular2/core.dart' show Component, View, Input, Inject, Injecta
 import 'package:angular2/platform/common_dom.dart' show DOM;
 //import 'package:angular2/src/platform/dom/dom_adapter.dart' show DOM;
 
-@Component(selector: 'app-element')
-@View(templateUrl: 'app_element.html', directives: const [SecondComponent])
+@Component(selector: 'app-element',templateUrl: 'app_element.html', directives: const [SecondComponent])
 class AppElement {
   SomeService _someService;
   AppElement(this._someService);

@@ -2,8 +2,7 @@ library child_focus.app_element;
 
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'app-element')
-@View(templateUrl: 'app_element.html', directives: const [MyComp]
+@Component(selector: 'app-element',templateUrl: 'app_element.html', directives: const [MyComp]
 //    directives: const [FORM_DIRECTIVES]
     )
 class AppElement {}

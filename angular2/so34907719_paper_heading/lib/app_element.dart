@@ -5,8 +5,7 @@ import 'package:polymer_elements/paper_card.dart';
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <paper-card [heading]="someVarFromComponent"></paper-card>

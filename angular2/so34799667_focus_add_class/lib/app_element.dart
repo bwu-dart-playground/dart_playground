@@ -4,8 +4,7 @@ import 'dart:html' show Element;
 import 'package:angular2/angular2.dart'
     show Component, ControlGroup, Directive, ElementRef, FORM_DIRECTIVES, Input, OnInit, Output, Renderer, View;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     styles: const [
       '''
     div.md-input-focus {

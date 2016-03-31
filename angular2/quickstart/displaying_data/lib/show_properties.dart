@@ -4,8 +4,7 @@ import 'dart:async';
 import 'package:angular2/angular2.dart';
 import 'package:displaying_data/friends_service.dart';
 
-@Component(selector: 'display', viewProviders: const [FriendsService])
-@View(
+@Component(selector: 'display', viewProviders: const [FriendsService],
     template: '''
 <p>My name: {{ myName }}</p>
 <p>Current time: {{ time }}</p>

@@ -15,8 +15,7 @@ import 'package:angular2/angular2.dart'
 import 'dart:html' show Element, KeyboardEvent;
 
 // see also http://plnkr.co/edit/NVEBYAWCH7ybCy5pqaBr?p=preview
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: r'''
 <h1>app-element</h1>
 <div>

@@ -3,8 +3,7 @@ library user_input.todo_list;
 import 'dart:html';
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'todo-list')
-@View(
+@Component(selector: 'todo-list',
     // An alternative to using \$event is to use a raw string instead.
     // For example, change "template: '''" to "template: r'''".
 //    template: '''

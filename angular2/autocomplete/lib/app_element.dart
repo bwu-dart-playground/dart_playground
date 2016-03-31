@@ -13,8 +13,7 @@ Debounce debounce(int milliseconds) =>
 FlatMapLatest flatMapLatest(Mapper f) => new FlatMapLatest(f);
 FlatMapLatest flatMap(Mapper f) => new FlatMap(f);
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <input type="text" #symbol [ngFormControl]="searchText" placeholder="ticker symbol">

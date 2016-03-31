@@ -14,8 +14,7 @@ import 'package:angular2/angular2.dart'
 
 // https://github.com/angular/angular/issues/5894
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
     Demo:

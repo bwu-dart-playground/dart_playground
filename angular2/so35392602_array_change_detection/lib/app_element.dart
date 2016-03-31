@@ -13,8 +13,7 @@ import 'package:observe/observe.dart' show toObservable;
 
 @Component(
     selector: 'app-element' //, changeDetection: ChangeDetectionStrategy.OnPush
- )
-@View(template: '''
+,template: '''
 <h1>app-element</h1>
 <input type="text" #item>
 <button (click)="addItem(item.value)">add</button>     <button (click)="update()">update</button>

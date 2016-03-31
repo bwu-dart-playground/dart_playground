@@ -4,8 +4,7 @@ import 'package:angular2/angular2.dart' show Component, ControlGroup, FORM_DIREC
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <ul>

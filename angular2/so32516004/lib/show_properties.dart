@@ -3,8 +3,7 @@ library displaying_data.show_properties;
 import 'package:angular2/angular2.dart';
 import 'dart:async';
 
-@Component( selector: 'display' )
-@View( template: '''
+@Component( selector: 'display', template: '''
 <p>My name: {{ myName }}</p>
 <p>Current time: {{ time }}</p>
 <p>Friends:</p>

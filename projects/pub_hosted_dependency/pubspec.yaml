@@ -1,0 +1,7 @@
+name: pub_hosted_dependency
+dependencies:
+  intl:
+    version: 0.12.7
+    hosted:
+#      name: intl
+      url: https://pub.dartlang.org

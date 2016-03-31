@@ -10,8 +10,7 @@ import 'package:angular2/angular2.dart'
         Output,
         View;
 
-@Component(selector: 'app-element')
-@View(template: '''
+@Component(selector: 'app-element',template: '''
 <h1>app-element</h1>
 <page-component></page-component>
 ''' ,

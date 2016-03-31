@@ -5,8 +5,7 @@ import 'dart:async' show Timer;
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <div *ngFor="#item of items | filter: [items, other]">{{item}}</div>

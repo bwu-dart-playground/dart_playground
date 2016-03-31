@@ -5,8 +5,7 @@ import 'package:angular2/core.dart'
 import 'package:collection/collection.dart';
 import 'dart:async';
 
-@Component(selector: 'app-element', pipes: const [MapKeysPipe])
-@View(template: '''
+@Component(selector: 'app-element', pipes: const [MapKeysPipe],template: '''
 <h1>app-element</h1>
 <table>
 <tr *ngFor="#p of people">

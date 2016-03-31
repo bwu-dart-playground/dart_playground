@@ -5,8 +5,7 @@ import 'package:angular2/angular2.dart'
 import 'dart:async' show Timer;
 import 'dart:math' show Random;
 
-@Component(selector: 'app-element')
-@View(templateUrl: 'app_element.html' ,
+@Component(selector: 'app-element',templateUrl: 'app_element.html' ,
     directives: const [SubComponent]
     )
 class AppElement implements OnInit {
@@ -25,8 +24,7 @@ class AppElement implements OnInit {
   }
 }
 
-@Component(selector: 'sub-component')
-@View(template: '<div>sub-component <span>{{fixed}}</span></div>')
+@Component(selector: 'sub-component',template: '<div>sub-component <span>{{fixed}}</span></div>')
 class SubComponent implements OnChanges, OnInit {
   @Output()EventEmitter fixedChange = new EventEmitter();
   @Input() bool fixed;

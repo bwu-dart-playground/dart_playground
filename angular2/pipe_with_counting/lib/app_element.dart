@@ -14,8 +14,7 @@ import 'package:angular2/angular2.dart'
 
 // http://stackoverflow.com/questions/35127257/how-to-get-the-size-of-a-filtered-piped-set-in-angular2
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <tr *ngFor="#singleCustomerData of customerData | myFilter:searchTerm">

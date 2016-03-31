@@ -12,8 +12,7 @@ import 'package:angular2/router.dart'
         Router,
         Redirect;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     templateUrl: 'app_element.html',
     directives: const [ROUTER_DIRECTIVES, ChildComponent])
 @RouteConfig(const [
@@ -38,8 +37,7 @@ class AppElement implements OnInit {
   }
 }
 
-@Component(selector: 'child-component')
-@View(
+@Component(selector: 'child-component',
     template: '''
     child
     <router-outlet></router-outlet>''',
@@ -74,8 +72,7 @@ class ChildComponent implements OnInit {
   }
 }
 
-@Component(selector: 'other-component')
-@View(template: 'other')
+@Component(selector: 'other-component',template: 'other')
 class OtherComponent implements OnInit {
   Router router;
   RouteParams params;

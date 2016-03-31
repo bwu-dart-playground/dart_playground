@@ -9,6 +9,11 @@
     ngZone.onEventDone.subscribe(function() { console.log('Angular did some work'); });
 
   - Observables
+    - class that notifies about property changes
+       - http://stackoverflow.com/questions/36267119/detect-change-of-nested-property-for-component-input/36267274#36267274
+       - https://plnkr.co/edit/wnLWAW?p=preview (own)
+
+
     obs=new Subject().startWith(4);
     obs.subscribe();
     obs.next(3);
@@ -71,6 +76,7 @@ You can. Call `markForCheck` on a change detector ref, and then call LifeCycle.t
     - https://github.com/angular/angular/issues/6223#issuecomment-195155190
     - https://github.com/angular/angular/issues/6370#issuecomment-193896657 (good example)
     - http://plnkr.co/edit/tcgbI2?p=preview  (https://github.com/angular/angular/issues/7453#issuecomment-193138577)
+    - https://github.com/angular/angular/issues/6071#issuecomment-202765309 (register component with change detection)
   - load by name https://plnkr.co/edit/C0U5IIflrMnqxuXVbdw8?p=preview (https://github.com/angular/angular/issues/7652#issuecomment-198365577)
 
 - custom validators
@@ -109,6 +115,8 @@ cont.subscribe(adjustwidth);
 
 
 - Router
+  - routerCanReuse https://github.com/angular/angular/issues/7784#issuecomment-202492405
+  - Navigate to parent route (without activating child) http://stackoverflow.com/questions/36274134/angular2-default-route-view/36275487?noredirect=1#comment60179417_36275487 (own Plunker)
   - Get query parameters / redirect after login http://stackoverflow.com/questions/36160118/angular2-redirect-after-login
   - Child routes https://plnkr.co/edit/nt8Zzi?p=preview (zoechi)
   - check if route exists before re-adding it http://plnkr.co/edit/ya8M0spq5ayOvWAeOtYh?p=preview (eigner) http://stackoverflow.com/questions/36114571/configuration-name-conflicts-with-existing-route-name/36114986#36114986
@@ -211,7 +219,9 @@ cont.subscribe(adjustwidth);
 
 - view compiler
   - Angular 2.0: Life of a Template https://docs.google.com/document/d/19_9pshmkAQOA67UWTm41bzWbvikwerVjnCD97D0JS7g/edit
-  - viewContainer createEmbeddedView (https://github.com/angular/angular/issues/7443) http://plnkr.co/edit/LK1Aa3vhawd2sMl0Wj6F
+  - viewContainer createEmbeddedView (https://github.com/angular/angular/issues/7443)
+    - http://plnkr.co/edit/LK1Aa3vhawd2sMl0Wj6F
+    - http://plnkr.co/edit/GNYqQROgM7DQ4ly9G8Xz?p=preview (tabs from https://github.com/angular/angular/issues/6310)
   - http://plnkr.co/edit/fwd1kh9TXfemagpuDnLZ?p=preview (TemplateRef, ViewContainerRef)
 
 - unittest
@@ -255,6 +265,7 @@ cont.subscribe(adjustwidth);
   - Using Animation and AnimationBuilder https://plnkr.co/edit/f9X2UfWdExhCh6oAX9hc?p=preview
   - Simple keyframes, ngFor http://plnkr.co/edit/SXzyyN?p=preview
   - page transition animation http://plnkr.co/edit/FikHIEPONMYhr6COD9Ou?p=info
+  - hide spinner on load http://stackoverflow.com/questions/36234211/how-to-set-animation-on-first-element-on-loading
 
 - Project setup
   - cannot find Promise
@@ -262,6 +273,9 @@ cont.subscribe(adjustwidth);
     - https://github.com/angular/angular/issues/6391, https://github.com/angular/angular/issues/7144#issuecomment-190012839
 
 - Aria roles https://github.com/angular/angular/issues/754
+
+- HTTP Request
+  - Get the current base URL http://stackoverflow.com/questions/36222845/how-to-get-domain-name-for-service-in-angular2
 
 - Dart Transformers
   - https://github.com/angular/angular/wiki/Advanced-Transformer-Configuration
@@ -297,8 +311,12 @@ cont.subscribe(adjustwidth);
 
 
 - FAQ
+  - add ROUTER_DIRECTIVES to PLATFORM_DIRECTIVES
+    `provide(PLATFORM_DIRECTIVES, {useValue: [ROUTER_DIRECTIVES], multi: true})`
   - GitHub issues are for bug reports and feature requests.
     For support questions please use other channels like the ones listed in [CONTRIBUTING - Got a Question or Problem?](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#question)
+
+    There is a nice new GitHub feature to "add reaction"s instead of `+1` posts. Please use this instead :+1:
 
   - escardin community FAQ
     - https://github.com/escardin/angular2-community-faq#what-are-observables-and-where-can-i-learn-more-about-them-and-rx
@@ -315,6 +333,7 @@ cont.subscribe(adjustwidth);
     - http://stackoverflow.com/questions/34700438/global-events-in-angular-2
     - eigner Plnkr https://plnkr.co/edit/o88z1FFYcZsNebbcGBsF?p=preview
   - pushstate 404
+    - http://stackoverflow.com/questions/35137573/angular-2-router-es5-doesnt-work-on-page-reload/35137712#35137712 (own)
     - http://stackoverflow.com/questions/31415052/angular-2-0-router-not-working-on-reloading-the-browser (main)
     - http://stackoverflow.com/questions/35077977/angular2-when-refresh-the-page-url-remains-same-but-appropriate-view-doesnt-g  (duplicated)
     - http://stackoverflow.com/questions/34415725/when-i-refresh-my-website-i-get-a-404-this-is-with-angular2-and-firebase/34416946#34416946 (firebase)
@@ -340,5 +359,14 @@ cont.subscribe(adjustwidth);
      You can follow https://docs.google.com/document/d/150lerb1LmNLuau_a_EznPV1I1UHMTbEl61t4hZ7ZpS0/edit to see what next steps are planned.
      See also https://github.com/escardin/angular2-community-faq
   - ngFor with JSON
+  - @ViewChildren, @ContentChildren
+    - http://plnkr.co/edit/5kJfvIjnC1ROKuXPKNKX?p=preview (own) simple
+    - http://plnkr.co/edit/h8aT7cPuW2PCWBqUzlth?p=preview (own) more variations
+    - http://stackoverflow.com/questions/36329658/angular-2-select-object-from-the-dom-and-set-the-focus/36329983#36329990 (own Plunker) find by element attribute
+
+  - Observable in service http://stackoverflow.com/questions/34376854/delegation-eventemitter-or-observable-in-angular2/35568924 (Mark)
+    - monitor object change http://stackoverflow.com/questions/36267119/detect-change-of-nested-property-for-component-input/36267274#36267274
+
+  - Http Interceptors http://stackoverflow.com/questions/36261100/what-is-angular-2-analogue-solution-for-angular-1-interceptors
 
 

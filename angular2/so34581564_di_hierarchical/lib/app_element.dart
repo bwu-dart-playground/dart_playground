@@ -2,8 +2,7 @@ library so34581564_di_hierarchical.app_element;
 
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'app-element', providers: const [SomeService])
-@View(templateUrl: 'app_element.html' //,
+@Component(selector: 'app-element', providers: const [SomeService],templateUrl: 'app_element.html' //,
 //    directives: const [FORM_DIRECTIVES]
     )
 class AppElement {

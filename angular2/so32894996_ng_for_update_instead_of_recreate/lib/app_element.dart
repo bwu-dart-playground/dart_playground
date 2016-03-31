@@ -3,15 +3,13 @@ library so32894996_ng_for_update_instead_of_recreate.app_element;
 import 'dart:math' show Random;
 import 'package:angular2/angular2.dart';
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''<h3>app-element</h3>
     <map></map>''',
     directives: const [MapComponent])
 class AppElement {}
 
-@Component(selector: 'map')
-@View(
+@Component(selector: 'map',
     template: '''
 <button (click)="changeValue()">Change value</button>
 <marker *ngFor="#m of markersIndexes" [model]="markers[m]"></marker>
@@ -37,8 +35,7 @@ class MapComponent {
   }
 }
 
-@Component(selector: 'marker')
-@View(
+@Component(selector: 'marker',
     template: '''
 <h3>marker</h3>
 <div>name: {{model.name}} pos: {{model.position}} created: {{createdAt}}</div>

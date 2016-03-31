@@ -16,8 +16,7 @@ import 'package:angular2/angular2.dart'
 
 /// Gitter @vladotesanovic
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <parent-element></parent-element>
@@ -51,8 +50,7 @@ class ParentElement {
   }
 }
 
-@Component(selector: 'dcl-child')
-@View(template: '''
+@Component(selector: 'dcl-child',template: '''
 <h1>dcl-child</h1>
 <div>someString: { {someString} }</div>
 ''')

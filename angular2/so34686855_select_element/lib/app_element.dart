@@ -14,8 +14,7 @@ import 'package:angular2/angular2.dart'
         SimpleChange,
         View;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     templateUrl: 'app_element.html',
     directives: const [FORM_DIRECTIVES, NgFor]) // OptionValue,
 class AppElement {

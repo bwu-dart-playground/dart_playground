@@ -7,8 +7,7 @@ const OpaqueToken globalConfigValue = const OpaqueToken('GlobalConfigValue');
 
 @Component(
     selector: 'app-element'
-)
-@View(
+,
     template: '''
 <h1>app-element</h1>
 <div>config: {{globalConfigValue}}</div>

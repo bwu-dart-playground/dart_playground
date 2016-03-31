@@ -4,8 +4,7 @@ import 'package:angular2/core.dart'
     show Attribute, Component, ElementRef, Input, OnInit, Output, View;
 import 'dart:html' show Element;
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 <test-element

@@ -17,8 +17,7 @@ import 'dart:convert' show JSON;
 
 /// http://www.syntaxsuccess.com/viewarticle/forms-and-validation-in-angular-2.0
 
-@Component(selector: 'app-element')
-@View(
+@Component(selector: 'app-element',
     template: '''
 <h1>app-element</h1>
 
@@ -52,8 +51,7 @@ class ZipValidator {
   }
 }
 
-@Component(selector: 'form-element')
-@View(template: '''
+@Component(selector: 'form-element',template: '''
 <h1>form-element</h1>
 <form (ngSubmit)="onSubmit()" [ngFormModel]="form" #f="ngForm">
     <div>
