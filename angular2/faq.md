@@ -9,10 +9,15 @@
     ngZone.onEventDone.subscribe(function() { console.log('Angular did some work'); });
 
   - Observables
+    - https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#bidirectional-service
     - class that notifies about property changes
        - http://stackoverflow.com/questions/36267119/detect-change-of-nested-property-for-component-input/36267274#36267274
        - https://plnkr.co/edit/wnLWAW?p=preview (own)
-
+    - Observable in service http://stackoverflow.com/questions/34376854/delegation-eventemitter-or-observable-in-angular2/35568924 (Mark)
+      - monitor object change http://stackoverflow.com/questions/36267119/detect-change-of-nested-property-for-component-input/36267274#36267274
+    - BehaviorSubject http://stackoverflow.com/questions/36372724/how-do-i-ensure-that-a-call-to-subscribe-on-the-observer-initially-receives-the
+      - http://stackoverflow.com/questions/36408997/angular2-sending-data-from-a-component-to-a-component-via-service/36409287?noredirect=1#comment60442306_36409287
+      - Use Service to communicate between components https://plnkr.co/edit/7sWWpF?p=preview (own)
 
     obs=new Subject().startWith(4);
     obs.subscribe();
@@ -26,6 +31,8 @@
     obs.subscribe(); //prints 3
 
   - Forms
+    - form-level validator http://stackoverflow.com/questions/36399934/angular2-form-validation-on-conditionally-created-input-field
+    - form.find() controls https://github.com/angular/angular/issues/5024
     - form test not getting valid (Gitter binarious)
     - use custom components as form inputs with `ngModel` (uses ControlValueAccessor)
       - https://github.com/angular/angular/issues/6639#issuecomment-174703547 (with example links)
@@ -60,16 +67,17 @@
   - public Google Docs https://drive.google.com/drive/folders/0BxgtL8yFJbacQmpCc1NMV3d5dnM
 
 - Change detection
-How can we inform angular that there are changes on the component (when using ON_PUSH)?
+    How can we inform angular that there are changes on the component (when using ON_PUSH)?
 
-Can we be running outside angular's zone and still do this?
-You can. Call `markForCheck` on a change detector ref, and then call LifeCycle.tick.
+    Can we be running outside angular's zone and still do this?
+    You can. Call `markForCheck` on a change detector ref, and then call LifeCycle.tick.
 
   - observables and onPush https://plnkr.co/edit/oUQW5DzrLdUUThIkxLGG?p=preview
 
 
 - DynamicComponentLoader
-  - with data binding http://plnkr.co/edit/yzKAiXQQQwKi88g6wIdY?p=preview
+  - wrapper element for DCL http://stackoverflow.com/questions/36325212/angular-2-dynamic-tabs-with-user-click-chosen-components/36325468#36325468
+  - loadAsRoot with data binding http://plnkr.co/edit/yzKAiXQQQwKi88g6wIdY?p=preview
   - eigenes (set id) http://plnkr.co/edit/ihb7dzRlz1DO5piUvoXw?p=preview
   - simple loadNextToLocation example https://plnkr.co/edit/LwrrrEcn4rDqWs3bXu3K?p=preview
   - loadAsRoot workaround
@@ -115,6 +123,10 @@ cont.subscribe(adjustwidth);
 
 
 - Router
+  - load routes dynamically
+    - http://stackoverflow.com/questions/36350906/dynamic-build-routes-or-dynamic-component-import-angular-2/36351148#36351148
+    - http://stackoverflow.com/questions/35887063/dynamic-route-loading-in-angular-2-fails-beta/35889066#35889066
+
   - routerCanReuse https://github.com/angular/angular/issues/7784#issuecomment-202492405
   - Navigate to parent route (without activating child) http://stackoverflow.com/questions/36274134/angular2-default-route-view/36275487?noredirect=1#comment60179417_36275487 (own Plunker)
   - Get query parameters / redirect after login http://stackoverflow.com/questions/36160118/angular2-redirect-after-login
@@ -168,13 +180,117 @@ cont.subscribe(adjustwidth);
     - https://github.com/angular/angular/issues/5335#issuecomment-170088933
   - Is current route active (Instruction alias) https://github.com/angular/angular/issues/7476 `router.isRouteActive(router.generate(['Parent', 'Child']))`
 
+  - secure router-outlet  CaptainCodeman
+```
+  import {Directive, Injector, Attribute, ElementRef, DynamicComponentLoader} from 'angular2/core';
+  import {Router, RouteData, RouterOutlet, RouteParams, Instruction, ComponentInstruction} from 'angular2/router';
+
+  /*
+    Example implementation
+
+    Given a route:
+    @RouteConfig([
+    { path: '/thing/:id', component: ThingComponent, name: 'Thing', data: { public: false, roles:['thinger'] } }
+    ])
+
+    authorize(instruction: ComponentInstruction):boolean {
+      // simplest case - route is public
+      if (<boolean>instruction.routeData.data['public']) {
+        return true;
+      }
+
+      // if not public then we at least need an authenticated user
+      if (this.isAuthenticated()) {
+        var routeRoles = <any[]>instruction.routeData.data['roles'];
+        var userRoles = <string[]>this.roles();
+
+        // no roles required for route = user just needs to be authenticated
+        var authorized = routeRoles.length === 0 || routeRoles.some(routeRole => userRoles.indexOf(routeRole) >= 0);
+
+        return authorized;
+      }
+
+      return false;
+    }
+  */
+  export abstract class IAuthService {
+    abstract isAuthenticated():boolean;
+    authorize(instruction: ComponentInstruction, params:any):boolean {
+      // authorized if route allows public access or user is authenticated
+      return this.isAuthenticated() || <boolean>instruction.routeData.data['public']
+    }
+  }
+
+  @Directive({selector: 'secure-outlet'})
+  export class SecureRouterOutlet extends RouterOutlet {
+    signin:string;
+    unauthorized:string;
+    injector:Injector;
+
+    private parentRouter: Router;
+    private authService: IAuthService;
+
+    constructor(_elementRef: ElementRef, _loader: DynamicComponentLoader,
+                _parentRouter: Router, @Attribute('name') nameAttr: string,
+                authService:IAuthService,
+                injector:Injector,
+                @Attribute('signin') signinAttr: string,
+                @Attribute('unauthorized') unauthorizedAttr: string) {
+      super(_elementRef, _loader, _parentRouter, nameAttr);
+      this.parentRouter = _parentRouter;
+      this.authService = authService;
+      this.injector = injector;
+      this.signin = signinAttr;
+      this.unauthorized = unauthorizedAttr;
+    }
+
+    activate(nextInstruction: ComponentInstruction): Promise<any> {
+      var params = this.getAllRouteParams(this.injector);
+      var isAuthorized = this.authService.authorize(nextInstruction, params);
+
+      if (isAuthorized) {
+        return super.activate(nextInstruction);
+      }
+
+      if (this.authService.isAuthenticated()) {
+        var ins = this.parentRouter.generate([this.unauthorized]);
+        return super.activate(ins.component);
+      } else {
+        var ins = this.parentRouter.generate([this.signin,{url:location.pathname}]);
+        return super.activate(ins.component);
+      }
+    }
+
+    reuse(nextInstruction: ComponentInstruction): Promise<any> {
+      return super.reuse(nextInstruction);
+    }
+
+    getAllRouteParams(injector) {
+      let params = null;
+      while(injector) {
+        const routeParams = injector.getOptional(RouteParams);
+        if (routeParams) {
+          if (params === null) {
+            params = {};
+          } else {
+            params = Object.create(params);
+          }
+
+          Object.assign(params, routeParams.params);
+        }
+        injector = injector.parent;
+      }
+      return params;
+    }
+  }
+  ```
+
 
 - forms
   - uppercase directive https://plnkr.co/edit/MzVOCK?p=preview (eigener)
   - different ways of building a form http://stackoverflow.com/questions/35383765/angular2-forms-validations-ngcontrol-ngmodel-etc
   - Model-driven forms using ControlGroup http://plnkr.co/edit/UClEl7ly2LRjYRf7MvY6?p=info
-  - forms
-  http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
+    http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
   - valueaccessor
     - https://github.com/angular/angular/issues/2543 (eigenes funktionierendes Beispiel)
     - http://plnkr.co/edit/slVMz6Kgv6KlnUNMDe3o?p=preview
@@ -265,6 +381,7 @@ cont.subscribe(adjustwidth);
   - Using Animation and AnimationBuilder https://plnkr.co/edit/f9X2UfWdExhCh6oAX9hc?p=preview
   - Simple keyframes, ngFor http://plnkr.co/edit/SXzyyN?p=preview
   - page transition animation http://plnkr.co/edit/FikHIEPONMYhr6COD9Ou?p=info
+    http://stackoverflow.com/questions/33553828/page-transition-animations-with-angular-2-0-router-and-component-interface-promi
   - hide spinner on load http://stackoverflow.com/questions/36234211/how-to-set-animation-on-first-element-on-loading
 
 - Project setup
@@ -274,13 +391,10 @@ cont.subscribe(adjustwidth);
 
 - Aria roles https://github.com/angular/angular/issues/754
 
-- HTTP Request
-  - Get the current base URL http://stackoverflow.com/questions/36222845/how-to-get-domain-name-for-service-in-angular2
-
 - Dart Transformers
   - https://github.com/angular/angular/wiki/Advanced-Transformer-Configuration
   - https://github.com/angular/angular/pull/7464/files
-  ```
+```
   # from https://github.com/kegluneq/angular/blob/use_split_transformers/modules/playground/pubspec.yaml
   transformers:
   - angular2/transform/codegen:
@@ -309,10 +423,23 @@ cont.subscribe(adjustwidth);
           - --enable-experimental-mirrors
 ```
 
+  - Service
+    - Http
+      - ensure only one request http://stackoverflow.com/questions/36271899/what-is-the-correct-way-to-share-the-result-of-an-angular-2-http-network-call-in
+      - HTTP Request
+        - Get the current base URL http://stackoverflow.com/questions/36222845/how-to-get-domain-name-for-service-in-angular2
+        - get cached data http://stackoverflow.com/questions/36271899/what-is-the-correct-way-to-share-the-result-of-an-angular-2-http-network-call-in
+
+  - Authentication
+    - http://stackoverflow.com/questions/34331478/angular2-redirect-to-login-page
+
 
 - FAQ
+  - ngClass http://stackoverflow.com/a/33713824/217408
   - add ROUTER_DIRECTIVES to PLATFORM_DIRECTIVES
     `provide(PLATFORM_DIRECTIVES, {useValue: [ROUTER_DIRECTIVES], multi: true})`
+  - add pipes to PLATFORM_PIPES
+    `bootstrap(App, [provide(PLATFORM_PIPES, {useValue: RainbowizePipe, multi:true})]);`
   - GitHub issues are for bug reports and feature requests.
     For support questions please use other channels like the ones listed in [CONTRIBUTING - Got a Question or Problem?](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#question)
 
@@ -348,7 +475,9 @@ cont.subscribe(adjustwidth);
     - Dart
       - https://github.com/adaojunior/pub_serve_rewrites
     - DI config setting http://stackoverflow.com/questions/35215112/pass-page-global-variables-into-angular2-app-for-use-with-services/35217704#35217704
-  - ngFor trackBy https://github.com/angular/angular/issues/6907#issuecomment-182359285
+  - ngFor trackBy
+    - https://github.com/angular/angular/issues/6907#issuecomment-182359285
+    - http://www.bennadel.com/blog/3020-understanding-object-identity-with-ngfor-loops-in-angular-2-beta-3.htm
   - ES6 DI Dependency Injection http://stackoverflow.com/questions/33034930/how-to-use-angular2-dynamiccomponentloader-in-es6
   - status of multiple checkboxes http://plnkr.co/edit/N9NXBYcwhon6ITr8RP5y?p=preview
     http://stackoverflow.com/questions/35592529/why-did-deleting-my-web-assets-folder-also-delete-all-source-in-lib/35598277?noredirect=1#comment58922781_35598277
@@ -363,9 +492,6 @@ cont.subscribe(adjustwidth);
     - http://plnkr.co/edit/5kJfvIjnC1ROKuXPKNKX?p=preview (own) simple
     - http://plnkr.co/edit/h8aT7cPuW2PCWBqUzlth?p=preview (own) more variations
     - http://stackoverflow.com/questions/36329658/angular-2-select-object-from-the-dom-and-set-the-focus/36329983#36329990 (own Plunker) find by element attribute
-
-  - Observable in service http://stackoverflow.com/questions/34376854/delegation-eventemitter-or-observable-in-angular2/35568924 (Mark)
-    - monitor object change http://stackoverflow.com/questions/36267119/detect-change-of-nested-property-for-component-input/36267274#36267274
 
   - Http Interceptors http://stackoverflow.com/questions/36261100/what-is-angular-2-analogue-solution-for-angular-1-interceptors
 
