@@ -1,8 +1,0 @@
-<h1>app-element</h1>
-<span *ngFor="#f of fruits; #i=index">
-  <div>{{i}}<span>{{f}}</span></div>
-</span>
-<div>---</div>
-<template ngFor #f [ngForOf]="fruits" #i="index">
-  <div>{{i}}<span>{{f}}</span></div>
-</template>
